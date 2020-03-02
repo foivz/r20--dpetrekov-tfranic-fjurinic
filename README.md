@@ -15,9 +15,9 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 ## Projektni tim
 
-Domagoj Petreković | dpetrekov@foi.hr | 0016125620 | Tecidis
-Tin Franić | tfranic@foi.hr | 0016123673 | Tin21
-Filip Jurinić | fjurinic@foi.hr | 0016132125 | fjurinic
+Domagoj Petreković | dpetrekov@foi.hr | 0016125620 | Tecidis<br/><br/>
+Tin Franić | tfranic@foi.hr | 0016123673 | Tin21<br/>
+Filip Jurinić | fjurinic@foi.hr | 0016132125 | fjurinic<br/>
 
 ## Opis domene
 Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
