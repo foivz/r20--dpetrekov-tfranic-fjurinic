@@ -15,7 +15,7 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 
 ## Projektni tim
 
-Domagoj Petreković | dpetrekov@foi.hr | 0016125620 | Tecidis<br/><br/>
+Domagoj Petreković | dpetrekov@foi.hr | 0016125620 | Tecidis<br/>
 Tin Franić | tfranic@foi.hr | 0016123673 | Tin21<br/>
 Filip Jurinić | fjurinic@foi.hr | 0016132125 | fjurinic<br/>
 
