@@ -27,7 +27,7 @@ Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda.
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Registracija | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je registrirati u istu. | Domagoj Petreković
+F01 | Registracija | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je registrirati u istu. | Domagoj Petreković
 F02 | Prijava | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je ulogirati u istu. | Domagoj Petreković
 F03 | Uređivanje korisnickih podataka | Promjena E-maila, korisničkog imena, lozinke itd. | Domagoj Petreković
 F04 | Početna stranica | Stranica na kojem svaki korisnik vidi svoj status, i podatke o svojim mečevima, turnirima itd. | Tin Franić
