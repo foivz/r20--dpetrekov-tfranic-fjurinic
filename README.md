@@ -27,9 +27,7 @@ Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda.
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-
 F01 | Registracija | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je registrirati u istu. | Domagoj Petreković
-
 F02 | Prijava | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je ulogirati u istu. | Domagoj Petreković
 
 
