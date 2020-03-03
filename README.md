@@ -33,10 +33,10 @@ F02 | Prijava | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je ulogi
 F03 | Uređivanje korisnickih podataka | Promjena E-maila, korisničkog imena, lozinke itd. | Domagoj Petreković
 F04 | Početna stranica | Stranica na kojem svaki korisnik vidi svoj status, i podatke o svojim mečevima, turnirima itd. | Tin Franić
 F05 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. |
-F06 | Dodavanje novih mečeva | Dodavanje novoga meča između dva korisnika aplikacije | 
+F06 | Dodavanje novih mečeva | Dodavanje novoga meča između dva korisnika aplikacije | Filip Jurinić
 F07 | Pregled prošlih mečeva | Lista na kojoj će biti svi odigrani mečevi | Tin Franić
-F08 | Dodavanje turnira | Dodavanje novoga turnira na listu dostupnih | 
-F09 | Prijava na turnir | Prijava na turnir koji je netko od organizatora kreirao |
+F08 | Dodavanje turnira | Dodavanje novoga turnira na listu dostupnih | Filip Jurinić
+F09 | Prijava na turnir | Prijava na turnir koji je netko od organizatora kreirao |Filip Jurinić
 F10 | Pregled prošlih turnira | Pregled rezultata turnira koji su odigrani | Tin Franić
 F11 | Registracija kluba | Registracija kluba te dodavanje terena koje klub ima na raspolaganju | 
 F12 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet |
