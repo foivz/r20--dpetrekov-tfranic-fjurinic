@@ -35,6 +35,12 @@ F04 | Početna stranica | Stranica na kojem svaki korisnik vidi svoj status, i p
 F05 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. |
 F06 | Dodavanje novih mečeva | Dodavanje novoga meča između dva korisnika aplikacije | 
 F07 | Pregled prošlih mečeva | Lista na kojoj će biti svi odigrani mečevi | 
+F08 | Dodavanje turnira | Dodavanje novoga turnira na listu dostupnih | 
+F09 | Prijava na turnir | Prijava na turnir koji je netko od organizatora kreirao |
+F10 | Pregled prošlih turnira | Pregled rezultata turnira koji su odigrani | 
+F11 | Registracija kluba | Registracija kluba te dodavanje terena koje klub ima na raspolaganju | 
+F12 | Pregled terena | Pregled dostupnih terena koje su registrirani klubovi dali na korištenje |
+F13 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet |
 
 
 ## Tehnologije i oprema
