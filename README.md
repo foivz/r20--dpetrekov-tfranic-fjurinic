@@ -20,8 +20,8 @@ Tin Franić | tfranic@foi.hr | 0016123673 | Tin21
 Filip Jurinić | fjurinic@foi.hr | 0016132125 | fjurinic
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
-
+Tennis Track je aplikacija čija je primarna funkcija rezervacija teniskih terena. Prvi korak kod korištenja aplikacije je registracija korisnika. Nakon registracije, korisnik prijavom pristupa aplikaciji. Nakon prijave korisniku je vidljiva početna stranica na kojoj se nalaze podaci o mečevima i turnirima. Korisnik u svakom trenutku može mjenjati korisničke podatke kao što su E-mail, lozinku i korisničko ime. Aplikacija prikazuje rang liste svih korisnika, a postoji i mogućnost filtriranja po više kriterija. Korisniku se nudi mogućnost dodavanja novih mečeva, kao i pregled prijašnjih, tj. odigranih mečeva. Uz to, korisnik se može prijavljivati na turnire i ima uvid u pregled prijašnjih turnira. Također, postoji mogućnost dodavanja novih turnira na listu dostupnih. Korisnik može dodati svoj teniski klub kao i terene koji su na raspolaganju kluba. Korisnik može rezervirati termin korištenja određenog termina. 
+ 
 ## Specifikacija projekta
 Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
 
