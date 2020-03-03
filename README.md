@@ -39,8 +39,7 @@ F08 | Dodavanje turnira | Dodavanje novoga turnira na listu dostupnih |
 F09 | Prijava na turnir | Prijava na turnir koji je netko od organizatora kreirao |
 F10 | Pregled prošlih turnira | Pregled rezultata turnira koji su odigrani | 
 F11 | Registracija kluba | Registracija kluba te dodavanje terena koje klub ima na raspolaganju | 
-F12 | Pregled terena | Pregled dostupnih terena koje su registrirani klubovi dali na korištenje |
-F13 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet |
+F12 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet |
 
 
 ## Tehnologije i oprema
