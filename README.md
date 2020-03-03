@@ -30,6 +30,8 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Registracija | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je registrirati u istu. | Domagoj Petreković
 F02 | Prijava | Ukoliko korisnik želi pristuputi aplikaciji potrebo se je ulogirati u istu. | Domagoj Petreković
+F03 | Uređivanje korisnickih podataka | Promjena E-maila, korisničkog imena, lozinke itd. | Domagoj Petreković
+F04 |  |  |
 
 
 ## Tehnologije i oprema
