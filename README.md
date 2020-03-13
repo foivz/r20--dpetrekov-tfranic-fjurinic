@@ -29,4 +29,4 @@ F12 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije v
 
 
 ## Tehnologije i oprema
-.NET (Visual Studio), GitHub, GitHub Classroom, TeamGant, Word, MySQL
+.NET (Visual Studio), GitHub, GitHub Classroom, TeamGant, Word, MySQL, Draw.io
