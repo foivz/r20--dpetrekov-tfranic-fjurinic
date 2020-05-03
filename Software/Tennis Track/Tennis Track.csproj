@@ -46,16 +46,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forme\DodajClana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Forme\DodajClana.Designer.cs">
+      <DependentUpon>DodajClana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Postavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Postavke.Designer.cs">
+      <DependentUpon>Postavke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\GlavniIzbornik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\GlavniIzbornik.Designer.cs">
+      <DependentUpon>GlavniIzbornik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PromjeniLozinku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PromjeniLozinku.Designer.cs">
+      <DependentUpon>PromjeniLozinku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\RangListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\RangListe.Designer.cs">
+      <DependentUpon>RangListe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forme\DodajClana.resx">
+      <DependentUpon>DodajClana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\GlavniIzbornik.resx">
+      <DependentUpon>GlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Postavke.resx">
+      <DependentUpon>Postavke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PromjeniLozinku.resx">
+      <DependentUpon>PromjeniLozinku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\RangListe.resx">
+      <DependentUpon>RangListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

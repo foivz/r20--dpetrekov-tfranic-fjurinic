@@ -78,7 +78,7 @@
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
             this.Name = "LoginForm";
-            this.Text = "Tennis Track";
+            this.Text = "TennisTrack";
             this.ResumeLayout(false);
             this.PerformLayout();
 
