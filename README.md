@@ -14,19 +14,13 @@ Tennis Track je aplikacija čija je primarna funkcija rezervacija teniskih teren
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Registracija | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je registrirati u istu. | Domagoj Petreković
-F02 | Prijava | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je ulogirati u istu. | Domagoj Petreković
-F03 | Uređivanje korisnickih podataka | Promjena E-maila, korisničkog imena, lozinke itd. | Domagoj Petreković
-F04 | Početna stranica | Stranica na kojem svaki korisnik vidi svoj status, i podatke o svojim mečevima, statistiku itd. | Tin Franić
-F05 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. | Tin Franić
-F06 | Dodavanje novih mečeva | Dodavanje novoga meča između dva korisnika aplikacije | Filip Jurinić
-F07 | Pregled prošlih mečeva | Lista na kojoj će biti svi odigrani mečevi | Tin Franić
-F08 | Dodavanje turnira | Dodavanje novoga turnira na listu dostupnih | Filip Jurinić
-F09 | Prijava na turnir | Prijava na turnir koji je netko od organizatora kreirao | Filip Jurinić
-F10 | Pregled prošlih turnira | Pregled rezultata turnira koji su odigrani | Tin Franić
-F11 | Registracija kluba | Registracija kluba te dodavanje terena koje klub ima na raspolaganju | Domagoj Petreković
-F12 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet | Filip Jurinić
+F01 | Prijava | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je ulogirati u istu. | Domagoj Petreković
+F02 | Učlanjenje | Promjena E-maila, korisničkog imena, lozinke itd, kreiranje novoga računa od strane zaposlenika kluba. | Domagoj Petreković
+F03 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. | Tin Franić
+F04 | Mečevi | Dodavanje novoga meča između dva korisnika aplikacije, lista na kojoj će biti svi odigrani mečevi trenutnog korisnika  | Tin Franić
+F05 | Turniri | Dodavanje novoga turnira na listu dostupnih, prijava na turnir koji je netko od organizatora kreirao, pregled rezultata turnira koji su odigrani | Filip Jurinić
+F06 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet | Filip Jurinić
 
 
 ## Tehnologije i oprema
-.NET (Visual Studio), GitHub, GitHub Classroom, TeamGant, Word, MySQL, Draw.io
+.NET (Visual Studio), GitHub, GitHub Classroom, TeamGant, Word, MySQL, Draw.io, Visual Paradigm
