@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TennisTrackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HashLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
+    <Property Name="SaltLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
+    <Property Name="TipClana" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Clan" FromRole="Clan" ToRole="Mec" />
+    <NavigationProperty Name="Mecs1" Relationship="Self.FK_Mec_Clan1" FromRole="Clan" ToRole="Mec" />
+    <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Clan" FromRole="Clan" ToRole="Rezervacije" />
+    <NavigationProperty Name="Turnirs" Relationship="Self.Turnir_prijave" FromRole="Clan" ToRole="Turnir" />
+  </EntityType>
+  <EntityType Name="Mec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Prvi_clan_Id" Type="Int32" />
+    <Property Name="Drugi_clan_Id" Type="Int32" />
+    <Property Name="Teren_Id" Type="Int32" />
+    <Property Name="Turnir_Id" Type="Int32" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Precision="0" />
+    <Property Name="Vrijeme" Type="Time" Precision="7" />
+    <NavigationProperty Name="Clan" Relationship="Self.FK_Mec_Clan" FromRole="Mec" ToRole="Clan" />
+    <NavigationProperty Name="Clan1" Relationship="Self.FK_Mec_Clan1" FromRole="Mec" ToRole="Clan" />
+    <NavigationProperty Name="Teren" Relationship="Self.FK_Mec_Teren" FromRole="Mec" ToRole="Teren" />
+    <NavigationProperty Name="Turnir" Relationship="Self.FK_Mec_Turnir" FromRole="Mec" ToRole="Turnir" />
+    <NavigationProperty Name="Sets" Relationship="Self.FK_Set_Mec" FromRole="Mec" ToRole="Set" />
+  </EntityType>
+  <EntityType Name="Rezervacije">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Precision="0" />
+    <Property Name="Vrijeme" Type="Time" Precision="7" />
+    <Property Name="Clan_Id" Type="Int32" />
+    <Property Name="Teren_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Clan" Relationship="Self.FK_Rezervacije_Clan" FromRole="Rezervacije" ToRole="Clan" />
+    <NavigationProperty Name="Teren" Relationship="Self.FK_Rezervacije_Teren" FromRole="Rezervacije" ToRole="Teren" />
+  </EntityType>
+  <EntityType Name="Set">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Rezultat_prvi_clan" Type="Int32" />
+    <Property Name="Rezultat_drugi_clan" Type="Int32" />
+    <Property Name="Mec_Id" Type="Int32" />
+    <NavigationProperty Name="Mec" Relationship="Self.FK_Set_Mec" FromRole="Set" ToRole="Mec" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teren">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Vrsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Teren" FromRole="Teren" ToRole="Mec" />
+    <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Teren" FromRole="Teren" ToRole="Rezervacije" />
+  </EntityType>
+  <EntityType Name="Turnir">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Datum" Type="DateTime" Precision="0" />
+    <Property Name="Vrijeme" Type="Time" Precision="7" />
+    <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Turnir" FromRole="Turnir" ToRole="Mec" />
+    <NavigationProperty Name="Clans" Relationship="Self.Turnir_prijave" FromRole="Turnir" ToRole="Clan" />
+  </EntityType>
+  <Association Name="FK_Mec_Clan">
+    <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+    <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Mec">
+        <PropertyRef Name="Prvi_clan_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mec_Clan1">
+    <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+    <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Mec">
+        <PropertyRef Name="Drugi_clan_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacije_Clan">
+    <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Clan_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mec_Teren">
+    <End Role="Teren" Type="Self.Teren" Multiplicity="0..1" />
+    <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teren">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mec">
+        <PropertyRef Name="Teren_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mec_Turnir">
+    <End Role="Turnir" Type="Self.Turnir" Multiplicity="1" />
+    <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turnir">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mec">
+        <PropertyRef Name="Turnir_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Set_Mec">
+    <End Role="Mec" Type="Self.Mec" Multiplicity="0..1" />
+    <End Role="Set" Type="Self.Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mec">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Set">
+        <PropertyRef Name="Mec_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacije_Teren">
+    <End Role="Teren" Type="Self.Teren" Multiplicity="1" />
+    <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teren">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rezervacije">
+        <PropertyRef Name="Teren_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Turnir_prijave">
+    <End Role="Clan" Type="Self.Clan" Multiplicity="*" />
+    <End Role="Turnir" Type="Self.Turnir" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="TennisTrackEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clans" EntityType="Self.Clan" />
+    <EntitySet Name="Mecs" EntityType="Self.Mec" />
+    <EntitySet Name="Rezervacijes" EntityType="Self.Rezervacije" />
+    <EntitySet Name="Sets" EntityType="Self.Set" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Terens" EntityType="Self.Teren" />
+    <EntitySet Name="Turnirs" EntityType="Self.Turnir" />
+    <AssociationSet Name="FK_Mec_Clan" Association="Self.FK_Mec_Clan">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="Mec" EntitySet="Mecs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mec_Clan1" Association="Self.FK_Mec_Clan1">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="Mec" EntitySet="Mecs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacije_Clan" Association="Self.FK_Rezervacije_Clan">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="Rezervacije" EntitySet="Rezervacijes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mec_Teren" Association="Self.FK_Mec_Teren">
+      <End Role="Teren" EntitySet="Terens" />
+      <End Role="Mec" EntitySet="Mecs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mec_Turnir" Association="Self.FK_Mec_Turnir">
+      <End Role="Turnir" EntitySet="Turnirs" />
+      <End Role="Mec" EntitySet="Mecs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Set_Mec" Association="Self.FK_Set_Mec">
+      <End Role="Mec" EntitySet="Mecs" />
+      <End Role="Set" EntitySet="Sets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacije_Teren" Association="Self.FK_Rezervacije_Teren">
+      <End Role="Teren" EntitySet="Terens" />
+      <End Role="Rezervacije" EntitySet="Rezervacijes" />
+    </AssociationSet>
+    <AssociationSet Name="Turnir_prijave" Association="Self.Turnir_prijave">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="Turnir" EntitySet="Turnirs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -81,6 +81,7 @@
             this.btnPostavke.TabIndex = 3;
             this.btnPostavke.Text = "Postavke";
             this.btnPostavke.UseVisualStyleBackColor = true;
+            this.btnPostavke.Click += new System.EventHandler(this.btnPostavke_Click);
             // 
             // btnDodajClana
             // 
@@ -91,6 +92,7 @@
             this.btnDodajClana.TabIndex = 4;
             this.btnDodajClana.Text = "Dodaj člana";
             this.btnDodajClana.UseVisualStyleBackColor = true;
+            this.btnDodajClana.Click += new System.EventHandler(this.btnDodajClana_Click);
             // 
             // btnOdjaviSe
             // 
@@ -102,6 +104,7 @@
             this.btnOdjaviSe.Text = "Odjavi se";
             this.btnOdjaviSe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOdjaviSe.UseVisualStyleBackColor = true;
+            this.btnOdjaviSe.Click += new System.EventHandler(this.btnOdjaviSe_Click);
             // 
             // btnRezervacijaTerena
             // 
@@ -122,13 +125,13 @@
             this.lblImePrezimeKorisnika.Size = new System.Drawing.Size(116, 13);
             this.lblImePrezimeKorisnika.TabIndex = 7;
             this.lblImePrezimeKorisnika.Text = "Ime_Prezime_Korisnika";
-            this.lblImePrezimeKorisnika.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
             // 
             // GlavniIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.lblImePrezimeKorisnika);
             this.Controls.Add(this.btnRezervacijaTerena);
             this.Controls.Add(this.btnOdjaviSe);
@@ -138,7 +141,9 @@
             this.Controls.Add(this.btnTurniri);
             this.Controls.Add(this.btnRangListe);
             this.Name = "GlavniIzbornik";
-            this.Text = "TennisTrack";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tennis Track";
+            this.Load += new System.EventHandler(this.GlavniIzbornik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

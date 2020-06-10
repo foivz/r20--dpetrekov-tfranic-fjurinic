@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TennisTrackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" />
+          <Property Name="KorisnickoIme" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="HashLozinke" Type="binary" MaxLength="32" />
+          <Property Name="SaltLozinke" Type="binary" MaxLength="32" />
+          <Property Name="TipClana" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Prvi_clan_Id" Type="int" />
+          <Property Name="Drugi_clan_Id" Type="int" />
+          <Property Name="Teren_Id" Type="int" />
+          <Property Name="Turnir_Id" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Vrijeme" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Rezervacije">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Vrijeme" Type="time" Precision="7" />
+          <Property Name="Clan_Id" Type="int" />
+          <Property Name="Teren_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Set">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Rezultat_prvi_clan" Type="int" />
+          <Property Name="Rezultat_drugi_clan" Type="int" />
+          <Property Name="Mec_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Teren">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Vrsta" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Turnir">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="100" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Vrijeme" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Turnir_prijave">
+          <Key>
+            <PropertyRef Name="Id_Turnir" />
+            <PropertyRef Name="Id_Clan" />
+          </Key>
+          <Property Name="Id_Turnir" Type="int" Nullable="false" />
+          <Property Name="Id_Clan" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Mec_Clan">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Prvi_clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Clan1">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Drugi_clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Teren">
+          <End Role="Teren" Type="Self.Teren" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teren">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Teren_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Turnir">
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Turnir_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacije_Clan">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rezervacije">
+              <PropertyRef Name="Clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacije_Teren">
+          <End Role="Teren" Type="Self.Teren" Multiplicity="1" />
+          <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teren">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervacije">
+              <PropertyRef Name="Teren_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Set_Mec">
+          <End Role="Mec" Type="Self.Mec" Multiplicity="0..1" />
+          <End Role="Set" Type="Self.Set" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mec">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Set">
+              <PropertyRef Name="Mec_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Turnir_prijave_Clan">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Turnir_prijave" Type="Self.Turnir_prijave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Turnir_prijave">
+              <PropertyRef Name="Id_Clan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Turnir_prijave_Turnir">
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Turnir_prijave" Type="Self.Turnir_prijave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Turnir_prijave">
+              <PropertyRef Name="Id_Turnir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TennisTrackModelStoreContainer">
+          <EntitySet Name="Clan" EntityType="Self.Clan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mec" EntityType="Self.Mec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rezervacije" EntityType="Self.Rezervacije" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Set" EntityType="Self.Set" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teren" EntityType="Self.Teren" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turnir" EntityType="Self.Turnir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turnir_prijave" EntityType="Self.Turnir_prijave" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Mec_Clan" Association="Self.FK_Mec_Clan">
+            <End Role="Clan" EntitySet="Clan" />
+            <End Role="Mec" EntitySet="Mec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Clan1" Association="Self.FK_Mec_Clan1">
+            <End Role="Clan" EntitySet="Clan" />
+            <End Role="Mec" EntitySet="Mec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Teren" Association="Self.FK_Mec_Teren">
+            <End Role="Teren" EntitySet="Teren" />
+            <End Role="Mec" EntitySet="Mec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Turnir" Association="Self.FK_Mec_Turnir">
+            <End Role="Turnir" EntitySet="Turnir" />
+            <End Role="Mec" EntitySet="Mec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacije_Clan" Association="Self.FK_Rezervacije_Clan">
+            <End Role="Clan" EntitySet="Clan" />
+            <End Role="Rezervacije" EntitySet="Rezervacije" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacije_Teren" Association="Self.FK_Rezervacije_Teren">
+            <End Role="Teren" EntitySet="Teren" />
+            <End Role="Rezervacije" EntitySet="Rezervacije" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Set_Mec" Association="Self.FK_Set_Mec">
+            <End Role="Mec" EntitySet="Mec" />
+            <End Role="Set" EntitySet="Set" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Turnir_prijave_Clan" Association="Self.FK_Turnir_prijave_Clan">
+            <End Role="Clan" EntitySet="Clan" />
+            <End Role="Turnir_prijave" EntitySet="Turnir_prijave" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Turnir_prijave_Turnir" Association="Self.FK_Turnir_prijave_Turnir">
+            <End Role="Turnir" EntitySet="Turnir" />
+            <End Role="Turnir_prijave" EntitySet="Turnir_prijave" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TennisTrackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HashLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
+          <Property Name="SaltLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
+          <Property Name="TipClana" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Clan" FromRole="Clan" ToRole="Mec" />
+          <NavigationProperty Name="Mecs1" Relationship="Self.FK_Mec_Clan1" FromRole="Clan" ToRole="Mec" />
+          <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Clan" FromRole="Clan" ToRole="Rezervacije" />
+          <NavigationProperty Name="Turnirs" Relationship="Self.Turnir_prijave" FromRole="Clan" ToRole="Turnir" />
+        </EntityType>
+        <EntityType Name="Mec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Prvi_clan_Id" Type="Int32" />
+          <Property Name="Drugi_clan_Id" Type="Int32" />
+          <Property Name="Teren_Id" Type="Int32" />
+          <Property Name="Turnir_Id" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Precision="7" />
+          <NavigationProperty Name="Clan" Relationship="Self.FK_Mec_Clan" FromRole="Mec" ToRole="Clan" />
+          <NavigationProperty Name="Clan1" Relationship="Self.FK_Mec_Clan1" FromRole="Mec" ToRole="Clan" />
+          <NavigationProperty Name="Teren" Relationship="Self.FK_Mec_Teren" FromRole="Mec" ToRole="Teren" />
+          <NavigationProperty Name="Turnir" Relationship="Self.FK_Mec_Turnir" FromRole="Mec" ToRole="Turnir" />
+          <NavigationProperty Name="Sets" Relationship="Self.FK_Set_Mec" FromRole="Mec" ToRole="Set" />
+        </EntityType>
+        <EntityType Name="Rezervacije">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Precision="7" />
+          <Property Name="Clan_Id" Type="Int32" />
+          <Property Name="Teren_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clan" Relationship="Self.FK_Rezervacije_Clan" FromRole="Rezervacije" ToRole="Clan" />
+          <NavigationProperty Name="Teren" Relationship="Self.FK_Rezervacije_Teren" FromRole="Rezervacije" ToRole="Teren" />
+        </EntityType>
+        <EntityType Name="Set">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Rezultat_prvi_clan" Type="Int32" />
+          <Property Name="Rezultat_drugi_clan" Type="Int32" />
+          <Property Name="Mec_Id" Type="Int32" />
+          <NavigationProperty Name="Mec" Relationship="Self.FK_Set_Mec" FromRole="Set" ToRole="Mec" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Teren">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Vrsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Teren" FromRole="Teren" ToRole="Mec" />
+          <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Teren" FromRole="Teren" ToRole="Rezervacije" />
+        </EntityType>
+        <EntityType Name="Turnir">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Precision="7" />
+          <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Turnir" FromRole="Turnir" ToRole="Mec" />
+          <NavigationProperty Name="Clans" Relationship="Self.Turnir_prijave" FromRole="Turnir" ToRole="Clan" />
+        </EntityType>
+        <Association Name="FK_Mec_Clan">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Prvi_clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Clan1">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Drugi_clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacije_Clan">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rezervacije">
+              <PropertyRef Name="Clan_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Teren">
+          <End Role="Teren" Type="Self.Teren" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teren">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Teren_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mec_Turnir">
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mec">
+              <PropertyRef Name="Turnir_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Set_Mec">
+          <End Role="Mec" Type="Self.Mec" Multiplicity="0..1" />
+          <End Role="Set" Type="Self.Set" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mec">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Set">
+              <PropertyRef Name="Mec_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacije_Teren">
+          <End Role="Teren" Type="Self.Teren" Multiplicity="1" />
+          <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teren">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervacije">
+              <PropertyRef Name="Teren_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Turnir_prijave">
+          <End Role="Clan" Type="Self.Clan" Multiplicity="*" />
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="TennisTrackEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clans" EntityType="Self.Clan" />
+          <EntitySet Name="Mecs" EntityType="Self.Mec" />
+          <EntitySet Name="Rezervacijes" EntityType="Self.Rezervacije" />
+          <EntitySet Name="Sets" EntityType="Self.Set" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Terens" EntityType="Self.Teren" />
+          <EntitySet Name="Turnirs" EntityType="Self.Turnir" />
+          <AssociationSet Name="FK_Mec_Clan" Association="Self.FK_Mec_Clan">
+            <End Role="Clan" EntitySet="Clans" />
+            <End Role="Mec" EntitySet="Mecs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Clan1" Association="Self.FK_Mec_Clan1">
+            <End Role="Clan" EntitySet="Clans" />
+            <End Role="Mec" EntitySet="Mecs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacije_Clan" Association="Self.FK_Rezervacije_Clan">
+            <End Role="Clan" EntitySet="Clans" />
+            <End Role="Rezervacije" EntitySet="Rezervacijes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Teren" Association="Self.FK_Mec_Teren">
+            <End Role="Teren" EntitySet="Terens" />
+            <End Role="Mec" EntitySet="Mecs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mec_Turnir" Association="Self.FK_Mec_Turnir">
+            <End Role="Turnir" EntitySet="Turnirs" />
+            <End Role="Mec" EntitySet="Mecs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Set_Mec" Association="Self.FK_Set_Mec">
+            <End Role="Mec" EntitySet="Mecs" />
+            <End Role="Set" EntitySet="Sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacije_Teren" Association="Self.FK_Rezervacije_Teren">
+            <End Role="Teren" EntitySet="Terens" />
+            <End Role="Rezervacije" EntitySet="Rezervacijes" />
+          </AssociationSet>
+          <AssociationSet Name="Turnir_prijave" Association="Self.Turnir_prijave">
+            <End Role="Clan" EntitySet="Clans" />
+            <End Role="Turnir" EntitySet="Turnirs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TennisTrackModelStoreContainer" CdmEntityContainer="TennisTrackEntities">
+          <EntitySetMapping Name="Clans">
+            <EntityTypeMapping TypeName="TennisTrackModel.Clan">
+              <MappingFragment StoreEntitySet="Clan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="HashLozinke" ColumnName="HashLozinke" />
+                <ScalarProperty Name="SaltLozinke" ColumnName="SaltLozinke" />
+                <ScalarProperty Name="TipClana" ColumnName="TipClana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mecs">
+            <EntityTypeMapping TypeName="TennisTrackModel.Mec">
+              <MappingFragment StoreEntitySet="Mec">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Prvi_clan_Id" ColumnName="Prvi_clan_Id" />
+                <ScalarProperty Name="Drugi_clan_Id" ColumnName="Drugi_clan_Id" />
+                <ScalarProperty Name="Teren_Id" ColumnName="Teren_Id" />
+                <ScalarProperty Name="Turnir_Id" ColumnName="Turnir_Id" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrijeme" ColumnName="Vrijeme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rezervacijes">
+            <EntityTypeMapping TypeName="TennisTrackModel.Rezervacije">
+              <MappingFragment StoreEntitySet="Rezervacije">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrijeme" ColumnName="Vrijeme" />
+                <ScalarProperty Name="Clan_Id" ColumnName="Clan_Id" />
+                <ScalarProperty Name="Teren_Id" ColumnName="Teren_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sets">
+            <EntityTypeMapping TypeName="TennisTrackModel.Set">
+              <MappingFragment StoreEntitySet="Set">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rezultat_prvi_clan" ColumnName="Rezultat_prvi_clan" />
+                <ScalarProperty Name="Rezultat_drugi_clan" ColumnName="Rezultat_drugi_clan" />
+                <ScalarProperty Name="Mec_Id" ColumnName="Mec_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TennisTrackModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terens">
+            <EntityTypeMapping TypeName="TennisTrackModel.Teren">
+              <MappingFragment StoreEntitySet="Teren">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnirs">
+            <EntityTypeMapping TypeName="TennisTrackModel.Turnir">
+              <MappingFragment StoreEntitySet="Turnir">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vrijeme" ColumnName="Vrijeme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Turnir_prijave" TypeName="TennisTrackModel.Turnir_prijave" StoreEntitySet="Turnir_prijave">
+            <EndProperty Name="Clan">
+              <ScalarProperty Name="ID" ColumnName="Id_Clan" />
+            </EndProperty>
+            <EndProperty Name="Turnir">
+              <ScalarProperty Name="Id" ColumnName="Id_Turnir" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

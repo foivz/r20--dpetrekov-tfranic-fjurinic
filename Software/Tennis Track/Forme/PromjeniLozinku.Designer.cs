@@ -78,6 +78,7 @@
             this.btnSpremiPromjene.TabIndex = 5;
             this.btnSpremiPromjene.Text = "Spremi promjene";
             this.btnSpremiPromjene.UseVisualStyleBackColor = true;
+            this.btnSpremiPromjene.Click += new System.EventHandler(this.btnSpremiPromjene_Click);
             // 
             // btnPovratak
             // 
@@ -88,18 +89,21 @@
             this.btnPovratak.TabIndex = 7;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // PromjeniLozinku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnSpremiPromjene);
             this.Controls.Add(this.txtStaraLozinka);
             this.Controls.Add(this.txtPonovljenaLozinka);
             this.Controls.Add(this.txtNovaLozinka);
             this.Name = "PromjeniLozinku";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PromjeniLozinku";
             this.ResumeLayout(false);
             this.PerformLayout();

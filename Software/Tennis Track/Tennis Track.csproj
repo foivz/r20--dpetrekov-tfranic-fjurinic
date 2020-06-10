@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baza_podataka\Clan.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\Mec.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\Rezervacije.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\Set.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\sysdiagram.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\TennisTrackModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TennisTrackModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\TennisTrackModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\TennisTrackModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TennisTrackModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\Teren.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_podataka\Turnir.cs">
+      <DependentUpon>TennisTrackModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Forme\DodajClana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +127,9 @@
     <Compile Include="Forme\RangListe.Designer.cs">
       <DependentUpon>RangListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klase\KreirajNovogaClana.cs" />
+    <Compile Include="Klase\EnkripcijaLozinke.cs" />
+    <Compile Include="Klase\PrijavaClana.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\DodajClana.resx">
@@ -111,6 +159,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Baza_podataka\TennisTrackModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TennisTrackModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Baza_podataka\TennisTrackModel.edmx.diagram">
+      <DependentUpon>TennisTrackModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +179,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Baza_podataka\TennisTrackModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TennisTrackModel.edmx</DependentUpon>
+      <LastGenOutput>TennisTrackModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Baza_podataka\TennisTrackModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TennisTrackModel.edmx</DependentUpon>
+      <LastGenOutput>TennisTrackModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

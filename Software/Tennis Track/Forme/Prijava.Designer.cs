@@ -36,7 +36,7 @@
             // TxtUsername
             // 
             this.TxtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TxtUsername.ForeColor = System.Drawing.SystemColors.Desktop;
             this.TxtUsername.Location = new System.Drawing.Point(275, 161);
             this.TxtUsername.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.TxtUsername.Multiline = true;
@@ -49,7 +49,7 @@
             // TxtPassword
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TxtPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TxtPassword.Location = new System.Drawing.Point(275, 204);
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.TxtPassword.Multiline = true;
@@ -68,6 +68,7 @@
             this.BtnPrijaviSe.TabIndex = 2;
             this.BtnPrijaviSe.Text = "Prijavi se";
             this.BtnPrijaviSe.UseVisualStyleBackColor = true;
+            this.BtnPrijaviSe.Click += new System.EventHandler(this.BtnPrijaviSe_Click);
             // 
             // LoginForm
             // 
@@ -78,6 +79,7 @@
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TennisTrack";
             this.ResumeLayout(false);
             this.PerformLayout();

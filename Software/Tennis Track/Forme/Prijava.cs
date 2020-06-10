@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tennis_Track.Forme;
+using Tennis_Track.Klase;
 
 namespace Tennis_Track
 {
@@ -27,5 +29,16 @@ namespace Tennis_Track
             TxtPassword.SelectAll();
         }
 
+        private void BtnPrijaviSe_Click(object sender, EventArgs e)
+        {
+            GlavniIzbornik glavniIzbornik = new GlavniIzbornik(this);
+            if (PrijavaClana.ProvjeriPodatke(TxtUsername.Text.ToString(), TxtPassword.Text.ToString()))
+            {
+                this.Hide();
+                glavniIzbornik.ShowDialog();
+                TxtUsername.Text = "Korisnicko ime";
+                TxtPassword.Text = "Lozinka";
+            }
+        }
     }
 }
