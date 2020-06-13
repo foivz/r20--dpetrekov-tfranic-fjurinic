@@ -31,6 +31,7 @@ namespace Tennis_Track.Forme
         {
             txtEmail.Text = PrijavaClana.clan.Email;
             txtTelefon.Text = PrijavaClana.clan.Telefon;
+            //test
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
