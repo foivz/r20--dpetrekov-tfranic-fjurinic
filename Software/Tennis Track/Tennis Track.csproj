@@ -158,6 +158,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Baza_podataka\TennisTrackModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -194,6 +195,7 @@
       <DependentUpon>TennisTrackModel.edmx</DependentUpon>
       <LastGenOutput>TennisTrackModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\How-to-Grip-a-Tennis-Racket-Properly.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

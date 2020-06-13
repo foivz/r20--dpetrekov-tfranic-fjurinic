@@ -48,6 +48,7 @@
             this.btnRangListe.TabIndex = 0;
             this.btnRangListe.Text = "Rang liste";
             this.btnRangListe.UseVisualStyleBackColor = true;
+            this.btnRangListe.Click += new System.EventHandler(this.btnRangListe_Click);
             // 
             // btnTurniri
             // 
@@ -120,9 +121,10 @@
             // lblImePrezimeKorisnika
             // 
             this.lblImePrezimeKorisnika.AutoSize = true;
+            this.lblImePrezimeKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImePrezimeKorisnika.Location = new System.Drawing.Point(12, 9);
             this.lblImePrezimeKorisnika.Name = "lblImePrezimeKorisnika";
-            this.lblImePrezimeKorisnika.Size = new System.Drawing.Size(116, 13);
+            this.lblImePrezimeKorisnika.Size = new System.Drawing.Size(175, 20);
             this.lblImePrezimeKorisnika.TabIndex = 7;
             this.lblImePrezimeKorisnika.Text = "Ime_Prezime_Korisnika";
             // 
@@ -130,6 +132,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.lblImePrezimeKorisnika);

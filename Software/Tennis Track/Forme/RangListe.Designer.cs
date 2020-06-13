@@ -71,17 +71,22 @@
             this.btnPovratak.TabIndex = 8;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // RangListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnFiltriraj);
             this.Controls.Add(this.txtPrezimeKorisnika);
             this.Controls.Add(this.dgvRangLista);
             this.Name = "RangListe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rang liste";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRangLista)).EndInit();
             this.ResumeLayout(false);
