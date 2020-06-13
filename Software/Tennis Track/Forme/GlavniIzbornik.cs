@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tennis_Track.Baza_podataka;
 using Tennis_Track.Klase;
 
 namespace Tennis_Track.Forme
@@ -29,6 +30,7 @@ namespace Tennis_Track.Forme
         private void GlavniIzbornik_Load(object sender, EventArgs e)
         {
             lblImePrezimeKorisnika.Text = "Trenutno ste prijavljeni kao" + Environment.NewLine + PrijavaClana.clan.Ime + " " + PrijavaClana.clan.Prezime;
+            lblImePrezimeKorisnika.BackColor = System.Drawing.Color.Transparent;
             if (PrijavaClana.clan.TipClana == "Admin")
             {
                 btnDodajClana.Visible = true;
@@ -65,6 +67,21 @@ namespace Tennis_Track.Forme
             RangListe rangListe = new RangListe(this);
             this.Hide();
             rangListe.ShowDialog();
+        }
+
+        private void bntMecevi_Click(object sender, EventArgs e)
+        {
+            Mecevi mecevi = new Mecevi(this);
+            this.Hide();
+            mecevi.ShowDialog();
+        }
+
+        private void lblImePrezimeKorisnika_Click(object sender, EventArgs e)
+        {
+            StatistikaKorisnika statistikaKorisnika = new StatistikaKorisnika(this);
+            this.Hide();
+            statistikaKorisnika.ShowDialog();
+
         }
     }
 }

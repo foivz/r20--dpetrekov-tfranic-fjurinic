@@ -97,6 +97,12 @@
     <Compile Include="Forme\DodajClana.Designer.cs">
       <DependentUpon>DodajClana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Mecevi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Mecevi.Designer.cs">
+      <DependentUpon>Mecevi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Postavke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="Forme\RangListe.Designer.cs">
       <DependentUpon>RangListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\StatistikaKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\StatistikaKorisnika.Designer.cs">
+      <DependentUpon>StatistikaKorisnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klase\KreirajNovogaClana.cs" />
     <Compile Include="Klase\EnkripcijaLozinke.cs" />
     <Compile Include="Klase\PrijavaClana.cs" />
@@ -137,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlavniIzbornik.resx">
       <DependentUpon>GlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Mecevi.resx">
+      <DependentUpon>Mecevi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Postavke.resx">
       <DependentUpon>Postavke.cs</DependentUpon>
@@ -149,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\RangListe.resx">
       <DependentUpon>RangListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\StatistikaKorisnika.resx">
+      <DependentUpon>StatistikaKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

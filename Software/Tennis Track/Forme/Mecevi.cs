@@ -10,30 +10,30 @@ using System.Windows.Forms;
 
 namespace Tennis_Track.Forme
 {
-    public partial class RangListe : Form
+    public partial class Mecevi : Form
     {
         private GlavniIzbornik glavniIzbornik;
 
-        public RangListe()
+        public Mecevi()
         {
             InitializeComponent();
         }
 
-        public RangListe(GlavniIzbornik glavniIzbornik)
+        public Mecevi(GlavniIzbornik glavniIzbornik)
         {
             this.glavniIzbornik = glavniIzbornik;
             InitializeComponent();
+        }
+
+        private void Mecevi_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             glavniIzbornik.Show();
             this.Close();
-        }
-
-        private void RangListe_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

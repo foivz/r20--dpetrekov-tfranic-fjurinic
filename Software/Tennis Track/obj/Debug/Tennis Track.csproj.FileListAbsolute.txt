@@ -18,3 +18,5 @@ C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Tr
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.xml
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
+C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.StatistikaKorisnika.resources
+C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Mecevi.resources
