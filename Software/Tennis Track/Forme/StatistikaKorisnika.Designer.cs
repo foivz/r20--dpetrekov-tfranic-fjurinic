@@ -1,6 +1,6 @@
 ﻿namespace Tennis_Track.Forme
 {
-    partial class Mecevi
+    partial class StatistikaKorisnika
     {
         /// <summary>
         /// Required designer variable.
@@ -37,12 +37,12 @@
             this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(125, 25);
-            this.btnPovratak.TabIndex = 7;
+            this.btnPovratak.TabIndex = 9;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
-            // Mecevi
+            // StatistikaKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,10 +51,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btnPovratak);
-            this.Name = "Mecevi";
+            this.Name = "StatistikaKorisnika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mecevi";
-            this.Load += new System.EventHandler(this.Mecevi_Load);
+            this.Text = "StatistikaKorisnika";
             this.ResumeLayout(false);
 
         }

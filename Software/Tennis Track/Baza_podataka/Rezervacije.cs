@@ -15,9 +15,9 @@ namespace Tennis_Track.Baza_podataka
     public partial class Rezervacije
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> Datum { get; set; }
-        public Nullable<System.TimeSpan> Vrijeme { get; set; }
-        public Nullable<int> Clan_Id { get; set; }
+        public System.DateTime Datum { get; set; }
+        public System.TimeSpan Vrijeme { get; set; }
+        public int Clan_Id { get; set; }
         public int Teren_Id { get; set; }
     
         public virtual Clan Clan { get; set; }

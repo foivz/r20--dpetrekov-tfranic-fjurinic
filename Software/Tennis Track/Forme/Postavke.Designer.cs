@@ -34,7 +34,7 @@
             this.btnPromjeniLozinku = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTelefon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -104,15 +104,15 @@
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
-            // label2
+            // lblTelefon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(273, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Telefon";
+            this.lblTelefon.AutoSize = true;
+            this.lblTelefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefon.Location = new System.Drawing.Point(273, 199);
+            this.lblTelefon.Name = "lblTelefon";
+            this.lblTelefon.Size = new System.Drawing.Size(62, 20);
+            this.lblTelefon.TabIndex = 8;
+            this.lblTelefon.Text = "Telefon";
             // 
             // Postavke
             // 
@@ -122,7 +122,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTelefon);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnPromjeniLozinku);
@@ -145,6 +145,6 @@
         private System.Windows.Forms.Button btnPromjeniLozinku;
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTelefon;
     }
 }

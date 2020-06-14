@@ -101,6 +101,7 @@
             this.Name = "RangListe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rang liste";
+            this.Load += new System.EventHandler(this.RangListe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRangLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

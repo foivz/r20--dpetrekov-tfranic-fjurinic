@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Tennis_Track.Forme
 {
-    public partial class RangListe : Form
+    public partial class StatistikaKorisnika : Form
     {
         private GlavniIzbornik glavniIzbornik;
 
-        public RangListe()
+        public StatistikaKorisnika()
         {
             InitializeComponent();
         }
 
-        public RangListe(GlavniIzbornik glavniIzbornik)
+        public StatistikaKorisnika(GlavniIzbornik glavniIzbornik)
         {
             this.glavniIzbornik = glavniIzbornik;
             InitializeComponent();
@@ -29,11 +29,6 @@ namespace Tennis_Track.Forme
         {
             glavniIzbornik.Show();
             this.Close();
-        }
-
-        private void RangListe_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
