@@ -21,12 +21,12 @@ namespace Tennis_Track.Baza_podataka
         }
     
         public int Id { get; set; }
-        public Nullable<int> Prvi_clan_Id { get; set; }
-        public Nullable<int> Drugi_clan_Id { get; set; }
-        public Nullable<int> Teren_Id { get; set; }
-        public int Turnir_Id { get; set; }
-        public Nullable<System.DateTime> Datum { get; set; }
-        public Nullable<System.TimeSpan> Vrijeme { get; set; }
+        public int Prvi_clan_Id { get; set; }
+        public int Drugi_clan_Id { get; set; }
+        public int Teren_Id { get; set; }
+        public Nullable<int> Turnir_Id { get; set; }
+        public System.DateTime Datum { get; set; }
+        public System.TimeSpan Vrijeme { get; set; }
     
         public virtual Clan Clan { get; set; }
         public virtual Clan Clan1 { get; set; }

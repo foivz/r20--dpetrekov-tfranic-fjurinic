@@ -203,6 +203,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\How-to-Grip-a-Tennis-Racket-Properly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Baza_podataka\TennisTrackModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TennisTrackModel.edmx</DependentUpon>
@@ -213,7 +216,6 @@
       <DependentUpon>TennisTrackModel.edmx</DependentUpon>
       <LastGenOutput>TennisTrackModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\How-to-Grip-a-Tennis-Racket-Properly.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

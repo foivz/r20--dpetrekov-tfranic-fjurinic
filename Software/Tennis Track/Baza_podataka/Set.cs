@@ -15,9 +15,9 @@ namespace Tennis_Track.Baza_podataka
     public partial class Set
     {
         public int Id { get; set; }
-        public Nullable<int> Rezultat_prvi_clan { get; set; }
-        public Nullable<int> Rezultat_drugi_clan { get; set; }
-        public Nullable<int> Mec_Id { get; set; }
+        public int Rezultat_prvi_clan { get; set; }
+        public int Rezultat_drugi_clan { get; set; }
+        public int Mec_Id { get; set; }
     
         public virtual Mec Mec { get; set; }
     }

@@ -10,45 +10,45 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ime" Type="varchar" MaxLength="50" />
-          <Property Name="Prezime" Type="varchar" MaxLength="50" />
-          <Property Name="KorisnickoIme" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Telefon" Type="varchar" MaxLength="50" />
-          <Property Name="HashLozinke" Type="binary" MaxLength="32" />
-          <Property Name="SaltLozinke" Type="binary" MaxLength="32" />
-          <Property Name="TipClana" Type="varchar" MaxLength="50" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HashLozinke" Type="binary" MaxLength="32" Nullable="false" />
+          <Property Name="SaltLozinke" Type="binary" MaxLength="32" Nullable="false" />
+          <Property Name="TipClana" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Mec">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Prvi_clan_Id" Type="int" />
-          <Property Name="Drugi_clan_Id" Type="int" />
-          <Property Name="Teren_Id" Type="int" />
-          <Property Name="Turnir_Id" Type="int" Nullable="false" />
-          <Property Name="Datum" Type="date" />
-          <Property Name="Vrijeme" Type="time" Precision="7" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prvi_clan_Id" Type="int" Nullable="false" />
+          <Property Name="Drugi_clan_Id" Type="int" Nullable="false" />
+          <Property Name="Teren_Id" Type="int" Nullable="false" />
+          <Property Name="Turnir_Id" Type="int" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Vrijeme" Type="time" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="Rezervacije">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Datum" Type="date" />
-          <Property Name="Vrijeme" Type="time" Precision="7" />
-          <Property Name="Clan_Id" Type="int" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Vrijeme" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Clan_Id" Type="int" Nullable="false" />
           <Property Name="Teren_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Set">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Rezultat_prvi_clan" Type="int" />
-          <Property Name="Rezultat_drugi_clan" Type="int" />
-          <Property Name="Mec_Id" Type="int" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rezultat_prvi_clan" Type="int" Nullable="false" />
+          <Property Name="Rezultat_drugi_clan" Type="int" Nullable="false" />
+          <Property Name="Mec_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -64,17 +64,17 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Vrsta" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vrsta" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Turnir">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Naziv" Type="varchar" MaxLength="100" />
-          <Property Name="Datum" Type="date" />
-          <Property Name="Vrijeme" Type="time" Precision="7" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Vrijeme" Type="time" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="Turnir_prijave">
           <Key>
@@ -85,7 +85,7 @@
           <Property Name="Id_Clan" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Mec_Clan">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -97,7 +97,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Clan1">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -109,7 +109,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Teren">
-          <End Role="Teren" Type="Self.Teren" Multiplicity="0..1" />
+          <End Role="Teren" Type="Self.Teren" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teren">
@@ -121,7 +121,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Turnir">
-          <End Role="Turnir" Type="Self.Turnir" Multiplicity="1" />
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="0..1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Turnir">
@@ -133,7 +133,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rezervacije_Clan">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -157,7 +157,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Set_Mec">
-          <End Role="Mec" Type="Self.Mec" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="1" />
           <End Role="Set" Type="Self.Set" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Mec">
@@ -252,14 +252,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="HashLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
-          <Property Name="SaltLozinke" Type="Binary" MaxLength="32" FixedLength="true" />
-          <Property Name="TipClana" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HashLozinke" Type="Binary" MaxLength="32" FixedLength="true" Nullable="false" />
+          <Property Name="SaltLozinke" Type="Binary" MaxLength="32" FixedLength="true" Nullable="false" />
+          <Property Name="TipClana" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Clan" FromRole="Clan" ToRole="Mec" />
           <NavigationProperty Name="Mecs1" Relationship="Self.FK_Mec_Clan1" FromRole="Clan" ToRole="Mec" />
           <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Clan" FromRole="Clan" ToRole="Rezervacije" />
@@ -269,13 +269,13 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Prvi_clan_Id" Type="Int32" />
-          <Property Name="Drugi_clan_Id" Type="Int32" />
-          <Property Name="Teren_Id" Type="Int32" />
-          <Property Name="Turnir_Id" Type="Int32" Nullable="false" />
-          <Property Name="Datum" Type="DateTime" Precision="0" />
-          <Property Name="Vrijeme" Type="Time" Precision="7" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prvi_clan_Id" Type="Int32" Nullable="false" />
+          <Property Name="Drugi_clan_Id" Type="Int32" Nullable="false" />
+          <Property Name="Teren_Id" Type="Int32" Nullable="false" />
+          <Property Name="Turnir_Id" Type="Int32" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Nullable="false" Precision="7" />
           <NavigationProperty Name="Clan" Relationship="Self.FK_Mec_Clan" FromRole="Mec" ToRole="Clan" />
           <NavigationProperty Name="Clan1" Relationship="Self.FK_Mec_Clan1" FromRole="Mec" ToRole="Clan" />
           <NavigationProperty Name="Teren" Relationship="Self.FK_Mec_Teren" FromRole="Mec" ToRole="Teren" />
@@ -286,10 +286,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Datum" Type="DateTime" Precision="0" />
-          <Property Name="Vrijeme" Type="Time" Precision="7" />
-          <Property Name="Clan_Id" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Clan_Id" Type="Int32" Nullable="false" />
           <Property Name="Teren_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Clan" Relationship="Self.FK_Rezervacije_Clan" FromRole="Rezervacije" ToRole="Clan" />
           <NavigationProperty Name="Teren" Relationship="Self.FK_Rezervacije_Teren" FromRole="Rezervacije" ToRole="Teren" />
@@ -298,10 +298,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Rezultat_prvi_clan" Type="Int32" />
-          <Property Name="Rezultat_drugi_clan" Type="Int32" />
-          <Property Name="Mec_Id" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rezultat_prvi_clan" Type="Int32" Nullable="false" />
+          <Property Name="Rezultat_drugi_clan" Type="Int32" Nullable="false" />
+          <Property Name="Mec_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Mec" Relationship="Self.FK_Set_Mec" FromRole="Set" ToRole="Mec" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -318,8 +318,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Vrsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vrsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Teren" FromRole="Teren" ToRole="Mec" />
           <NavigationProperty Name="Rezervacijes" Relationship="Self.FK_Rezervacije_Teren" FromRole="Teren" ToRole="Rezervacije" />
         </EntityType>
@@ -327,15 +327,15 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Datum" Type="DateTime" Precision="0" />
-          <Property Name="Vrijeme" Type="Time" Precision="7" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Vrijeme" Type="Time" Nullable="false" Precision="7" />
           <NavigationProperty Name="Mecs" Relationship="Self.FK_Mec_Turnir" FromRole="Turnir" ToRole="Mec" />
           <NavigationProperty Name="Clans" Relationship="Self.Turnir_prijave" FromRole="Turnir" ToRole="Clan" />
         </EntityType>
         <Association Name="FK_Mec_Clan">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -347,7 +347,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Clan1">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -359,7 +359,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rezervacije_Clan">
-          <End Role="Clan" Type="Self.Clan" Multiplicity="0..1" />
+          <End Role="Clan" Type="Self.Clan" Multiplicity="1" />
           <End Role="Rezervacije" Type="Self.Rezervacije" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clan">
@@ -371,7 +371,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Teren">
-          <End Role="Teren" Type="Self.Teren" Multiplicity="0..1" />
+          <End Role="Teren" Type="Self.Teren" Multiplicity="1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teren">
@@ -383,7 +383,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mec_Turnir">
-          <End Role="Turnir" Type="Self.Turnir" Multiplicity="1" />
+          <End Role="Turnir" Type="Self.Turnir" Multiplicity="0..1" />
           <End Role="Mec" Type="Self.Mec" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Turnir">
@@ -395,7 +395,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Set_Mec">
-          <End Role="Mec" Type="Self.Mec" Multiplicity="0..1" />
+          <End Role="Mec" Type="Self.Mec" Multiplicity="1" />
           <End Role="Set" Type="Self.Set" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Mec">

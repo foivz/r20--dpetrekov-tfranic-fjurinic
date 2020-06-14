@@ -23,8 +23,8 @@ namespace Tennis_Track.Baza_podataka
     
         public int Id { get; set; }
         public string Naziv { get; set; }
-        public Nullable<System.DateTime> Datum { get; set; }
-        public Nullable<System.TimeSpan> Vrijeme { get; set; }
+        public System.DateTime Datum { get; set; }
+        public System.TimeSpan Vrijeme { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mec> Mecs { get; set; }
