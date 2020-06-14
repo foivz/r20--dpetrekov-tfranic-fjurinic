@@ -66,5 +66,12 @@ namespace Tennis_Track.Forme
             this.Hide();
             rangListe.ShowDialog();
         }
+
+        private void bntMecevi_Click(object sender, EventArgs e)
+        {
+            Mecevi mecevi = new Mecevi(this);
+            this.Hide();
+            mecevi.ShowDialog();
+        }
     }
 }

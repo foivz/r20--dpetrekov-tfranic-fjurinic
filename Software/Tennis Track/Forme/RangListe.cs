@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tennis_Track.Baza_podataka;
 
 namespace Tennis_Track.Forme
 {
@@ -29,6 +30,28 @@ namespace Tennis_Track.Forme
         {
             glavniIzbornik.Show();
             this.Close();
+        }
+
+        private void btnFiltriraj_Click(object sender, EventArgs e)
+        {
+            string ime = txtPrezimeIliImeKorisnika.Text;
+            using (var db = new TennisTrackEntities())
+            {
+                var query = from c in db.Clan where c.Prezime.Contains(ime) || c.Ime.Contains(ime) select new 
+                { c.Ime, c.Prezime, c.KorisnickoIme, c.Email, c.Telefon, c.TipClana };
+                dgvRangLista.DataSource = query.ToList();
+            }
+        }
+
+        private void btnPrikaziSve_Click(object sender, EventArgs e)
+        {
+            using (var db = new TennisTrackEntities())
+            {
+                var query = from c in db.Clan
+                            select new
+                            { c.Ime, c.Prezime, c.KorisnickoIme, c.Email, c.Telefon, c.TipClana };
+                dgvRangLista.DataSource = query.ToList();
+            }
         }
     }
 }

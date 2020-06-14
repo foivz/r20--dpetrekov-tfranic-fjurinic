@@ -71,6 +71,7 @@
             this.bntMecevi.TabIndex = 2;
             this.bntMecevi.Text = "Mečevi";
             this.bntMecevi.UseVisualStyleBackColor = true;
+            this.bntMecevi.Click += new System.EventHandler(this.bntMecevi_Click);
             // 
             // btnPostavke
             // 

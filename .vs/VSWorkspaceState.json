@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Software"
+    "\\Software",
+    "\\Software\\Tennis Track",
+    "\\Software\\Tennis Track\\Klase"
   ],
-  "SelectedNode": "\\Software",
+  "SelectedNode": "\\Software\\Tennis Track\\Tennis Track.sln",
   "PreviewInSolutionExplorer": false
 }
