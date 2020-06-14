@@ -62,7 +62,6 @@
             this.btnFiltriraj.TabIndex = 5;
             this.btnFiltriraj.Text = "Filtriraj";
             this.btnFiltriraj.UseVisualStyleBackColor = true;
-            this.btnFiltriraj.Click += new System.EventHandler(this.btnFiltriraj_Click);
             // 
             // btnPovratak
             // 
@@ -83,7 +82,6 @@
             this.btnPrikaziSve.TabIndex = 9;
             this.btnPrikaziSve.Text = "Prikaži sve";
             this.btnPrikaziSve.UseVisualStyleBackColor = true;
-            this.btnPrikaziSve.Click += new System.EventHandler(this.btnPrikaziSve_Click);
             // 
             // RangListe
             // 
