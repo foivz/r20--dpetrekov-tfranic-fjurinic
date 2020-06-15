@@ -20,3 +20,24 @@ C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Tr
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.StatistikaKorisnika.resources
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Mecevi.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Tennis Track.exe.config
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Tennis Track.exe
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Tennis Track.pdb
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.dll
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.xml
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.DodajClana.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.GlavniIzbornik.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Mecevi.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Postavke.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.LoginForm.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PromjeniLozinku.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.RangListe.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.StatistikaKorisnika.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Properties.Resources.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.GenerateResource.cache
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.exe
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.pdb
