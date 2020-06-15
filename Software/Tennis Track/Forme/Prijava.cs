@@ -40,5 +40,10 @@ namespace Tennis_Track
                 TxtPassword.Text = "Lozinka";
             }
         }
+
+        private void btnResetirajLozinku_Click(object sender, EventArgs e)
+        {
+           Učlanjenje.ResetirajLozinku(TxtUsername.Text.ToString());
+        }
     }
 }

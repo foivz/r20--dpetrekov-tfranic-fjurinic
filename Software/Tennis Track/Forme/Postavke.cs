@@ -29,9 +29,9 @@ namespace Tennis_Track.Forme
 
         private void Postavke_Load(object sender, EventArgs e)
         {
-            txtEmail.Text = PrijavaClana.clan.Email;
+            txtEmail.Text = PrijavaClana.PrijavljeniCLan.Email;
             lblEmail.BackColor = System.Drawing.Color.Transparent;
-            txtTelefon.Text = PrijavaClana.clan.Telefon;
+            txtTelefon.Text = PrijavaClana.PrijavljeniCLan.Telefon;
             lblTelefon.BackColor = System.Drawing.Color.Transparent;
         }
 
@@ -43,15 +43,15 @@ namespace Tennis_Track.Forme
 
         private void btnSpremiPromjene_Click(object sender, EventArgs e)
         {
-            if (!(txtEmail.Text.ToString() == PrijavaClana.clan.Email && txtTelefon.Text.ToString()==PrijavaClana.clan.Telefon))
+            if (!(txtEmail.Text.ToString() == PrijavaClana.PrijavljeniCLan.Email && txtTelefon.Text.ToString()==PrijavaClana.PrijavljeniCLan.Telefon))
             {
                 MessageBox.Show("Novi podatci su spremljeni", "Obavijest!");
                 using (var db = new TennisTrackEntities())
                 {
-                    Clan clan = (from c in db.Clan where c.Ime == PrijavaClana.clan.Ime select c).FirstOrDefault();
+                    Clan clan = (from c in db.Clan where c.Ime == PrijavaClana.PrijavljeniCLan.Ime select c).FirstOrDefault();
                     clan.Telefon = txtTelefon.Text.ToString();
                     clan.Email = txtEmail.Text.ToString();
-                    PrijavaClana.clan = clan;
+                    PrijavaClana.PrijavljeniCLan = clan;
                     db.SaveChanges();
                 }
             }

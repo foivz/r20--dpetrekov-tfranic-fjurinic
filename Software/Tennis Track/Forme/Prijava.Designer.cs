@@ -31,6 +31,7 @@
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnPrijaviSe = new System.Windows.Forms.Button();
+            this.btnResetirajLozinku = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtUsername
@@ -70,6 +71,17 @@
             this.BtnPrijaviSe.UseVisualStyleBackColor = true;
             this.BtnPrijaviSe.Click += new System.EventHandler(this.BtnPrijaviSe_Click);
             // 
+            // btnResetirajLozinku
+            // 
+            this.btnResetirajLozinku.Location = new System.Drawing.Point(324, 303);
+            this.btnResetirajLozinku.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnResetirajLozinku.Name = "btnResetirajLozinku";
+            this.btnResetirajLozinku.Size = new System.Drawing.Size(153, 43);
+            this.btnResetirajLozinku.TabIndex = 3;
+            this.btnResetirajLozinku.Text = "Resetiraj lozinku";
+            this.btnResetirajLozinku.UseVisualStyleBackColor = true;
+            this.btnResetirajLozinku.Click += new System.EventHandler(this.btnResetirajLozinku_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -77,6 +89,7 @@
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnResetirajLozinku);
             this.Controls.Add(this.BtnPrijaviSe);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
@@ -93,6 +106,7 @@
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Button BtnPrijaviSe;
+        private System.Windows.Forms.Button btnResetirajLozinku;
     }
 }
 

@@ -32,13 +32,13 @@ namespace Tennis_Track.Forme
         {
             if (txtNovaLozinka.Text.ToString() == txtPonovljenaLozinka.Text.ToString())
             {
-                if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.clan.HashLozinke, EnkripcijaLozinke.GenerateSaltedHash(txtStaraLozinka.Text.ToString(), PrijavaClana.clan.SaltLozinke)))
+                if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.PrijavljeniCLan.HashLozinke, EnkripcijaLozinke.GenerateSaltedHash(txtStaraLozinka.Text.ToString(), PrijavaClana.PrijavljeniCLan.SaltLozinke)))
                 {
                     using (var db = new TennisTrackEntities())
                     {
-                        Clan clan = (from c in db.Clan where c.Ime == PrijavaClana.clan.Ime select c).FirstOrDefault();
+                        Clan clan = (from c in db.Clan where c.Ime == PrijavaClana.PrijavljeniCLan.Ime select c).FirstOrDefault();
                         clan.HashLozinke = EnkripcijaLozinke.GenerateSaltedHash(txtNovaLozinka.Text.ToString(), clan.SaltLozinke);
-                        PrijavaClana.clan = clan;
+                        PrijavaClana.PrijavljeniCLan = clan;
                         db.SaveChanges();
                     }
                     MessageBox.Show("Lozinka uspješno promijenjena.", "Obavijest!");

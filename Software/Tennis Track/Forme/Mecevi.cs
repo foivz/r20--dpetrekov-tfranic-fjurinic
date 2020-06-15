@@ -40,7 +40,7 @@ namespace Tennis_Track.Forme
             tennisTrackEntities.Clan.Load();
             clanBindingSource.DataSource = tennisTrackEntities.Clan.Local;
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
-            txtIgrac.Text = PrijavaClana.clan.Ime + " " + PrijavaClana.clan.Prezime;
+            txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             var mecevi = from m in tennisTrackEntities.Mec select m;
             dgvMecevi.DataSource = mecevi.ToList();
             cmbTermini.DataSource = PopuniTermine();
@@ -99,7 +99,7 @@ namespace Tennis_Track.Forme
             string time = cmbTermini.SelectedItem as string;
             TimeSpan realTime = TimeSpan.Parse(time);
 
-            mec.Prvi_clan_Id = PrijavaClana.clan.ID;
+            mec.Prvi_clan_Id = PrijavaClana.PrijavljeniCLan.ID;
             mec.Drugi_clan_Id = odabraniSuigrac.ID;
             mec.Datum = dtpDatumMeca.Value;
             mec.Teren = teren;
