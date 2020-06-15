@@ -39,8 +39,6 @@ namespace Tennis_Track.Klase
 
         private static void DohvatiKorisnika(string KorisnickoIme)
         {
-            TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
-            tennisTrackEntities.Clan.Load();
             using (var db = new TennisTrackEntities())
             {
                 clan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
