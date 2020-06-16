@@ -45,5 +45,11 @@ namespace Tennis_Track
         {
            Učlanjenje.ResetirajLozinku(TxtUsername.Text.ToString());
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            TxtUsername.Text = "dpetrekovic";
+            TxtPassword.Text = "123";
+        }
     }
 }

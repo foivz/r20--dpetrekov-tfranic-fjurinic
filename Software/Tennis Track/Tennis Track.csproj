@@ -92,6 +92,18 @@
     <Compile Include="Baza_podataka\Turnir.cs">
       <DependentUpon>TennisTrackModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forme\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Brisanje mečeva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Brisanje mečeva.Designer.cs">
+      <DependentUpon>Brisanje mečeva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\DodajClana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +157,12 @@
     <Compile Include="Klase\PrijavaClana.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forme\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Brisanje mečeva.resx">
+      <DependentUpon>Brisanje mečeva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\DodajClana.resx">
       <DependentUpon>DodajClana.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +206,8 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Clan.datasource" />
+    <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Mec.datasource" />
+    <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Teren.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -207,6 +227,7 @@
   <ItemGroup>
     <None Include="Resources\How-to-Grip-a-Tennis-Racket-Properly.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Baza_podataka\TennisTrackModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

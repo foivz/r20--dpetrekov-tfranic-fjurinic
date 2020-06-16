@@ -34,5 +34,65 @@ namespace Tennis_Track.Baza_podataka
         public virtual Turnir Turnir { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Set> Sets { get; set; }
+
+        private string imePrviClan;
+        public string ImePrviClan
+        {
+            get { return Clan.Ime + " " + Clan.Prezime; }
+            set { imePrviClan = value; }
+        }
+
+
+        private string imeDrugiClan;
+        public string ImeDrugiClan
+        {
+            get { return Clan1.Ime + " " + Clan1.Prezime; }
+            set { imeDrugiClan = value; }
+        }
+
+
+        private string vrstaTerena;
+        public string VrstaTerena
+        {
+            get { return Teren.Vrsta; }
+            set { vrstaTerena = value; }
+        }
+
+        private string imeTurnira;
+        public string ImeTurnira
+        {
+            get { return VratiImeTurnira(); }
+            set { imeTurnira = value; }
+        }
+
+        private string VratiImeTurnira()
+        {
+            if (Turnir == null)
+                return "n/a";
+            else return Turnir.Naziv;
+        }
+
+        private string rezultat;
+        public string Rezultat
+        {
+            get { return VratiRezultatMeca(); }
+            set { rezultat = value; }
+        }
+
+        private string VratiRezultatMeca()
+        {
+            int rezultatPrviClan = 0;
+            int rezultatDrugiClan = 0;
+            foreach (Set set in Sets)
+            {
+                if (set.Rezultat_prvi_clan > set.Rezultat_drugi_clan)
+                    rezultatPrviClan = rezultatPrviClan + 1;
+                else if (set.Rezultat_prvi_clan < set.Rezultat_drugi_clan)
+                    rezultatDrugiClan = rezultatDrugiClan + 1;
+            }
+
+
+            return rezultatPrviClan.ToString() + " : " + rezultatDrugiClan.ToString();
+        }
     }
 }

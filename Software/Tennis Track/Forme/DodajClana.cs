@@ -14,22 +14,23 @@ namespace Tennis_Track.Forme
 {
     public partial class DodajClana : Form
     {
-        private GlavniIzbornik glavniIzbornik;
+        private AdminPanel adminPanel;
 
         public DodajClana()
         {
             InitializeComponent();
         }
 
-        public DodajClana(GlavniIzbornik glavniIzbornik)
+
+        public DodajClana(AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             InitializeComponent();
-            this.glavniIzbornik = glavniIzbornik;
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            glavniIzbornik.Show();
+            adminPanel.Show();
             this.Close();
         }
 

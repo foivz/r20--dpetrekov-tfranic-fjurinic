@@ -150,6 +150,8 @@ namespace Tennis_Track.Forme
             tennisTrackEntities.Mec.Add(mec);
             tennisTrackEntities.SaveChanges();
             MessageBox.Show("Meč je dodan!");
+            dgvMecevi.DataSource = tennisTrackEntities.Mec.Local;
+
         }
 
         private Teren OdaberiTeren()
