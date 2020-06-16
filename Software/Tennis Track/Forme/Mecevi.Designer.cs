@@ -66,9 +66,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblSet3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTermini = new System.Windows.Forms.ComboBox();
+            this.gboBrojDobivenih = new System.Windows.Forms.GroupBox();
+            this.rbtn2Dobivena = new System.Windows.Forms.RadioButton();
+            this.rbtn3Dobivena = new System.Windows.Forms.RadioButton();
+            this.lblSet5 = new System.Windows.Forms.Label();
+            this.lblSet4 = new System.Windows.Forms.Label();
+            this.txtIgracSet5 = new System.Windows.Forms.TextBox();
+            this.txtSuigracSet5 = new System.Windows.Forms.TextBox();
+            this.txtSuigracSet4 = new System.Windows.Forms.TextBox();
+            this.txtIgracSet4 = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +96,7 @@
             this.clanBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecevi)).BeginInit();
+            this.gboBrojDobivenih.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,7 +297,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(500, 47);
+            this.label3.Location = new System.Drawing.Point(510, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 13;
@@ -296,7 +306,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(693, 47);
+            this.label4.Location = new System.Drawing.Point(703, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 14;
@@ -304,14 +314,14 @@
             // 
             // txtIgrac
             // 
-            this.txtIgrac.Location = new System.Drawing.Point(467, 73);
+            this.txtIgrac.Location = new System.Drawing.Point(477, 103);
             this.txtIgrac.Name = "txtIgrac";
             this.txtIgrac.Size = new System.Drawing.Size(126, 20);
             this.txtIgrac.TabIndex = 15;
             // 
             // txtSuigrac
             // 
-            this.txtSuigrac.Location = new System.Drawing.Point(644, 73);
+            this.txtSuigrac.Location = new System.Drawing.Point(654, 103);
             this.txtSuigrac.Name = "txtSuigrac";
             this.txtSuigrac.Size = new System.Drawing.Size(137, 20);
             this.txtSuigrac.TabIndex = 16;
@@ -356,45 +366,51 @@
             // 
             // txtIgracSet1
             // 
-            this.txtIgracSet1.Location = new System.Drawing.Point(555, 99);
+            this.txtIgracSet1.Location = new System.Drawing.Point(565, 129);
             this.txtIgracSet1.Name = "txtIgracSet1";
             this.txtIgracSet1.Size = new System.Drawing.Size(38, 20);
             this.txtIgracSet1.TabIndex = 21;
+            this.txtIgracSet1.TextChanged += new System.EventHandler(this.txtIgracSet1_TextChanged);
             // 
             // txtSuigracSet1
             // 
-            this.txtSuigracSet1.Location = new System.Drawing.Point(644, 99);
+            this.txtSuigracSet1.Location = new System.Drawing.Point(654, 129);
             this.txtSuigracSet1.Name = "txtSuigracSet1";
             this.txtSuigracSet1.Size = new System.Drawing.Size(38, 20);
             this.txtSuigracSet1.TabIndex = 22;
+            this.txtSuigracSet1.TextChanged += new System.EventHandler(this.txtSuigracSet1_TextChanged);
             // 
             // txtIgracSet2
             // 
-            this.txtIgracSet2.Location = new System.Drawing.Point(555, 125);
+            this.txtIgracSet2.Location = new System.Drawing.Point(565, 155);
             this.txtIgracSet2.Name = "txtIgracSet2";
             this.txtIgracSet2.Size = new System.Drawing.Size(38, 20);
             this.txtIgracSet2.TabIndex = 23;
+            this.txtIgracSet2.TextChanged += new System.EventHandler(this.txtIgracSet2_TextChanged);
             // 
             // txtSuigracSet2
             // 
-            this.txtSuigracSet2.Location = new System.Drawing.Point(644, 125);
+            this.txtSuigracSet2.Location = new System.Drawing.Point(654, 155);
             this.txtSuigracSet2.Name = "txtSuigracSet2";
             this.txtSuigracSet2.Size = new System.Drawing.Size(38, 20);
             this.txtSuigracSet2.TabIndex = 24;
+            this.txtSuigracSet2.TextChanged += new System.EventHandler(this.txtSuigracSet2_TextChanged);
             // 
             // txtSuigracSet3
             // 
-            this.txtSuigracSet3.Location = new System.Drawing.Point(644, 151);
+            this.txtSuigracSet3.Location = new System.Drawing.Point(654, 181);
             this.txtSuigracSet3.Name = "txtSuigracSet3";
             this.txtSuigracSet3.Size = new System.Drawing.Size(38, 20);
             this.txtSuigracSet3.TabIndex = 25;
+            this.txtSuigracSet3.TextChanged += new System.EventHandler(this.txtSuigracSet3_TextChanged);
             // 
             // txtIgracSet3
             // 
-            this.txtIgracSet3.Location = new System.Drawing.Point(555, 151);
+            this.txtIgracSet3.Location = new System.Drawing.Point(565, 181);
             this.txtIgracSet3.Name = "txtIgracSet3";
             this.txtIgracSet3.Size = new System.Drawing.Size(38, 20);
             this.txtIgracSet3.TabIndex = 26;
+            this.txtIgracSet3.TextChanged += new System.EventHandler(this.txtIgracSet3_TextChanged);
             // 
             // label5
             // 
@@ -408,7 +424,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(509, 102);
+            this.label6.Location = new System.Drawing.Point(519, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 28;
@@ -417,20 +433,20 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(509, 128);
+            this.label7.Location = new System.Drawing.Point(519, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 29;
             this.label7.Text = "2. set:";
             // 
-            // label8
+            // lblSet3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(509, 154);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "3. set:";
+            this.lblSet3.AutoSize = true;
+            this.lblSet3.Location = new System.Drawing.Point(519, 184);
+            this.lblSet3.Name = "lblSet3";
+            this.lblSet3.Size = new System.Drawing.Size(36, 13);
+            this.lblSet3.TabIndex = 30;
+            this.lblSet3.Text = "3. set:";
             // 
             // label9
             // 
@@ -448,6 +464,95 @@
             this.cmbTermini.Name = "cmbTermini";
             this.cmbTermini.Size = new System.Drawing.Size(121, 21);
             this.cmbTermini.TabIndex = 32;
+            // 
+            // gboBrojDobivenih
+            // 
+            this.gboBrojDobivenih.Controls.Add(this.rbtn3Dobivena);
+            this.gboBrojDobivenih.Controls.Add(this.rbtn2Dobivena);
+            this.gboBrojDobivenih.Location = new System.Drawing.Point(522, 12);
+            this.gboBrojDobivenih.Name = "gboBrojDobivenih";
+            this.gboBrojDobivenih.Size = new System.Drawing.Size(215, 48);
+            this.gboBrojDobivenih.TabIndex = 33;
+            this.gboBrojDobivenih.TabStop = false;
+            this.gboBrojDobivenih.Text = "Broj dobivenih setova za pobjedu:";
+            // 
+            // rbtn2Dobivena
+            // 
+            this.rbtn2Dobivena.AutoSize = true;
+            this.rbtn2Dobivena.Checked = true;
+            this.rbtn2Dobivena.Location = new System.Drawing.Point(43, 25);
+            this.rbtn2Dobivena.Name = "rbtn2Dobivena";
+            this.rbtn2Dobivena.Size = new System.Drawing.Size(54, 17);
+            this.rbtn2Dobivena.TabIndex = 0;
+            this.rbtn2Dobivena.TabStop = true;
+            this.rbtn2Dobivena.Text = "2 seta";
+            this.rbtn2Dobivena.UseVisualStyleBackColor = true;
+            this.rbtn2Dobivena.CheckedChanged += new System.EventHandler(this.rbtn2Dobivena_CheckedChanged);
+            // 
+            // rbtn3Dobivena
+            // 
+            this.rbtn3Dobivena.AutoSize = true;
+            this.rbtn3Dobivena.Location = new System.Drawing.Point(129, 25);
+            this.rbtn3Dobivena.Name = "rbtn3Dobivena";
+            this.rbtn3Dobivena.Size = new System.Drawing.Size(54, 17);
+            this.rbtn3Dobivena.TabIndex = 1;
+            this.rbtn3Dobivena.Text = "3 seta";
+            this.rbtn3Dobivena.UseVisualStyleBackColor = true;
+            this.rbtn3Dobivena.CheckedChanged += new System.EventHandler(this.rbtn3Dobivena_CheckedChanged);
+            // 
+            // lblSet5
+            // 
+            this.lblSet5.AutoSize = true;
+            this.lblSet5.Location = new System.Drawing.Point(519, 236);
+            this.lblSet5.Name = "lblSet5";
+            this.lblSet5.Size = new System.Drawing.Size(36, 13);
+            this.lblSet5.TabIndex = 39;
+            this.lblSet5.Text = "5. set:";
+            this.lblSet5.Visible = false;
+            // 
+            // lblSet4
+            // 
+            this.lblSet4.AutoSize = true;
+            this.lblSet4.Location = new System.Drawing.Point(519, 210);
+            this.lblSet4.Name = "lblSet4";
+            this.lblSet4.Size = new System.Drawing.Size(36, 13);
+            this.lblSet4.TabIndex = 38;
+            this.lblSet4.Text = "4. set:";
+            this.lblSet4.Visible = false;
+            // 
+            // txtIgracSet5
+            // 
+            this.txtIgracSet5.Location = new System.Drawing.Point(565, 233);
+            this.txtIgracSet5.Name = "txtIgracSet5";
+            this.txtIgracSet5.Size = new System.Drawing.Size(38, 20);
+            this.txtIgracSet5.TabIndex = 37;
+            this.txtIgracSet5.Visible = false;
+            // 
+            // txtSuigracSet5
+            // 
+            this.txtSuigracSet5.Location = new System.Drawing.Point(654, 233);
+            this.txtSuigracSet5.Name = "txtSuigracSet5";
+            this.txtSuigracSet5.Size = new System.Drawing.Size(38, 20);
+            this.txtSuigracSet5.TabIndex = 36;
+            this.txtSuigracSet5.Visible = false;
+            // 
+            // txtSuigracSet4
+            // 
+            this.txtSuigracSet4.Location = new System.Drawing.Point(654, 207);
+            this.txtSuigracSet4.Name = "txtSuigracSet4";
+            this.txtSuigracSet4.Size = new System.Drawing.Size(38, 20);
+            this.txtSuigracSet4.TabIndex = 35;
+            this.txtSuigracSet4.Visible = false;
+            this.txtSuigracSet4.TextChanged += new System.EventHandler(this.txtSuigracSet4_TextChanged);
+            // 
+            // txtIgracSet4
+            // 
+            this.txtIgracSet4.Location = new System.Drawing.Point(565, 207);
+            this.txtIgracSet4.Name = "txtIgracSet4";
+            this.txtIgracSet4.Size = new System.Drawing.Size(38, 20);
+            this.txtIgracSet4.TabIndex = 34;
+            this.txtIgracSet4.Visible = false;
+            this.txtIgracSet4.TextChanged += new System.EventHandler(this.txtIgracSet4_TextChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -549,9 +654,16 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.lblSet5);
+            this.Controls.Add(this.lblSet4);
+            this.Controls.Add(this.txtIgracSet5);
+            this.Controls.Add(this.txtSuigracSet5);
+            this.Controls.Add(this.txtSuigracSet4);
+            this.Controls.Add(this.txtIgracSet4);
+            this.Controls.Add(this.gboBrojDobivenih);
             this.Controls.Add(this.cmbTermini);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblSet3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -585,6 +697,8 @@
             this.clanBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecevi)).EndInit();
+            this.gboBrojDobivenih.ResumeLayout(false);
+            this.gboBrojDobivenih.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -643,8 +757,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSet3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTermini;
+        private System.Windows.Forms.GroupBox gboBrojDobivenih;
+        private System.Windows.Forms.RadioButton rbtn3Dobivena;
+        private System.Windows.Forms.RadioButton rbtn2Dobivena;
+        private System.Windows.Forms.Label lblSet5;
+        private System.Windows.Forms.Label lblSet4;
+        private System.Windows.Forms.TextBox txtIgracSet5;
+        private System.Windows.Forms.TextBox txtSuigracSet5;
+        private System.Windows.Forms.TextBox txtSuigracSet4;
+        private System.Windows.Forms.TextBox txtIgracSet4;
     }
 }
