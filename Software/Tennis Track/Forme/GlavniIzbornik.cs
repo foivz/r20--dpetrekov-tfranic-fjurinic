@@ -29,9 +29,9 @@ namespace Tennis_Track.Forme
 
         private void GlavniIzbornik_Load(object sender, EventArgs e)
         {
-            lblImePrezimeKorisnika.Text = "Trenutno ste prijavljeni kao" + Environment.NewLine + PrijavaClana.clan.Ime + " " + PrijavaClana.clan.Prezime;
+            lblImePrezimeKorisnika.Text = "Trenutno ste prijavljeni kao" + Environment.NewLine + PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             lblImePrezimeKorisnika.BackColor = System.Drawing.Color.Transparent;
-            if (PrijavaClana.clan.TipClana == "Admin")
+            if (PrijavaClana.PrijavljeniCLan.TipClana == "Admin")
             {
                 btnDodajClana.Visible = true;
             }
@@ -51,7 +51,7 @@ namespace Tennis_Track.Forme
         private void btnOdjaviSe_Click(object sender, EventArgs e)
         {
             loginForm.Show();
-            PrijavaClana.clan = null;
+            PrijavaClana.PrijavljeniCLan = null;
             this.Close();
         }
 
@@ -81,7 +81,6 @@ namespace Tennis_Track.Forme
             StatistikaKorisnika statistikaKorisnika = new StatistikaKorisnika(this);
             this.Hide();
             statistikaKorisnika.ShowDialog();
-
         }
     }
 }

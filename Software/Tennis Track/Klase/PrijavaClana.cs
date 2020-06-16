@@ -13,37 +13,33 @@ namespace Tennis_Track.Klase
 {
     public static class PrijavaClana
     {
-        public static Clan clan = null;
+        public static Clan PrijavljeniCLan = null;
         public static bool ProvjeriPodatke(string KorisickoIme, string Lozinka)
         {
             DohvatiKorisnika(KorisickoIme);
 
-            if (clan == null)
+            if (PrijavljeniCLan == null)
             {
                 MessageBox.Show("Nepostojece korisnničko ime!", "Korisničko ime koje ste unesli ne postoji");
                 return false;
             }
-            else if (StructuralComparisons.StructuralEqualityComparer.Equals(clan.HashLozinke, EnkripcijaLozinke.GenerateSaltedHash(Lozinka, clan.SaltLozinke)))
+            else if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavljeniCLan.HashLozinke, EnkripcijaLozinke.GenerateSaltedHash(Lozinka, PrijavljeniCLan.SaltLozinke)))
             {
                 return true;
             }
             else
             {
-                clan = null;
+                PrijavljeniCLan = null;
                 MessageBox.Show("Pogrešna lozinka!", "Lozinka koju ste unesli je neispravna");
                 return false;
             }
         }
 
-
-
         private static void DohvatiKorisnika(string KorisnickoIme)
         {
-            TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
-            tennisTrackEntities.Clan.Load();
             using (var db = new TennisTrackEntities())
             {
-                clan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
+                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
             }
         }
     }

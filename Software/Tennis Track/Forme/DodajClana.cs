@@ -25,7 +25,6 @@ namespace Tennis_Track.Forme
         {
             InitializeComponent();
             this.glavniIzbornik = glavniIzbornik;
-            KreirajNovogaClana.DodajClana = this;
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace Tennis_Track.Forme
 
         private void btnKreirajNoviRacun_Click(object sender, EventArgs e)
         {
-            KreirajNovogaClana.KreirajClana();
+            Učlanjenje.DodajClana(this);
         }
 
         private void DodajClana_Load(object sender, EventArgs e)
