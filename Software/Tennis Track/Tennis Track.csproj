@@ -85,7 +85,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TennisTrackModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Baza_podataka\Teren.code.cs" />
     <Compile Include="Baza_podataka\Teren.cs">
       <DependentUpon>TennisTrackModel.tt</DependentUpon>
     </Compile>

@@ -41,7 +41,8 @@ namespace Tennis_Track.Forme
         private void Mecevi_Load(object sender, EventArgs e)
         {
             tennisTrackEntities.Clan.Load();
-            clanBindingSource.DataSource = tennisTrackEntities.Clan.Local;
+            clanBindingSource.DataSource = from c in tennisTrackEntities.Clan.Local where
+                                           c.KorisnickoIme!=PrijavaClana.PrijavljeniCLan.KorisnickoIme && c.Email!=PrijavaClana.PrijavljeniCLan.Email select c;
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
             txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             var mecevi = from m in tennisTrackEntities.Mec select m;
@@ -52,7 +53,12 @@ namespace Tennis_Track.Forme
             gboBrojDobivenih.BackColor = System.Drawing.Color.Transparent;
             txtSuigrac.Enabled = false;
             txtIgrac.Enabled = false;
-           
+            for (int i = 0; i < clanDataGridView.Columns.Count; i++)
+            {
+                clanDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            clanDataGridView.AllowUserToAddRows = false;
+            clanDataGridView.RowHeadersVisible = false;
         }
 
         private List<string> PopuniTermine()
@@ -88,18 +94,6 @@ namespace Tennis_Track.Forme
             clanBindingSource.DataSource = result.ToList();
         }
 
-        private void btnOdaberi_Click(object sender, EventArgs e)
-        {
-            odabraniSuigrac = clanBindingSource.Current as Clan;
-            if (odabraniSuigrac.ID == PrijavaClana.PrijavljeniCLan.ID)
-            {
-                MessageBox.Show("Igrač i suigrač ne mogu biti ista osoba!");
-            }
-            else
-            {
-                txtSuigrac.Text = odabraniSuigrac.Ime + " " + odabraniSuigrac.Prezime;
-            }
-        }
 
         private void btnKreirajMec_Click(object sender, EventArgs e)
         {
@@ -490,6 +484,12 @@ namespace Tennis_Track.Forme
                 if (cetvrtiSetPotreban == true)
                     ProvjeriPotrebuZaUnosomPetogSeta();
             }
+        }
+
+        private void clanDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            odabraniSuigrac = clanBindingSource.Current as Clan;
+            txtSuigrac.Text = odabraniSuigrac.Ime + " " + odabraniSuigrac.Prezime;
         }
     }
 }
