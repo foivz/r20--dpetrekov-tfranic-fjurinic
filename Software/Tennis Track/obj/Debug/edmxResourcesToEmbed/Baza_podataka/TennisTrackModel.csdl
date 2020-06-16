@@ -148,7 +148,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Set_Mec">
-    <End Role="Mec" Type="Self.Mec" Multiplicity="1" />
+    <End Role="Mec" Type="Self.Mec" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Set" Type="Self.Set" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Mec">

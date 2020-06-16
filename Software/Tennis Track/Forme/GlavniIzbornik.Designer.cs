@@ -32,7 +32,7 @@
             this.btnTurniri = new System.Windows.Forms.Button();
             this.bntMecevi = new System.Windows.Forms.Button();
             this.btnPostavke = new System.Windows.Forms.Button();
-            this.btnDodajClana = new System.Windows.Forms.Button();
+            this.btnAdminPanel = new System.Windows.Forms.Button();
             this.btnOdjaviSe = new System.Windows.Forms.Button();
             this.btnRezervacijaTerena = new System.Windows.Forms.Button();
             this.lblImePrezimeKorisnika = new System.Windows.Forms.Label();
@@ -85,16 +85,16 @@
             this.btnPostavke.UseVisualStyleBackColor = true;
             this.btnPostavke.Click += new System.EventHandler(this.btnPostavke_Click);
             // 
-            // btnDodajClana
+            // btnAdminPanel
             // 
-            this.btnDodajClana.Location = new System.Drawing.Point(651, 401);
-            this.btnDodajClana.Margin = new System.Windows.Forms.Padding(3, 3, 15, 15);
-            this.btnDodajClana.Name = "btnDodajClana";
-            this.btnDodajClana.Size = new System.Drawing.Size(125, 25);
-            this.btnDodajClana.TabIndex = 4;
-            this.btnDodajClana.Text = "Dodaj člana";
-            this.btnDodajClana.UseVisualStyleBackColor = true;
-            this.btnDodajClana.Click += new System.EventHandler(this.btnDodajClana_Click);
+            this.btnAdminPanel.Location = new System.Drawing.Point(651, 401);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(3, 3, 15, 15);
+            this.btnAdminPanel.Name = "btnAdminPanel";
+            this.btnAdminPanel.Size = new System.Drawing.Size(125, 25);
+            this.btnAdminPanel.TabIndex = 4;
+            this.btnAdminPanel.Text = "Admin panel";
+            this.btnAdminPanel.UseVisualStyleBackColor = true;
+            this.btnAdminPanel.Click += new System.EventHandler(this.btnDodajClana_Click);
             // 
             // btnOdjaviSe
             // 
@@ -142,7 +142,7 @@
             this.Controls.Add(this.lblImePrezimeKorisnika);
             this.Controls.Add(this.btnRezervacijaTerena);
             this.Controls.Add(this.btnOdjaviSe);
-            this.Controls.Add(this.btnDodajClana);
+            this.Controls.Add(this.btnAdminPanel);
             this.Controls.Add(this.btnPostavke);
             this.Controls.Add(this.bntMecevi);
             this.Controls.Add(this.btnTurniri);
@@ -162,7 +162,7 @@
         private System.Windows.Forms.Button btnTurniri;
         private System.Windows.Forms.Button bntMecevi;
         private System.Windows.Forms.Button btnPostavke;
-        private System.Windows.Forms.Button btnDodajClana;
+        private System.Windows.Forms.Button btnAdminPanel;
         private System.Windows.Forms.Button btnOdjaviSe;
         private System.Windows.Forms.Button btnRezervacijaTerena;
         private System.Windows.Forms.Label lblImePrezimeKorisnika;

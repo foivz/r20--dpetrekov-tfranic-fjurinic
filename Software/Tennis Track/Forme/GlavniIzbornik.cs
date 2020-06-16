@@ -33,19 +33,19 @@ namespace Tennis_Track.Forme
             lblImePrezimeKorisnika.BackColor = System.Drawing.Color.Transparent;
             if (PrijavaClana.PrijavljeniCLan.TipClana == "Admin")
             {
-                btnDodajClana.Visible = true;
+                btnAdminPanel.Visible = true;
             }
             else
             {
-                btnDodajClana.Visible = false;
+                btnAdminPanel.Visible = false;
             }
         }
 
         private void btnDodajClana_Click(object sender, EventArgs e)
         {
-            DodajClana dodajClana = new DodajClana(this);
+            AdminPanel adminPanel = new AdminPanel(this);
             this.Hide();
-            dodajClana.ShowDialog();
+            adminPanel.ShowDialog();
         }
 
         private void btnOdjaviSe_Click(object sender, EventArgs e)
