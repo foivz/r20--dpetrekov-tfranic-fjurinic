@@ -14,9 +14,9 @@ namespace Tennis_Track.Klase
     public static class PrijavaClana
     {
         public static Clan PrijavljeniCLan = null;
-        public static bool ProvjeriPodatke(string KorisickoIme, string Lozinka)
+        public static bool ProvjeriPodatke(string KorisinckoIme, string Lozinka)
         {
-            DohvatiKorisnika(KorisickoIme);
+            DohvatiKorisnika(KorisinckoIme);
 
             if (PrijavljeniCLan == null)
             {

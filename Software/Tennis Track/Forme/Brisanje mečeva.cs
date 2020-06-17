@@ -32,6 +32,9 @@ namespace Tennis_Track.Forme
         {
             mecDataGridView.AllowUserToAddRows = false;
             mecDataGridView.RowHeadersVisible = false;
+            tennisTrackEntities.Teren.Load();
+            tennisTrackEntities.Mec.Load();
+            terenBindingSource.DataSource = tennisTrackEntities.Teren.Local;
             OsvjeziMeceve();
         }
 
@@ -53,11 +56,40 @@ namespace Tennis_Track.Forme
             }
         }
 
+        private void ResetirajFiltere()
+        {
+            txtFilter.Text = "";
+            txtTipTerena.Text = "";
+            tennisTrackEntities.Mec.Load();
+        }
+
         private void OsvjeziMeceve()
         {
+            if (txtFilter.Text.ToString() == "" && txtTipTerena.Text.ToString() == "")
+            {
+                mecBindingSource.DataSource = tennisTrackEntities.Mec.Local;
+            }
+            else if (txtTipTerena.Text.ToString() == "" && txtFilter.Text.ToString() != "")
+            {
+                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
+                                              where mec.ImePrviClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()) || mec.ImeDrugiClan.ToLower().Contains(txtFilter.Text.ToString().ToLower())
+                                              select mec;
+            }
+            else if (txtTipTerena.Text.ToString() != "" && txtFilter.Text.ToString() == "")
+            {
+                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
+                                              where mec.VrstaTerena.ToLower().Contains(txtTipTerena.Text.ToString().ToLower())
+                                              select mec;
+            }
+            else
+            {
+                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
+                                              where mec.VrstaTerena.ToLower().Contains(txtTipTerena.Text.ToString().ToLower()) && (mec.ImePrviClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()) || mec.ImeDrugiClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()))
+                                              select mec;
+            }
+
+
             int ukupnaSirinaStupaca = 0;
-            tennisTrackEntities.Mec.Load();
-            mecBindingSource.DataSource = tennisTrackEntities.Mec.Local;
             for (int i = 0; i < mecDataGridView.Columns.Count; i++)
             {
                 mecDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -76,6 +108,16 @@ namespace Tennis_Track.Forme
                 mecDataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             mecDataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            OsvjeziMeceve();
+        }
+
+        private void txtTipTerena_TextChanged(object sender, EventArgs e)
+        {
+            OsvjeziMeceve();
         }
     }
 }
