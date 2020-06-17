@@ -146,6 +146,12 @@
     <Compile Include="Forme\RangListe.Designer.cs">
       <DependentUpon>RangListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\ResetirajLozinku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ResetirajLozinku.Designer.cs">
+      <DependentUpon>ResetirajLozinku.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\StatistikaKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\RangListe.resx">
       <DependentUpon>RangListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ResetirajLozinku.resx">
+      <DependentUpon>ResetirajLozinku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\StatistikaKorisnika.resx">
       <DependentUpon>StatistikaKorisnika.cs</DependentUpon>

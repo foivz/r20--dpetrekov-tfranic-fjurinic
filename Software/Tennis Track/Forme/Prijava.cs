@@ -43,7 +43,9 @@ namespace Tennis_Track
 
         private void btnResetirajLozinku_Click(object sender, EventArgs e)
         {
-           Učlanjenje.ResetirajLozinku(TxtUsername.Text.ToString());
+            ResetirajLozinku resetirajLozinku = new ResetirajLozinku(this);
+            this.Hide();
+            resetirajLozinku.ShowDialog();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

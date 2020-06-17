@@ -32,12 +32,12 @@ namespace Tennis_Track.Klase
             MessageBox.Show("Korisnički podatci poslani su na mail korisnika.", "Obavijest!");
             PosaljiKorisnickePodatke(clan, lozinka);
         }
-        public static void ResetirajLozinku(string KorisnickoIme)
+        public static void ResetirajLozinku(string KorisnickoIme, string email)
         {
             string pass = GenerirajLozinku();
             using (var db = new TennisTrackEntities())
             {
-                Clan clan = (from c in db.Clan where c.KorisnickoIme == KorisnickoIme select c).FirstOrDefault();
+                Clan clan = (from c in db.Clan where c.KorisnickoIme == KorisnickoIme && c.Email == email select c).FirstOrDefault();
                 if (clan != null)
                 {
                     clan.SaltLozinke = EnkripcijaLozinke.GenerateSalt();

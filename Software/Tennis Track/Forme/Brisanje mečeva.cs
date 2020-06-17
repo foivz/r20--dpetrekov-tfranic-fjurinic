@@ -43,10 +43,14 @@ namespace Tennis_Track.Forme
 
         private void btnBrisiMec_Click(object sender, EventArgs e)
         {
-            Mec mecZaObrisati = mecBindingSource.Current as Mec;
-            mecBindingSource.Remove(mecZaObrisati);
-            tennisTrackEntities.Mec.Remove(mecZaObrisati);
-            tennisTrackEntities.SaveChanges();
+            if (MessageBox.Show("Obrisati čete meč. Želite li nastaviti?","Upozorenje", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Mec mecZaObrisati = mecBindingSource.Current as Mec;
+                mecBindingSource.Remove(mecZaObrisati);
+                tennisTrackEntities.Mec.Remove(mecZaObrisati);
+                tennisTrackEntities.SaveChanges();
+                OsvjeziMeceve();
+            }
         }
 
         private void OsvjeziMeceve()
@@ -62,15 +66,11 @@ namespace Tennis_Track.Forme
 
             int razlikaSirine = mecDataGridView.Width - ukupnaSirinaStupaca;
 
-            //datagrid has calculated it's widths so we can store them
             for (int i = 0; i <= mecDataGridView.Columns.Count - 1; i++)
             {
                 mecDataGridView.Columns[i].DefaultCellStyle.Font = new Font("Arial", 18F, GraphicsUnit.Pixel);
-                //store autosized widths
                 int colw = mecDataGridView.Columns[i].Width + razlikaSirine/8;
-                //remove autosizing
                 mecDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                //set width to calculated by autosize
                 mecDataGridView.Columns[i].Width = colw;
 
                 mecDataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
