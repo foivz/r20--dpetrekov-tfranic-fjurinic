@@ -77,6 +77,11 @@
             this.txtSuigracSet5 = new System.Windows.Forms.TextBox();
             this.txtSuigracSet4 = new System.Windows.Forms.TextBox();
             this.txtIgracSet4 = new System.Windows.Forms.TextBox();
+            this.cmbTurnir = new System.Windows.Forms.ComboBox();
+            this.gboSluzbenostMeca = new System.Windows.Forms.GroupBox();
+            this.rbtnNesluzbeni = new System.Windows.Forms.RadioButton();
+            this.rbtnSluzbeni = new System.Windows.Forms.RadioButton();
+            this.lblTurnir = new System.Windows.Forms.Label();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clanDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecevi)).BeginInit();
             this.gboBrojDobivenih.SuspendLayout();
+            this.gboSluzbenostMeca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,6 +304,7 @@
             this.txtIgrac.Name = "txtIgrac";
             this.txtIgrac.Size = new System.Drawing.Size(126, 20);
             this.txtIgrac.TabIndex = 15;
+            this.txtIgrac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSuigrac
             // 
@@ -305,18 +312,19 @@
             this.txtSuigrac.Name = "txtSuigrac";
             this.txtSuigrac.Size = new System.Drawing.Size(137, 20);
             this.txtSuigrac.TabIndex = 16;
+            this.txtSuigrac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbTeren
             // 
             this.cmbTeren.FormattingEnabled = true;
-            this.cmbTeren.Location = new System.Drawing.Point(576, 277);
+            this.cmbTeren.Location = new System.Drawing.Point(654, 290);
             this.cmbTeren.Name = "cmbTeren";
             this.cmbTeren.Size = new System.Drawing.Size(121, 21);
             this.cmbTeren.TabIndex = 18;
             // 
             // btnKreirajMec
             // 
-            this.btnKreirajMec.Location = new System.Drawing.Point(572, 314);
+            this.btnKreirajMec.Location = new System.Drawing.Point(651, 330);
             this.btnKreirajMec.Margin = new System.Windows.Forms.Padding(15);
             this.btnKreirajMec.Name = "btnKreirajMec";
             this.btnKreirajMec.Size = new System.Drawing.Size(125, 25);
@@ -328,9 +336,9 @@
             // dgvMecevi
             // 
             this.dgvMecevi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMecevi.Location = new System.Drawing.Point(228, 288);
+            this.dgvMecevi.Location = new System.Drawing.Point(396, 276);
             this.dgvMecevi.Name = "dgvMecevi";
-            this.dgvMecevi.Size = new System.Drawing.Size(342, 150);
+            this.dgvMecevi.Size = new System.Drawing.Size(254, 150);
             this.dgvMecevi.TabIndex = 20;
             // 
             // txtIgracSet1
@@ -523,6 +531,59 @@
             this.txtIgracSet4.Visible = false;
             this.txtIgracSet4.TextChanged += new System.EventHandler(this.txtIgracSet4_TextChanged);
             // 
+            // cmbTurnir
+            // 
+            this.cmbTurnir.Enabled = false;
+            this.cmbTurnir.FormattingEnabled = true;
+            this.cmbTurnir.Location = new System.Drawing.Point(10, 73);
+            this.cmbTurnir.Name = "cmbTurnir";
+            this.cmbTurnir.Size = new System.Drawing.Size(135, 21);
+            this.cmbTurnir.TabIndex = 40;
+            // 
+            // gboSluzbenostMeca
+            // 
+            this.gboSluzbenostMeca.Controls.Add(this.lblTurnir);
+            this.gboSluzbenostMeca.Controls.Add(this.rbtnSluzbeni);
+            this.gboSluzbenostMeca.Controls.Add(this.rbtnNesluzbeni);
+            this.gboSluzbenostMeca.Controls.Add(this.cmbTurnir);
+            this.gboSluzbenostMeca.Location = new System.Drawing.Point(239, 298);
+            this.gboSluzbenostMeca.Name = "gboSluzbenostMeca";
+            this.gboSluzbenostMeca.Size = new System.Drawing.Size(151, 110);
+            this.gboSluzbenostMeca.TabIndex = 41;
+            this.gboSluzbenostMeca.TabStop = false;
+            // 
+            // rbtnNesluzbeni
+            // 
+            this.rbtnNesluzbeni.AutoSize = true;
+            this.rbtnNesluzbeni.Checked = true;
+            this.rbtnNesluzbeni.Location = new System.Drawing.Point(10, 8);
+            this.rbtnNesluzbeni.Name = "rbtnNesluzbeni";
+            this.rbtnNesluzbeni.Size = new System.Drawing.Size(100, 17);
+            this.rbtnNesluzbeni.TabIndex = 2;
+            this.rbtnNesluzbeni.Text = "Neslužbeni meč";
+            this.rbtnNesluzbeni.UseVisualStyleBackColor = true;
+            this.rbtnNesluzbeni.CheckedChanged += new System.EventHandler(this.rbtnNesluzbeni_CheckedChanged);
+            // 
+            // rbtnSluzbeni
+            // 
+            this.rbtnSluzbeni.AutoSize = true;
+            this.rbtnSluzbeni.Location = new System.Drawing.Point(10, 31);
+            this.rbtnSluzbeni.Name = "rbtnSluzbeni";
+            this.rbtnSluzbeni.Size = new System.Drawing.Size(88, 17);
+            this.rbtnSluzbeni.TabIndex = 41;
+            this.rbtnSluzbeni.Text = "Službeni meč";
+            this.rbtnSluzbeni.UseVisualStyleBackColor = true;
+            this.rbtnSluzbeni.CheckedChanged += new System.EventHandler(this.rbtnSluzbeni_CheckedChanged);
+            // 
+            // lblTurnir
+            // 
+            this.lblTurnir.AutoSize = true;
+            this.lblTurnir.Location = new System.Drawing.Point(8, 53);
+            this.lblTurnir.Name = "lblTurnir";
+            this.lblTurnir.Size = new System.Drawing.Size(37, 13);
+            this.lblTurnir.TabIndex = 42;
+            this.lblTurnir.Text = "Turnir:";
+            // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
@@ -553,6 +614,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.gboSluzbenostMeca);
             this.Controls.Add(this.lblSet5);
             this.Controls.Add(this.lblSet4);
             this.Controls.Add(this.txtIgracSet5);
@@ -597,6 +659,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecevi)).EndInit();
             this.gboBrojDobivenih.ResumeLayout(false);
             this.gboBrojDobivenih.PerformLayout();
+            this.gboSluzbenostMeca.ResumeLayout(false);
+            this.gboSluzbenostMeca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -656,5 +720,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cmbTurnir;
+        private System.Windows.Forms.GroupBox gboSluzbenostMeca;
+        private System.Windows.Forms.RadioButton rbtnSluzbeni;
+        private System.Windows.Forms.RadioButton rbtnNesluzbeni;
+        private System.Windows.Forms.Label lblTurnir;
     }
 }

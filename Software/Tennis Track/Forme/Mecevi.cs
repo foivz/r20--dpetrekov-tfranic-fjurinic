@@ -19,6 +19,7 @@ namespace Tennis_Track.Forme
         private GlavniIzbornik glavniIzbornik;
         public Clan odabraniSuigrac = new Clan();
         public Teren teren = new Teren();
+        private Turnir turnir = new Turnir();
         private Set set1 = new Set();
         private Set set2 = new Set();
         private Set set3 = new Set();
@@ -42,7 +43,7 @@ namespace Tennis_Track.Forme
         {
             tennisTrackEntities.Clan.Load();
             clanBindingSource.DataSource = from c in tennisTrackEntities.Clan.Local where
-                                           c.KorisnickoIme!=PrijavaClana.PrijavljeniCLan.KorisnickoIme && c.Email!=PrijavaClana.PrijavljeniCLan.Email select c;
+                                           c.KorisnickoIme!=PrijavaClana.PrijavljeniCLan.KorisnickoIme select c;
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
             txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             var mecevi = from m in tennisTrackEntities.Mec select m;
@@ -50,7 +51,15 @@ namespace Tennis_Track.Forme
             var tereni = (from m in tennisTrackEntities.Teren select m.Vrsta).Distinct();
             cmbTeren.DataSource = tereni.ToList();
             cmbTermini.DataSource = PopuniTermine();
+
+            //var sviTurniri = (from c in tennisTrackEntities.Clan where PrijavaClana.PrijavljeniCLan.KorisnickoIme == c.KorisnickoIme select c.Turnirs);
+            var turniri = (from m in tennisTrackEntities.Turnir select m.Naziv).Distinct();
+            
+            cmbTurnir.DataSource = turniri.ToList();
+
             gboBrojDobivenih.BackColor = System.Drawing.Color.Transparent;
+            gboSluzbenostMeca.BackColor = System.Drawing.Color.Transparent;
+
             txtSuigrac.Enabled = false;
             txtIgrac.Enabled = false;
             for (int i = 0; i < clanDataGridView.Columns.Count; i++)
@@ -103,22 +112,28 @@ namespace Tennis_Track.Forme
 
             string time = cmbTermini.SelectedItem as string;
             TimeSpan realTime = TimeSpan.Parse(time);
-            teren = OdaberiTeren();
             
 
             mec.Prvi_clan_Id = PrijavaClana.PrijavljeniCLan.ID;
             mec.Drugi_clan_Id = odabraniSuigrac.ID;
-            mec.Datum = dtpDatumMeca.Value;
-            mec.Teren = teren;
+            mec.Datum = dtpDatumMeca.Value.Date;
+            mec.Teren = OdaberiTeren();
             mec.Vrijeme = realTime;
+            if (rbtnSluzbeni.Checked)
+                mec.Turnir = OdaberiTurnir();
+            else mec.Turnir = null;
+
             mec.Sets.Add(set1);
             mec.Sets.Add(set2);
             if (rbtn2Dobivena.Checked && ProvjeriRezultatMecaNaDvaDobivena())
             {
+                if(txtIgracSet3.Text!="" && txtSuigracSet3.Text != "")
+                {
+                    set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
+                    set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
+                    mec.Sets.Add(set3);
+                }
                 
-                set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
-                set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
-                mec.Sets.Add(set3);
             }
             else if (rbtn3Dobivena.Checked)
             {
@@ -146,6 +161,15 @@ namespace Tennis_Track.Forme
             MessageBox.Show("Meč je dodan!");
             dgvMecevi.DataSource = tennisTrackEntities.Mec.Local;
 
+        }
+
+        private Turnir OdaberiTurnir()
+        {
+            string imeTurnira = cmbTurnir.SelectedItem as string;
+            var upitTurnir = from t in tennisTrackEntities.Turnir where t.Naziv == imeTurnira select t;
+            List<Turnir> turniriCombo = upitTurnir.ToList();
+            turnir = turniriCombo.First(t => 1 == 1);
+            return turnir;
         }
 
         private Teren OdaberiTeren()
@@ -490,6 +514,22 @@ namespace Tennis_Track.Forme
         {
             odabraniSuigrac = clanBindingSource.Current as Clan;
             txtSuigrac.Text = odabraniSuigrac.Ime + " " + odabraniSuigrac.Prezime;
+        }
+
+        private void rbtnSluzbeni_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbtnSluzbeni.Checked == true)
+            {
+                cmbTurnir.Enabled = true;
+            }
+        }
+
+        private void rbtnNesluzbeni_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnNesluzbeni.Checked == true)
+            {
+                cmbTurnir.Enabled = false;
+            }
         }
     }
 }
