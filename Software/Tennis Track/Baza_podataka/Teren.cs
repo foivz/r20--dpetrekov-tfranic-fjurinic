@@ -28,5 +28,9 @@ namespace Tennis_Track.Baza_podataka
         public virtual ICollection<Mec> Mecs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rezervacije> Rezervacijes { get; set; }
+        public override string ToString()
+        {
+            return Vrsta;
+        }
     }
 }

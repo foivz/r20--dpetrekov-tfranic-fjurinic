@@ -53,7 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtIgrac = new System.Windows.Forms.TextBox();
             this.txtSuigrac = new System.Windows.Forms.TextBox();
-            this.btnOdaberi = new System.Windows.Forms.Button();
             this.cmbTeren = new System.Windows.Forms.ComboBox();
             this.btnKreirajMec = new System.Windows.Forms.Button();
             this.dgvMecevi = new System.Windows.Forms.DataGridView();
@@ -70,27 +69,17 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTermini = new System.Windows.Forms.ComboBox();
             this.gboBrojDobivenih = new System.Windows.Forms.GroupBox();
-            this.rbtn2Dobivena = new System.Windows.Forms.RadioButton();
             this.rbtn3Dobivena = new System.Windows.Forms.RadioButton();
+            this.rbtn2Dobivena = new System.Windows.Forms.RadioButton();
             this.lblSet5 = new System.Windows.Forms.Label();
             this.lblSet4 = new System.Windows.Forms.Label();
             this.txtIgracSet5 = new System.Windows.Forms.TextBox();
             this.txtSuigracSet5 = new System.Windows.Forms.TextBox();
             this.txtSuigracSet4 = new System.Windows.Forms.TextBox();
             this.txtIgracSet4 = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingNavigator)).BeginInit();
             this.clanBindingNavigator.SuspendLayout();
@@ -242,24 +231,15 @@
             this.clanDataGridView.AutoGenerateColumns = false;
             this.clanDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clanDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
             this.clanDataGridView.DataSource = this.clanBindingSource;
             this.clanDataGridView.Location = new System.Drawing.Point(22, 47);
             this.clanDataGridView.Name = "clanDataGridView";
-            this.clanDataGridView.Size = new System.Drawing.Size(343, 155);
+            this.clanDataGridView.Size = new System.Drawing.Size(440, 180);
             this.clanDataGridView.TabIndex = 8;
+            this.clanDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clanDataGridView_CellDoubleClick);
             // 
             // txtFilter
             // 
@@ -325,17 +305,6 @@
             this.txtSuigrac.Name = "txtSuigrac";
             this.txtSuigrac.Size = new System.Drawing.Size(137, 20);
             this.txtSuigrac.TabIndex = 16;
-            // 
-            // btnOdaberi
-            // 
-            this.btnOdaberi.Location = new System.Drawing.Point(240, 250);
-            this.btnOdaberi.Margin = new System.Windows.Forms.Padding(15);
-            this.btnOdaberi.Name = "btnOdaberi";
-            this.btnOdaberi.Size = new System.Drawing.Size(125, 25);
-            this.btnOdaberi.TabIndex = 17;
-            this.btnOdaberi.Text = "Odaberi igrača";
-            this.btnOdaberi.UseVisualStyleBackColor = true;
-            this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
             // 
             // cmbTeren
             // 
@@ -476,6 +445,17 @@
             this.gboBrojDobivenih.TabStop = false;
             this.gboBrojDobivenih.Text = "Broj dobivenih setova za pobjedu:";
             // 
+            // rbtn3Dobivena
+            // 
+            this.rbtn3Dobivena.AutoSize = true;
+            this.rbtn3Dobivena.Location = new System.Drawing.Point(129, 25);
+            this.rbtn3Dobivena.Name = "rbtn3Dobivena";
+            this.rbtn3Dobivena.Size = new System.Drawing.Size(54, 17);
+            this.rbtn3Dobivena.TabIndex = 1;
+            this.rbtn3Dobivena.Text = "3 seta";
+            this.rbtn3Dobivena.UseVisualStyleBackColor = true;
+            this.rbtn3Dobivena.CheckedChanged += new System.EventHandler(this.rbtn3Dobivena_CheckedChanged);
+            // 
             // rbtn2Dobivena
             // 
             this.rbtn2Dobivena.AutoSize = true;
@@ -488,17 +468,6 @@
             this.rbtn2Dobivena.Text = "2 seta";
             this.rbtn2Dobivena.UseVisualStyleBackColor = true;
             this.rbtn2Dobivena.CheckedChanged += new System.EventHandler(this.rbtn2Dobivena_CheckedChanged);
-            // 
-            // rbtn3Dobivena
-            // 
-            this.rbtn3Dobivena.AutoSize = true;
-            this.rbtn3Dobivena.Location = new System.Drawing.Point(129, 25);
-            this.rbtn3Dobivena.Name = "rbtn3Dobivena";
-            this.rbtn3Dobivena.Size = new System.Drawing.Size(54, 17);
-            this.rbtn3Dobivena.TabIndex = 1;
-            this.rbtn3Dobivena.Text = "3 seta";
-            this.rbtn3Dobivena.UseVisualStyleBackColor = true;
-            this.rbtn3Dobivena.CheckedChanged += new System.EventHandler(this.rbtn3Dobivena_CheckedChanged);
             // 
             // lblSet5
             // 
@@ -554,93 +523,23 @@
             this.txtIgracSet4.Visible = false;
             this.txtIgracSet4.TextChanged += new System.EventHandler(this.txtIgracSet4_TextChanged);
             // 
-            // dataGridViewTextBoxColumn1
+            // imeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn2
+            // prezimeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Ime";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Ime";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // emailDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Prezime";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Prezime";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "KorisnickoIme";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Korisnicko ime";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Telefon";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Telefon";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "HashLozinke";
-            this.dataGridViewImageColumn1.HeaderText = "HashLozinke";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Visible = false;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.DataPropertyName = "SaltLozinke";
-            this.dataGridViewImageColumn2.HeaderText = "SaltLozinke";
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "TipClana";
-            this.dataGridViewTextBoxColumn7.HeaderText = "TipClana";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Mecs";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Mecs";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Mecs1";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Mecs1";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Rezervacijes";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Rezervacijes";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Turnirs";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Turnirs";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Visible = false;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // clanBindingSource
             // 
@@ -676,7 +575,6 @@
             this.Controls.Add(this.dgvMecevi);
             this.Controls.Add(this.btnKreirajMec);
             this.Controls.Add(this.cmbTeren);
-            this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.txtSuigrac);
             this.Controls.Add(this.txtIgrac);
             this.Controls.Add(this.label4);
@@ -723,19 +621,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton clanBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView clanDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDatumMeca;
@@ -744,7 +629,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIgrac;
         private System.Windows.Forms.TextBox txtSuigrac;
-        private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.ComboBox cmbTeren;
         private System.Windows.Forms.Button btnKreirajMec;
         private System.Windows.Forms.DataGridView dgvMecevi;
@@ -769,5 +653,8 @@
         private System.Windows.Forms.TextBox txtSuigracSet5;
         private System.Windows.Forms.TextBox txtSuigracSet4;
         private System.Windows.Forms.TextBox txtIgracSet4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
