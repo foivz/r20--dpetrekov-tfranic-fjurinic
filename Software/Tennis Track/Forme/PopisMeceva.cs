@@ -29,19 +29,25 @@ namespace Tennis_Track.Forme
         }
         private void PopisMeceva_Load(object sender, EventArgs e)
         {
-            var mecevi = from m in tennisTrackEntities.Mec select m;//m.ImePrviClan, m.ImeDrugiClan, m.Rezultat, m.Turnir, m.VrstaTerena, m.Datum, m.Vrijeme;
+            var mecevi = from m in tennisTrackEntities.Mec select m;
             mecBindingSource.DataSource = mecevi.ToList();
             gboSluzbenost.BackColor = System.Drawing.Color.Transparent;
+            lblPretrazivanje.BackColor = System.Drawing.Color.Transparent;
 
             for (int i = 0; i < dgvPopisMeceva.Columns.Count; i++)
             {
                 dgvPopisMeceva.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                if(i!=dgvPopisMeceva.Columns.Count)
-                    dgvPopisMeceva.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+                dgvPopisMeceva.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvPopisMeceva.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+
             dgvPopisMeceva.AllowUserToAddRows = false;
             dgvPopisMeceva.RowHeadersVisible = false;
+            dgvPopisMeceva.Columns[0].HeaderText = "Prvi igrač";
+            dgvPopisMeceva.Columns[1].HeaderText = "Drugi igrač";
+            dgvPopisMeceva.Columns[3].HeaderText = "Setovi";
+            dgvPopisMeceva.Columns[4].HeaderText = "Ime turnira";
+
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -66,6 +72,54 @@ namespace Tennis_Track.Forme
                                  || m.Turnir.Naziv.Contains(pretraga)
                                  select m;
             mecBindingSource.DataSource = pretragaMeceva.ToList();
+        }
+
+        private void btnMojiMecevi_Click(object sender, EventArgs e)
+        {
+            if(rbtnSviMecevi.Checked)
+            {
+                var sviMojiMecevi = from m in tennisTrackEntities.Mec
+                                    where m.Clan.ID == PrijavaClana.PrijavljeniCLan.ID ||
+                                    m.Clan1.ID == PrijavaClana.PrijavljeniCLan.ID
+                                    select m;
+                mecBindingSource.DataSource = sviMojiMecevi.ToList();
+            }
+
+            else if (rbtnSluzbeni.Checked)
+            {
+                var mojiSluzbeniMecevi = from m in tennisTrackEntities.Mec
+                                         where (m.Clan.ID == PrijavaClana.PrijavljeniCLan.ID ||
+                                         m.Clan1.ID == PrijavaClana.PrijavljeniCLan.ID) && m.Turnir_Id!=null
+                                         select m;
+                mecBindingSource.DataSource = mojiSluzbeniMecevi.ToList();
+            }
+            else
+            {
+                var mojiNesluzbeniMecevi = from m in tennisTrackEntities.Mec 
+                                           where(m.Clan.ID == PrijavaClana.PrijavljeniCLan.ID ||
+                                           m.Clan1.ID == PrijavaClana.PrijavljeniCLan.ID) && m.Turnir_Id == null
+                                           select m;
+                mecBindingSource.DataSource = mojiNesluzbeniMecevi.ToList();
+            }
+        }
+
+        private void btnPrikaziSve_Click(object sender, EventArgs e)
+        {
+            if (rbtnSviMecevi.Checked)
+            {
+                var sviMecevi = from m in tennisTrackEntities.Mec select m;
+                mecBindingSource.DataSource = sviMecevi.ToList();
+            }
+            else if (rbtnSluzbeni.Checked)
+            {
+                var sviSluzbeniMecevi = from m in tennisTrackEntities.Mec where m.Turnir_Id != null select m;
+                mecBindingSource.DataSource = sviSluzbeniMecevi.ToList();
+            }
+            else
+            {
+                var sviNesluzbeniMecevi = from m in tennisTrackEntities.Mec where m.Turnir_Id == null select m;
+                mecBindingSource.DataSource = sviNesluzbeniMecevi.ToList();
+            }
         }
     }
 }

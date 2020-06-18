@@ -35,38 +35,40 @@
             this.txtPretrazivanje = new System.Windows.Forms.TextBox();
             this.dgvPopisMeceva = new System.Windows.Forms.DataGridView();
             this.gboSluzbenost = new System.Windows.Forms.GroupBox();
-            this.rbtnSviMecevi = new System.Windows.Forms.RadioButton();
+            this.rbtnNesluzbeni = new System.Windows.Forms.RadioButton();
             this.rbtnSluzbeni = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnSviMecevi = new System.Windows.Forms.RadioButton();
             this.lblPretrazivanje = new System.Windows.Forms.Label();
             this.btnDodajMec = new System.Windows.Forms.Button();
+            this.RezultatiSetova = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imePrviClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDrugiClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rezultatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeTurniraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.terenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeTurniraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mecBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mecBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisMeceva)).BeginInit();
             this.gboSluzbenost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPrikaziSve
             // 
-            this.btnPrikaziSve.Location = new System.Drawing.Point(685, 160);
+            this.btnPrikaziSve.Location = new System.Drawing.Point(714, 160);
             this.btnPrikaziSve.Name = "btnPrikaziSve";
             this.btnPrikaziSve.Size = new System.Drawing.Size(130, 30);
             this.btnPrikaziSve.TabIndex = 14;
             this.btnPrikaziSve.Text = "Prikaži sve mečeve";
             this.btnPrikaziSve.UseVisualStyleBackColor = true;
+            this.btnPrikaziSve.Click += new System.EventHandler(this.btnPrikaziSve_Click);
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(688, 421);
+            this.btnPovratak.Location = new System.Drawing.Point(717, 421);
             this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(125, 25);
@@ -77,12 +79,13 @@
             // 
             // btnMojiMecevi
             // 
-            this.btnMojiMecevi.Location = new System.Drawing.Point(685, 124);
+            this.btnMojiMecevi.Location = new System.Drawing.Point(714, 124);
             this.btnMojiMecevi.Name = "btnMojiMecevi";
             this.btnMojiMecevi.Size = new System.Drawing.Size(130, 30);
             this.btnMojiMecevi.TabIndex = 12;
             this.btnMojiMecevi.Text = "Prikaži moje mečeve";
             this.btnMojiMecevi.UseVisualStyleBackColor = true;
+            this.btnMojiMecevi.Click += new System.EventHandler(this.btnMojiMecevi_Click);
             // 
             // txtPretrazivanje
             // 
@@ -90,7 +93,7 @@
             this.txtPretrazivanje.Location = new System.Drawing.Point(34, 380);
             this.txtPretrazivanje.Multiline = true;
             this.txtPretrazivanje.Name = "txtPretrazivanje";
-            this.txtPretrazivanje.Size = new System.Drawing.Size(255, 30);
+            this.txtPretrazivanje.Size = new System.Drawing.Size(265, 30);
             this.txtPretrazivanje.TabIndex = 11;
             this.txtPretrazivanje.TextChanged += new System.EventHandler(this.txtPretrazivanje_TextChanged);
             // 
@@ -102,28 +105,47 @@
             this.imePrviClanDataGridViewTextBoxColumn,
             this.imeDrugiClanDataGridViewTextBoxColumn,
             this.rezultatDataGridViewTextBoxColumn,
-            this.turnirDataGridViewTextBoxColumn,
+            this.RezultatiSetova,
+            this.imeTurniraDataGridViewTextBoxColumn,
             this.datumDataGridViewTextBoxColumn,
             this.vrijemeDataGridViewTextBoxColumn,
-            this.terenDataGridViewTextBoxColumn,
-            this.setsDataGridViewTextBoxColumn,
-            this.imeTurniraDataGridViewTextBoxColumn});
+            this.terenDataGridViewTextBoxColumn});
             this.dgvPopisMeceva.DataSource = this.mecBindingSource;
-            this.dgvPopisMeceva.Location = new System.Drawing.Point(37, 25);
+            this.dgvPopisMeceva.Location = new System.Drawing.Point(34, 25);
             this.dgvPopisMeceva.Name = "dgvPopisMeceva";
-            this.dgvPopisMeceva.Size = new System.Drawing.Size(642, 318);
+            this.dgvPopisMeceva.Size = new System.Drawing.Size(674, 318);
             this.dgvPopisMeceva.TabIndex = 10;
             // 
             // gboSluzbenost
             // 
-            this.gboSluzbenost.Controls.Add(this.radioButton1);
+            this.gboSluzbenost.Controls.Add(this.rbtnNesluzbeni);
             this.gboSluzbenost.Controls.Add(this.rbtnSluzbeni);
             this.gboSluzbenost.Controls.Add(this.rbtnSviMecevi);
-            this.gboSluzbenost.Location = new System.Drawing.Point(685, 25);
+            this.gboSluzbenost.Location = new System.Drawing.Point(714, 25);
             this.gboSluzbenost.Name = "gboSluzbenost";
             this.gboSluzbenost.Size = new System.Drawing.Size(128, 78);
             this.gboSluzbenost.TabIndex = 15;
             this.gboSluzbenost.TabStop = false;
+            // 
+            // rbtnNesluzbeni
+            // 
+            this.rbtnNesluzbeni.AutoSize = true;
+            this.rbtnNesluzbeni.Location = new System.Drawing.Point(8, 56);
+            this.rbtnNesluzbeni.Name = "rbtnNesluzbeni";
+            this.rbtnNesluzbeni.Size = new System.Drawing.Size(114, 17);
+            this.rbtnNesluzbeni.TabIndex = 2;
+            this.rbtnNesluzbeni.Text = "Neslužbeni mečevi";
+            this.rbtnNesluzbeni.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSluzbeni
+            // 
+            this.rbtnSluzbeni.AutoSize = true;
+            this.rbtnSluzbeni.Location = new System.Drawing.Point(7, 33);
+            this.rbtnSluzbeni.Name = "rbtnSluzbeni";
+            this.rbtnSluzbeni.Size = new System.Drawing.Size(102, 17);
+            this.rbtnSluzbeni.TabIndex = 1;
+            this.rbtnSluzbeni.Text = "Službeni mečevi";
+            this.rbtnSluzbeni.UseVisualStyleBackColor = true;
             // 
             // rbtnSviMecevi
             // 
@@ -137,45 +159,32 @@
             this.rbtnSviMecevi.Text = "Svi mečevi";
             this.rbtnSviMecevi.UseVisualStyleBackColor = true;
             // 
-            // rbtnSluzbeni
-            // 
-            this.rbtnSluzbeni.AutoSize = true;
-            this.rbtnSluzbeni.Location = new System.Drawing.Point(7, 33);
-            this.rbtnSluzbeni.Name = "rbtnSluzbeni";
-            this.rbtnSluzbeni.Size = new System.Drawing.Size(102, 17);
-            this.rbtnSluzbeni.TabIndex = 1;
-            this.rbtnSluzbeni.Text = "Službeni mečevi";
-            this.rbtnSluzbeni.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 56);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(114, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.Text = "Neslužbeni mečevi";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // lblPretrazivanje
             // 
             this.lblPretrazivanje.AutoSize = true;
+            this.lblPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPretrazivanje.Location = new System.Drawing.Point(34, 361);
             this.lblPretrazivanje.Name = "lblPretrazivanje";
-            this.lblPretrazivanje.Size = new System.Drawing.Size(212, 13);
+            this.lblPretrazivanje.Size = new System.Drawing.Size(265, 16);
             this.lblPretrazivanje.TabIndex = 16;
             this.lblPretrazivanje.Text = "Pretraživanje po imenu, prezimenu ili turniru:";
             // 
             // btnDodajMec
             // 
             this.btnDodajMec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodajMec.Location = new System.Drawing.Point(685, 277);
+            this.btnDodajMec.Location = new System.Drawing.Point(714, 277);
             this.btnDodajMec.Name = "btnDodajMec";
             this.btnDodajMec.Size = new System.Drawing.Size(128, 66);
             this.btnDodajMec.TabIndex = 17;
             this.btnDodajMec.Text = "Dodaj meč";
             this.btnDodajMec.UseVisualStyleBackColor = true;
             this.btnDodajMec.Click += new System.EventHandler(this.btnDodajMec_Click);
+            // 
+            // RezultatiSetova
+            // 
+            this.RezultatiSetova.DataPropertyName = "RezultatiSetova";
+            this.RezultatiSetova.HeaderText = "RezultatiSetova";
+            this.RezultatiSetova.Name = "RezultatiSetova";
             // 
             // imePrviClanDataGridViewTextBoxColumn
             // 
@@ -195,11 +204,11 @@
             this.rezultatDataGridViewTextBoxColumn.HeaderText = "Rezultat";
             this.rezultatDataGridViewTextBoxColumn.Name = "rezultatDataGridViewTextBoxColumn";
             // 
-            // turnirDataGridViewTextBoxColumn
+            // imeTurniraDataGridViewTextBoxColumn
             // 
-            this.turnirDataGridViewTextBoxColumn.DataPropertyName = "Turnir";
-            this.turnirDataGridViewTextBoxColumn.HeaderText = "Turnir";
-            this.turnirDataGridViewTextBoxColumn.Name = "turnirDataGridViewTextBoxColumn";
+            this.imeTurniraDataGridViewTextBoxColumn.DataPropertyName = "ImeTurnira";
+            this.imeTurniraDataGridViewTextBoxColumn.HeaderText = "ImeTurnira";
+            this.imeTurniraDataGridViewTextBoxColumn.Name = "imeTurniraDataGridViewTextBoxColumn";
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -219,21 +228,13 @@
             this.terenDataGridViewTextBoxColumn.HeaderText = "Teren";
             this.terenDataGridViewTextBoxColumn.Name = "terenDataGridViewTextBoxColumn";
             // 
-            // setsDataGridViewTextBoxColumn
-            // 
-            this.setsDataGridViewTextBoxColumn.DataPropertyName = "Sets";
-            this.setsDataGridViewTextBoxColumn.HeaderText = "Sets";
-            this.setsDataGridViewTextBoxColumn.Name = "setsDataGridViewTextBoxColumn";
-            // 
-            // imeTurniraDataGridViewTextBoxColumn
-            // 
-            this.imeTurniraDataGridViewTextBoxColumn.DataPropertyName = "ImeTurnira";
-            this.imeTurniraDataGridViewTextBoxColumn.HeaderText = "ImeTurnira";
-            this.imeTurniraDataGridViewTextBoxColumn.Name = "imeTurniraDataGridViewTextBoxColumn";
-            // 
             // mecBindingSource
             // 
             this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
+            // 
+            // mecBindingSource1
+            // 
+            this.mecBindingSource1.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
             // 
             // PopisMeceva
             // 
@@ -241,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(827, 456);
+            this.ClientSize = new System.Drawing.Size(854, 457);
             this.Controls.Add(this.btnDodajMec);
             this.Controls.Add(this.lblPretrazivanje);
             this.Controls.Add(this.gboSluzbenost);
@@ -258,6 +259,7 @@
             this.gboSluzbenost.ResumeLayout(false);
             this.gboSluzbenost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,20 +273,20 @@
         private System.Windows.Forms.TextBox txtPretrazivanje;
         private System.Windows.Forms.DataGridView dgvPopisMeceva;
         private System.Windows.Forms.GroupBox gboSluzbenost;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnNesluzbeni;
         private System.Windows.Forms.RadioButton rbtnSluzbeni;
         private System.Windows.Forms.RadioButton rbtnSviMecevi;
         private System.Windows.Forms.Label lblPretrazivanje;
         private System.Windows.Forms.Button btnDodajMec;
         private System.Windows.Forms.BindingSource mecBindingSource;
+        private System.Windows.Forms.BindingSource mecBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn imePrviClanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDrugiClanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rezultatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turnirDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RezultatiSetova;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeTurniraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrijemeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn terenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn setsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imeTurniraDataGridViewTextBoxColumn;
     }
 }
