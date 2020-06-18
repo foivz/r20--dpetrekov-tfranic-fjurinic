@@ -31,21 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.mecDataGridView = new System.Windows.Forms.DataGridView();
+            this.Igrac_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImeDrugiClan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VrstaTerena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBrisiMec = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTipTerena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.mecBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.terenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTurnir = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Igrac_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImeDrugiClan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VrstaTerena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mecBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.terenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mecDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.terenBindingSource)).BeginInit();
@@ -84,6 +86,31 @@
             this.mecDataGridView.ReadOnly = true;
             this.mecDataGridView.Size = new System.Drawing.Size(1856, 300);
             this.mecDataGridView.TabIndex = 9;
+            // 
+            // Igrac_1
+            // 
+            this.Igrac_1.DataPropertyName = "ImePrviClan";
+            this.Igrac_1.HeaderText = "Igrač 1";
+            this.Igrac_1.Name = "Igrac_1";
+            this.Igrac_1.ReadOnly = true;
+            this.Igrac_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Igrac_1.Width = 150;
+            // 
+            // ImeDrugiClan
+            // 
+            this.ImeDrugiClan.DataPropertyName = "ImeDrugiClan";
+            this.ImeDrugiClan.HeaderText = "Igrač 2";
+            this.ImeDrugiClan.Name = "ImeDrugiClan";
+            this.ImeDrugiClan.ReadOnly = true;
+            this.ImeDrugiClan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ImeDrugiClan.Width = 150;
+            // 
+            // VrstaTerena
+            // 
+            this.VrstaTerena.DataPropertyName = "VrstaTerena";
+            this.VrstaTerena.HeaderText = "Vrsta terena";
+            this.VrstaTerena.Name = "VrstaTerena";
+            this.VrstaTerena.ReadOnly = true;
             // 
             // btnBrisiMec
             // 
@@ -138,13 +165,26 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Tip terena:";
             // 
-            // mecBindingSource
+            // label3
             // 
-            this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 460);
+            this.label3.Margin = new System.Windows.Forms.Padding(15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 35);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Ime turnira: ";
             // 
-            // terenBindingSource
+            // txtTurnir
             // 
-            this.terenBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Teren);
+            this.txtTurnir.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTurnir.Location = new System.Drawing.Point(216, 463);
+            this.txtTurnir.Margin = new System.Windows.Forms.Padding(15);
+            this.txtTurnir.Name = "txtTurnir";
+            this.txtTurnir.Size = new System.Drawing.Size(358, 35);
+            this.txtTurnir.TabIndex = 15;
+            this.txtTurnir.TextChanged += new System.EventHandler(this.txtTurnir_TextChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -155,24 +195,6 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // Igrac_1
-            // 
-            this.Igrac_1.DataPropertyName = "ImePrviClan";
-            this.Igrac_1.HeaderText = "Igrač 1";
-            this.Igrac_1.Name = "Igrac_1";
-            this.Igrac_1.ReadOnly = true;
-            this.Igrac_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Igrac_1.Width = 150;
-            // 
-            // ImeDrugiClan
-            // 
-            this.ImeDrugiClan.DataPropertyName = "ImeDrugiClan";
-            this.ImeDrugiClan.HeaderText = "Igrač 2";
-            this.ImeDrugiClan.Name = "ImeDrugiClan";
-            this.ImeDrugiClan.ReadOnly = true;
-            this.ImeDrugiClan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ImeDrugiClan.Width = 150;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -188,13 +210,6 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
-            // VrstaTerena
-            // 
-            this.VrstaTerena.DataPropertyName = "VrstaTerena";
-            this.VrstaTerena.HeaderText = "Vrsta terena";
-            this.VrstaTerena.Name = "VrstaTerena";
-            this.VrstaTerena.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Datum";
@@ -209,6 +224,14 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
+            // mecBindingSource
+            // 
+            this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
+            // 
+            // terenBindingSource
+            // 
+            this.terenBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Teren);
+            // 
             // Brisanje_mečeva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +240,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 861);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTurnir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTipTerena);
             this.Controls.Add(this.label1);
@@ -255,5 +280,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VrstaTerena;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTurnir;
     }
 }

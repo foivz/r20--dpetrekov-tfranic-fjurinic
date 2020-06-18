@@ -225,6 +225,7 @@
     <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Clan.datasource" />
     <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Mec.datasource" />
     <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Teren.datasource" />
+    <None Include="Properties\DataSources\Tennis_Track.Baza_podataka.Turnir.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
