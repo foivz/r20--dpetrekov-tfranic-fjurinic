@@ -64,31 +64,30 @@ namespace Tennis_Track.Forme
         }
 
         private void OsvjeziMeceve()
-        {
-            if (txtFilter.Text.ToString() == "" && txtTipTerena.Text.ToString() == "")
+        { 
+            List<Mec> mecevi = new List<Mec>();
+            mecevi = tennisTrackEntities.Mec.Local.ToList();
+            if (txtFilter.Text.ToString() != "")
             {
-                mecBindingSource.DataSource = tennisTrackEntities.Mec.Local;
-            }
-            else if (txtTipTerena.Text.ToString() == "" && txtFilter.Text.ToString() != "")
-            {
-                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
-                                              where mec.ImePrviClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()) || mec.ImeDrugiClan.ToLower().Contains(txtFilter.Text.ToString().ToLower())
-                                              select mec;
-            }
-            else if (txtTipTerena.Text.ToString() != "" && txtFilter.Text.ToString() == "")
-            {
-                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
-                                              where mec.VrstaTerena.ToLower().Contains(txtTipTerena.Text.ToString().ToLower())
-                                              select mec;
-            }
-            else
-            {
-                mecBindingSource.DataSource = from mec in tennisTrackEntities.Mec.Local
-                                              where mec.VrstaTerena.ToLower().Contains(txtTipTerena.Text.ToString().ToLower()) && (mec.ImePrviClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()) || mec.ImeDrugiClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()))
-                                              select mec;
+                mecevi = (from mec in mecevi
+                         where mec.ImePrviClan.ToLower().Contains(txtFilter.Text.ToString().ToLower()) || mec.ImeDrugiClan.ToLower().Contains(txtFilter.Text.ToString().ToLower())
+                         select mec).ToList();
             }
 
+            if (txtTipTerena.Text.ToString() != "")
+            {
+                mecevi = (from mec in mecevi
+                          where mec.VrstaTerena.ToLower().Contains(txtTipTerena.Text.ToString().ToLower())
+                          select mec).ToList();
+            }
 
+            if (txtTurnir.Text.ToString() != "")
+            {
+                mecevi = (from mec in mecevi
+                          where mec.ImeTurnira.ToString().ToLower().Contains(txtTurnir.Text.ToString())
+                          select mec).ToList();
+            }
+            mecBindingSource.DataSource = mecevi;
             int ukupnaSirinaStupaca = 0;
             for (int i = 0; i < mecDataGridView.Columns.Count; i++)
             {
@@ -116,6 +115,11 @@ namespace Tennis_Track.Forme
         }
 
         private void txtTipTerena_TextChanged(object sender, EventArgs e)
+        {
+            OsvjeziMeceve();
+        }
+
+        private void txtTurnir_TextChanged(object sender, EventArgs e)
         {
             OsvjeziMeceve();
         }
