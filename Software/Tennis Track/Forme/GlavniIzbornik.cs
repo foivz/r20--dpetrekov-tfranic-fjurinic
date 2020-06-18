@@ -71,9 +71,9 @@ namespace Tennis_Track.Forme
 
         private void bntMecevi_Click(object sender, EventArgs e)
         {
-            Mecevi mecevi = new Mecevi(this);
+            PopisMeceva popisMeceva = new PopisMeceva(this);
             this.Hide();
-            mecevi.ShowDialog();
+            popisMeceva.ShowDialog();
         }
 
         private void lblImePrezimeKorisnika_Click(object sender, EventArgs e)

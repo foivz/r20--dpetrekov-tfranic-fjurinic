@@ -16,7 +16,7 @@ namespace Tennis_Track.Forme
     public partial class Mecevi : Form
     {
         TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
-        private GlavniIzbornik glavniIzbornik;
+        private PopisMeceva popisMeceva;
         public Clan odabraniSuigrac = new Clan();
         public Teren teren = new Teren();
         private Turnir turnir = new Turnir();
@@ -33,9 +33,9 @@ namespace Tennis_Track.Forme
             InitializeComponent();
         }
 
-        public Mecevi(GlavniIzbornik glavniIzbornik)
+        public Mecevi(PopisMeceva popisMeceva)
         {
-            this.glavniIzbornik = glavniIzbornik;
+            this.popisMeceva = popisMeceva;
             InitializeComponent();
         }
 
@@ -52,10 +52,9 @@ namespace Tennis_Track.Forme
             cmbTeren.DataSource = tereni.ToList();
             cmbTermini.DataSource = PopuniTermine();
 
-            //var sviTurniri = (from c in tennisTrackEntities.Clan where PrijavaClana.PrijavljeniCLan.KorisnickoIme == c.KorisnickoIme select c.Turnirs);
-            var turniri = (from m in tennisTrackEntities.Turnir select m.Naziv).Distinct();
-            
-            cmbTurnir.DataSource = turniri.ToList();
+            var turniriKorisnika = (from turnir in tennisTrackEntities.Turnir from clan in turnir.Clans
+                           where clan.ID==PrijavaClana.PrijavljeniCLan.ID select turnir.Naziv).Distinct();
+            cmbTurnir.DataSource = turniriKorisnika.ToList();
 
             gboBrojDobivenih.BackColor = System.Drawing.Color.Transparent;
             gboSluzbenostMeca.BackColor = System.Drawing.Color.Transparent;
@@ -91,7 +90,7 @@ namespace Tennis_Track.Forme
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            glavniIzbornik.Show();
+            popisMeceva.Show();
             this.Close();
         }
 

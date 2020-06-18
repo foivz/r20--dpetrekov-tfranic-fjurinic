@@ -42,5 +42,98 @@ namespace Tennis_Track.Baza_podataka
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Turnir> Turnirs { get; set; }
 
+
+        private int ukupnoPobjeda;
+        public int UkupnoPobjeda
+        {
+            get { return VratiBrojPobjeda(); }
+            set { ukupnoPobjeda = value; }
+        }
+
+        private int sluzbenePobjede;
+        public int SluzbenePobjede
+        {
+            get { return VratiBrojSluzbenihPobjeda(); }
+            set { sluzbenePobjede = value; }
+        }
+
+        private int brojBodova;
+        public int BrojBodova
+        {
+            get { return VratiBrojSluzbenihPobjeda()*10; }
+            set { brojBodova = value; }
+        }
+
+        private int VratiBrojSluzbenihPobjeda()
+        {
+            int brPobjeda = 0;
+            int setoviIgrac1, setoviIgrac2;
+            foreach (Mec mec in Mecs)
+            {
+                if(mec.Turnir_Id!=null)
+                {
+                    setoviIgrac1 = 0;
+                    setoviIgrac2 = 0;
+                    foreach (Set set in mec.Sets)
+                    {
+                        if (set.Rezultat_prvi_clan > set.Rezultat_drugi_clan)
+                            setoviIgrac1++;
+                        else setoviIgrac2++;
+                    }
+                    if ((setoviIgrac1 > setoviIgrac2))
+                        brPobjeda++;
+                }
+            }
+            foreach (Mec mec in Mecs1)
+            {
+                if (mec.Turnir_Id != null)
+                {
+                    setoviIgrac1 = 0;
+                    setoviIgrac2 = 0;
+                    foreach (Set set in mec.Sets)
+                    {
+                        if (set.Rezultat_prvi_clan > set.Rezultat_drugi_clan)
+                            setoviIgrac1++;
+                        else setoviIgrac2++;
+                    }
+                    if ((setoviIgrac1 < setoviIgrac2))
+                        brPobjeda++;
+                }
+            }
+            return brPobjeda;
+        }
+
+        private int VratiBrojPobjeda()
+        {
+            int brPobjeda = 0;
+            int setoviIgrac1, setoviIgrac2;
+            foreach (Mec mec in Mecs)
+            {
+                setoviIgrac1 = 0;
+                setoviIgrac2 = 0;
+                foreach (Set set in mec.Sets)
+                {
+                    if (set.Rezultat_prvi_clan > set.Rezultat_drugi_clan)
+                          setoviIgrac1++;
+                    else setoviIgrac2++;
+                }
+                if ((setoviIgrac1 > setoviIgrac2))
+                    brPobjeda++;
+            }
+            foreach (Mec mec in Mecs1)
+            {
+                setoviIgrac1 = 0;
+                setoviIgrac2 = 0;
+                foreach (Set set in mec.Sets)
+                {
+                    if (set.Rezultat_prvi_clan > set.Rezultat_drugi_clan)
+                        setoviIgrac1++;
+                    else setoviIgrac2++;
+                }
+                if ((setoviIgrac1 < setoviIgrac2))
+                    brPobjeda++;
+            }
+            return brPobjeda;
+        }
     }
 }

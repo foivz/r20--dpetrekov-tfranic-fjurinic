@@ -94,5 +94,26 @@ namespace Tennis_Track.Baza_podataka
 
             return rezultatPrviClan.ToString() + " : " + rezultatDrugiClan.ToString();
         }
+        private string rezultatiSetova;
+        public string RezultatiSetova
+        {
+            get { return VratiRezultateSetova(); }
+            set { rezultatiSetova = value; }
+        }
+
+        private string VratiRezultateSetova()
+        {
+            string rezultat = "";
+            int brSetova = Sets.Count-1;
+            int brojac = 0;
+            foreach (Set set in Sets)
+            {
+                rezultat = rezultat + set.Rezultat_prvi_clan + " : " + set.Rezultat_drugi_clan;
+                if (brojac < brSetova)
+                    rezultat = rezultat + ",  ";
+                brojac++;
+            }
+            return rezultat;
+        }
     }
 }
