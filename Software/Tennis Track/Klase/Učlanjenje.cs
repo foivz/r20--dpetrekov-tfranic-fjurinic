@@ -63,7 +63,7 @@ namespace Tennis_Track.Klase
                 mailServer.Credentials = new System.Net.NetworkCredential("tennistrack2020@gmail.com", "PIProjekt2020");
 
                 string from = "tennistrack@gmail.com";
-                string to = "domagoj.ppp@gmail.com";
+                string to = clan.Email;
                 MailMessage msg = new MailMessage(from, to);
                 msg.Subject = "Korisnički podatci";
                 msg.IsBodyHtml = true;
