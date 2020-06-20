@@ -220,7 +220,7 @@ namespace Tennis_Track.Forme
             foreach (var item in mec.Sets)
             {
                 if (((item.Rezultat_prvi_clan == 6 && item.Rezultat_drugi_clan < 5) || (item.Rezultat_prvi_clan == 7 && (item.Rezultat_drugi_clan == 6 || item.Rezultat_drugi_clan == 5))
-                    || (item.Rezultat_drugi_clan == 6 && item.Rezultat_prvi_clan < 5) || (item.Rezultat_drugi_clan == 7 && (item.Rezultat_prvi_clan == 6 || item.Rezultat_drugi_clan ==5))) == false)
+                    || (item.Rezultat_drugi_clan == 6 && item.Rezultat_prvi_clan < 5) || (item.Rezultat_drugi_clan == 7 && (item.Rezultat_prvi_clan == 6 || item.Rezultat_prvi_clan ==5))) == false)
                     return false;
             }
             return true;
