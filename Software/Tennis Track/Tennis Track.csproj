@@ -163,6 +163,7 @@
     <Compile Include="Forme\StatistikaKorisnika.Designer.cs">
       <DependentUpon>StatistikaKorisnika.cs</DependentUpon>
     </Compile>
+    <Compile Include="Iznimke\ParseException.cs" />
     <Compile Include="Klase\Učlanjenje.cs" />
     <Compile Include="Klase\EnkripcijaLozinke.cs" />
     <Compile Include="Klase\PrijavaClana.cs" />

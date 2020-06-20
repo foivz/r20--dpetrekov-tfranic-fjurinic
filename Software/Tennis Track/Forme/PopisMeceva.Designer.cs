@@ -34,25 +34,25 @@
             this.btnMojiMecevi = new System.Windows.Forms.Button();
             this.txtPretrazivanje = new System.Windows.Forms.TextBox();
             this.dgvPopisMeceva = new System.Windows.Forms.DataGridView();
+            this.imePrviClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDrugiClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rezultatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RezultatiSetova = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeTurniraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mecBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gboSluzbenost = new System.Windows.Forms.GroupBox();
             this.rbtnNesluzbeni = new System.Windows.Forms.RadioButton();
             this.rbtnSluzbeni = new System.Windows.Forms.RadioButton();
             this.rbtnSviMecevi = new System.Windows.Forms.RadioButton();
             this.lblPretrazivanje = new System.Windows.Forms.Label();
             this.btnDodajMec = new System.Windows.Forms.Button();
-            this.RezultatiSetova = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imePrviClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeDrugiClanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rezultatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeTurniraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.terenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mecBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mecBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisMeceva)).BeginInit();
-            this.gboSluzbenost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).BeginInit();
+            this.gboSluzbenost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             this.txtPretrazivanje.Location = new System.Drawing.Point(34, 380);
             this.txtPretrazivanje.Multiline = true;
             this.txtPretrazivanje.Name = "txtPretrazivanje";
-            this.txtPretrazivanje.Size = new System.Drawing.Size(265, 30);
+            this.txtPretrazivanje.Size = new System.Drawing.Size(311, 30);
             this.txtPretrazivanje.TabIndex = 11;
             this.txtPretrazivanje.TextChanged += new System.EventHandler(this.txtPretrazivanje_TextChanged);
             // 
@@ -115,6 +115,58 @@
             this.dgvPopisMeceva.Name = "dgvPopisMeceva";
             this.dgvPopisMeceva.Size = new System.Drawing.Size(674, 318);
             this.dgvPopisMeceva.TabIndex = 10;
+            // 
+            // imePrviClanDataGridViewTextBoxColumn
+            // 
+            this.imePrviClanDataGridViewTextBoxColumn.DataPropertyName = "ImePrviClan";
+            this.imePrviClanDataGridViewTextBoxColumn.HeaderText = "ImePrviClan";
+            this.imePrviClanDataGridViewTextBoxColumn.Name = "imePrviClanDataGridViewTextBoxColumn";
+            // 
+            // imeDrugiClanDataGridViewTextBoxColumn
+            // 
+            this.imeDrugiClanDataGridViewTextBoxColumn.DataPropertyName = "ImeDrugiClan";
+            this.imeDrugiClanDataGridViewTextBoxColumn.HeaderText = "ImeDrugiClan";
+            this.imeDrugiClanDataGridViewTextBoxColumn.Name = "imeDrugiClanDataGridViewTextBoxColumn";
+            // 
+            // rezultatDataGridViewTextBoxColumn
+            // 
+            this.rezultatDataGridViewTextBoxColumn.DataPropertyName = "Rezultat";
+            this.rezultatDataGridViewTextBoxColumn.HeaderText = "Rezultat";
+            this.rezultatDataGridViewTextBoxColumn.Name = "rezultatDataGridViewTextBoxColumn";
+            // 
+            // RezultatiSetova
+            // 
+            this.RezultatiSetova.DataPropertyName = "RezultatiSetova";
+            this.RezultatiSetova.HeaderText = "RezultatiSetova";
+            this.RezultatiSetova.Name = "RezultatiSetova";
+            // 
+            // imeTurniraDataGridViewTextBoxColumn
+            // 
+            this.imeTurniraDataGridViewTextBoxColumn.DataPropertyName = "ImeTurnira";
+            this.imeTurniraDataGridViewTextBoxColumn.HeaderText = "ImeTurnira";
+            this.imeTurniraDataGridViewTextBoxColumn.Name = "imeTurniraDataGridViewTextBoxColumn";
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            // 
+            // vrijemeDataGridViewTextBoxColumn
+            // 
+            this.vrijemeDataGridViewTextBoxColumn.DataPropertyName = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
+            // 
+            // terenDataGridViewTextBoxColumn
+            // 
+            this.terenDataGridViewTextBoxColumn.DataPropertyName = "Teren";
+            this.terenDataGridViewTextBoxColumn.HeaderText = "Teren";
+            this.terenDataGridViewTextBoxColumn.Name = "terenDataGridViewTextBoxColumn";
+            // 
+            // mecBindingSource
+            // 
+            this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
             // 
             // gboSluzbenost
             // 
@@ -162,10 +214,10 @@
             // lblPretrazivanje
             // 
             this.lblPretrazivanje.AutoSize = true;
-            this.lblPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPretrazivanje.Location = new System.Drawing.Point(34, 361);
             this.lblPretrazivanje.Name = "lblPretrazivanje";
-            this.lblPretrazivanje.Size = new System.Drawing.Size(265, 16);
+            this.lblPretrazivanje.Size = new System.Drawing.Size(311, 16);
             this.lblPretrazivanje.TabIndex = 16;
             this.lblPretrazivanje.Text = "Pretraživanje po imenu, prezimenu ili turniru:";
             // 
@@ -179,58 +231,6 @@
             this.btnDodajMec.Text = "Dodaj meč";
             this.btnDodajMec.UseVisualStyleBackColor = true;
             this.btnDodajMec.Click += new System.EventHandler(this.btnDodajMec_Click);
-            // 
-            // RezultatiSetova
-            // 
-            this.RezultatiSetova.DataPropertyName = "RezultatiSetova";
-            this.RezultatiSetova.HeaderText = "RezultatiSetova";
-            this.RezultatiSetova.Name = "RezultatiSetova";
-            // 
-            // imePrviClanDataGridViewTextBoxColumn
-            // 
-            this.imePrviClanDataGridViewTextBoxColumn.DataPropertyName = "ImePrviClan";
-            this.imePrviClanDataGridViewTextBoxColumn.HeaderText = "ImePrviClan";
-            this.imePrviClanDataGridViewTextBoxColumn.Name = "imePrviClanDataGridViewTextBoxColumn";
-            // 
-            // imeDrugiClanDataGridViewTextBoxColumn
-            // 
-            this.imeDrugiClanDataGridViewTextBoxColumn.DataPropertyName = "ImeDrugiClan";
-            this.imeDrugiClanDataGridViewTextBoxColumn.HeaderText = "ImeDrugiClan";
-            this.imeDrugiClanDataGridViewTextBoxColumn.Name = "imeDrugiClanDataGridViewTextBoxColumn";
-            // 
-            // rezultatDataGridViewTextBoxColumn
-            // 
-            this.rezultatDataGridViewTextBoxColumn.DataPropertyName = "Rezultat";
-            this.rezultatDataGridViewTextBoxColumn.HeaderText = "Rezultat";
-            this.rezultatDataGridViewTextBoxColumn.Name = "rezultatDataGridViewTextBoxColumn";
-            // 
-            // imeTurniraDataGridViewTextBoxColumn
-            // 
-            this.imeTurniraDataGridViewTextBoxColumn.DataPropertyName = "ImeTurnira";
-            this.imeTurniraDataGridViewTextBoxColumn.HeaderText = "ImeTurnira";
-            this.imeTurniraDataGridViewTextBoxColumn.Name = "imeTurniraDataGridViewTextBoxColumn";
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            // 
-            // vrijemeDataGridViewTextBoxColumn
-            // 
-            this.vrijemeDataGridViewTextBoxColumn.DataPropertyName = "Vrijeme";
-            this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
-            this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
-            // 
-            // terenDataGridViewTextBoxColumn
-            // 
-            this.terenDataGridViewTextBoxColumn.DataPropertyName = "Teren";
-            this.terenDataGridViewTextBoxColumn.HeaderText = "Teren";
-            this.terenDataGridViewTextBoxColumn.Name = "terenDataGridViewTextBoxColumn";
-            // 
-            // mecBindingSource
-            // 
-            this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
             // 
             // mecBindingSource1
             // 
@@ -256,9 +256,9 @@
             this.Text = "PopisMeceva";
             this.Load += new System.EventHandler(this.PopisMeceva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisMeceva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();
             this.gboSluzbenost.ResumeLayout(false);
             this.gboSluzbenost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

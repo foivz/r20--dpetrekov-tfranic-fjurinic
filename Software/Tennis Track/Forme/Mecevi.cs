@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tennis_Track.Baza_podataka;
 using Tennis_Track.Klase;
+using Tennis_Track.Iznimke;
 
 namespace Tennis_Track.Forme
 {
@@ -26,6 +27,8 @@ namespace Tennis_Track.Forme
         private Set set4 = new Set();
         private Set set5 = new Set();
         bool cetvrtiSetPotreban = true;
+        bool odabirSuigraca = false;
+        bool unosZadovoljava = false;
 
 
         public Mecevi()
@@ -46,8 +49,7 @@ namespace Tennis_Track.Forme
                                            c.KorisnickoIme!=PrijavaClana.PrijavljeniCLan.KorisnickoIme select c;
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
             txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
-            var mecevi = from m in tennisTrackEntities.Mec select m;
-            dgvMecevi.DataSource = mecevi.ToList();
+            
             var tereni = (from m in tennisTrackEntities.Teren select m.Vrsta).Distinct();
             cmbTeren.DataSource = tereni.ToList();
             cmbTermini.DataSource = PopuniTermine();
@@ -58,12 +60,21 @@ namespace Tennis_Track.Forme
 
             gboBrojDobivenih.BackColor = System.Drawing.Color.Transparent;
             gboSluzbenostMeca.BackColor = System.Drawing.Color.Transparent;
+            lblPopis.BackColor = System.Drawing.Color.Transparent;
+            lblIgrac1.BackColor = System.Drawing.Color.Transparent;
+            lblIgrac2.BackColor = System.Drawing.Color.Transparent;
+            lblPretraga.BackColor = System.Drawing.Color.Transparent;
+            lblDatum.BackColor = System.Drawing.Color.Transparent;
+            lblVrijeme.BackColor = System.Drawing.Color.Transparent;
+            lblTeren.BackColor = System.Drawing.Color.Transparent;
 
             txtSuigrac.Enabled = false;
             txtIgrac.Enabled = false;
             for (int i = 0; i < clanDataGridView.Columns.Count; i++)
             {
                 clanDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                clanDataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                clanDataGridView.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             clanDataGridView.AllowUserToAddRows = false;
             clanDataGridView.RowHeadersVisible = false;
@@ -126,40 +137,93 @@ namespace Tennis_Track.Forme
             mec.Sets.Add(set2);
             if (rbtn2Dobivena.Checked && ProvjeriRezultatMecaNaDvaDobivena())
             {
-                if(txtIgracSet3.Text!="" && txtSuigracSet3.Text != "")
+                if(ProvjeriGemove(txtIgracSet3.Text, txtSuigracSet3.Text))
                 {
                     set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
                     set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
                     mec.Sets.Add(set3);
                 }
-                
+                else MessageBox.Show("Rezultati trećeg seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
+
             }
             else if (rbtn3Dobivena.Checked)
             {
-                set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
-                set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
-                mec.Sets.Add(set3);
+                if(ProvjeriGemove(txtIgracSet3.Text, txtSuigracSet3.Text))
+                {
+                    set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
+                    set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
+                    mec.Sets.Add(set3);
+                }
+                else MessageBox.Show("Rezultati trećeg seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
 
                 if (ProvjeriPotrebuZaCetvrtimSetom())
                 {
-                    set4.Rezultat_prvi_clan = int.Parse(txtIgracSet4.Text);
-                    set4.Rezultat_drugi_clan = int.Parse(txtSuigracSet4.Text);
-                    mec.Sets.Add(set4);
+                    if(ProvjeriGemove(txtIgracSet4.Text, txtSuigracSet4.Text))
+                    {
+                        set4.Rezultat_prvi_clan = int.Parse(txtIgracSet4.Text);
+                        set4.Rezultat_drugi_clan = int.Parse(txtSuigracSet4.Text);
+                        mec.Sets.Add(set4);
+                    }
+                    else MessageBox.Show("Rezultati četvrtog seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
 
                     if (ProvjeriPotrebuZaPetimSetom())
                     {
-                        set5.Rezultat_prvi_clan = int.Parse(txtIgracSet5.Text);
-                        set5.Rezultat_drugi_clan = int.Parse(txtSuigracSet5.Text);
-                        mec.Sets.Add(set5);
+                        if(ProvjeriGemove(txtIgracSet5.Text, txtSuigracSet5.Text))
+                        {
+                            set5.Rezultat_prvi_clan = int.Parse(txtIgracSet5.Text);
+                            set5.Rezultat_drugi_clan = int.Parse(txtSuigracSet5.Text);
+                            mec.Sets.Add(set5);
+                        }
+                        else MessageBox.Show("Rezultati petog seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
                     }
                 }
             }
             
-            tennisTrackEntities.Mec.Add(mec);
-            tennisTrackEntities.SaveChanges();
-            MessageBox.Show("Meč je dodan!");
-            dgvMecevi.DataSource = tennisTrackEntities.Mec.Local;
+            if (odabirSuigraca)
+            {
+                if (unosZadovoljava)
+                {
+                    if (ProvjeraValjanostiRezultataMeca(mec))
+                    {
+                        if (ProvjeravaIzjednacenRezultat(mec))
+                        {
+                            tennisTrackEntities.Mec.Add(mec);
+                            tennisTrackEntities.SaveChanges();
+                            MessageBox.Show("Meč je dodan!", "Obavijest");
+                        }
+                        else MessageBox.Show("Rezultat završenog meča ne može biti izjednačen","Upozorenje");
+                    }
+                    else MessageBox.Show("Uneseni rezultati nisu valjani!", "Upozorenje!");
+                }
+                else MessageBox.Show("Rezultati svih setova moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
+            }
+            else MessageBox.Show("Suigrač nije odabran!", "Upozorenje!");
 
+        }
+
+        private bool ProvjeravaIzjednacenRezultat(Mec mec)
+        {
+            int setoviIgraca1=0, setoviIgraca2 = 0;
+            foreach (var item in mec.Sets)
+            {
+                if (item.Rezultat_prvi_clan > item.Rezultat_drugi_clan)
+                    setoviIgraca1++;
+                else setoviIgraca2++;
+            }
+            if (setoviIgraca1 != setoviIgraca2)
+                return true;
+            else return false;
+        }
+
+        private bool ProvjeraValjanostiRezultataMeca(Mec mec)
+        {
+            foreach (var item in mec.Sets)
+            {
+                if (((item.Rezultat_prvi_clan == 6 && item.Rezultat_drugi_clan < 5) || (item.Rezultat_prvi_clan == 7 && (item.Rezultat_drugi_clan == 6 || item.Rezultat_drugi_clan == 5))
+                    || (item.Rezultat_drugi_clan == 6 && item.Rezultat_prvi_clan < 5) || (item.Rezultat_drugi_clan == 7 && (item.Rezultat_prvi_clan == 6 || item.Rezultat_drugi_clan ==5))) == false)
+                    return false;
+            }
+            return true;
         }
 
         private Turnir OdaberiTurnir()
@@ -182,11 +246,43 @@ namespace Tennis_Track.Forme
 
         private void PopuniSetove()
         {
-            set1.Rezultat_prvi_clan = int.Parse(txtIgracSet1.Text);
-            set1.Rezultat_drugi_clan = int.Parse(txtSuigracSet1.Text);
+            if (ProvjeriGemove(txtIgracSet1.Text, txtSuigracSet1.Text))
+            {
+                set1.Rezultat_prvi_clan = int.Parse(txtIgracSet1.Text);
+                set1.Rezultat_drugi_clan = int.Parse(txtSuigracSet1.Text);
 
-            set2.Rezultat_prvi_clan = int.Parse(txtIgracSet2.Text);
-            set2.Rezultat_drugi_clan = int.Parse(txtSuigracSet2.Text);
+                if (ProvjeriGemove(txtIgracSet2.Text, txtSuigracSet2.Text))
+                {
+                    set2.Rezultat_prvi_clan = int.Parse(txtIgracSet2.Text);
+                    set2.Rezultat_drugi_clan = int.Parse(txtSuigracSet2.Text);
+                }
+                else MessageBox.Show("Rezultati drugog seta moraju biti nenegativni cijeli brojevi!","Upozorenje!");
+            }
+            else MessageBox.Show("Rezultati prvog seta moraju biti nenegativni cijeli brojevi!","Upozorenje!");
+
+
+        }
+        private bool ProvjeriGemove(string set1, string set2)
+        {
+            if (uint.TryParse(set1, out uint broj))
+            {
+                if (uint.TryParse(set2, out uint broj2))
+                {
+                    unosZadovoljava = true;
+                    return true;
+                }
+                else
+                {
+                    unosZadovoljava = false;
+                    return false;
+                }
+                
+            }
+            else
+            {
+                unosZadovoljava = false;
+                return false;
+            }
         }
 
 
@@ -243,7 +339,6 @@ namespace Tennis_Track.Forme
                 return true;
             }
             else return false;
-                
         }
 
         private bool ProvjeriRezultatMecaNaDvaDobivena()
@@ -262,51 +357,6 @@ namespace Tennis_Track.Forme
             if (dobiveniSetoviIgraca != 2 && dobiveniSetoviSuigraca != 2)
                 return true;
             else return false;
-        }
-
-        private void txtIgracSet2_TextChanged(object sender, EventArgs e)
-        {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
-        }
-        private void txtSuigracSet2_TextChanged(object sender, EventArgs e)
-        {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
-        }
-        private void txtIgracSet1_TextChanged(object sender, EventArgs e)
-        {
-            if(rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
-        }
-        private void txtSuigracSet1_TextChanged(object sender, EventArgs e)
-        {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if(cetvrtiSetPotreban==true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
         }
 
         public void ProvjeriPotrebuZaUnosomTrecegSeta()
@@ -337,7 +387,6 @@ namespace Tennis_Track.Forme
                 lblSet3.Enabled = true;
             }
         }
-
         public void ProvjeriPotrebuZaUnosomCetvrtogSeta()
         {
             
@@ -345,8 +394,14 @@ namespace Tennis_Track.Forme
                 txtSuigracSet2.Text != "" && txtIgracSet3.Text != "" && txtSuigracSet3.Text != "")
             {
                 PopuniSetove();
-                set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
-                set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
+                if(ProvjeriGemove(txtIgracSet3.Text, txtSuigracSet3.Text))
+                {
+                    set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
+                    set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
+                }
+                else MessageBox.Show("Rezultati trećeg seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
+
+
                 if (ProvjeriPotrebuZaCetvrtimSetom() == false)
                 {
                     txtIgracSet4.Text = "";
@@ -385,7 +440,6 @@ namespace Tennis_Track.Forme
                 lblSet5.Enabled = true;
             }
         }
-
         public void ProvjeriPotrebuZaUnosomPetogSeta()
         {
             if (txtIgracSet1.Text != "" && txtIgracSet2.Text != "" && txtSuigracSet1.Text != "" &&
@@ -393,13 +447,21 @@ namespace Tennis_Track.Forme
                )
             {
                 PopuniSetove();
-                set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
-                set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
-
-                if(txtIgracSet4.Text!="" && txtSuigracSet4.Text != "")
+                if(ProvjeriGemove(txtIgracSet3.Text, txtSuigracSet3.Text))
                 {
-                    set4.Rezultat_prvi_clan = int.Parse(txtIgracSet4.Text);
-                    set4.Rezultat_drugi_clan = int.Parse(txtSuigracSet4.Text);
+                    set3.Rezultat_prvi_clan = int.Parse(txtIgracSet3.Text);
+                    set3.Rezultat_drugi_clan = int.Parse(txtSuigracSet3.Text);
+                }
+                else MessageBox.Show("Rezultati trećeg seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
+
+                if (txtIgracSet4.Text!="" && txtSuigracSet4.Text != "")
+                {
+                    if (ProvjeriGemove(txtIgracSet4.Text, txtSuigracSet4.Text))
+                    {
+                        set4.Rezultat_prvi_clan = int.Parse(txtIgracSet4.Text);
+                        set4.Rezultat_drugi_clan = int.Parse(txtSuigracSet4.Text);
+                    }
+                    else MessageBox.Show("Rezultati četvrtog seta moraju biti nenegativni cijeli brojevi!", "Upozorenje!");
                 }
                 
                 if (ProvjeriPotrebuZaPetimSetom() == false)
@@ -460,44 +522,43 @@ namespace Tennis_Track.Forme
                 txtSuigracSet5.Visible = false;
             }
         }
-
+        private void txtIgracSet2_TextChanged(object sender, EventArgs e)
+        {
+            PromjenaUnosaRezultataSetova();
+        }
+        private void txtSuigracSet2_TextChanged(object sender, EventArgs e)
+        {
+            PromjenaUnosaRezultataSetova();
+        }
+        private void txtIgracSet1_TextChanged(object sender, EventArgs e)
+        {
+            PromjenaUnosaRezultataSetova();
+        }
+        private void txtSuigracSet1_TextChanged(object sender, EventArgs e)
+        {
+            PromjenaUnosaRezultataSetova();
+        }
         private void txtIgracSet3_TextChanged(object sender, EventArgs e)
         {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
+            PromjenaUnosaRezultataSetova();
         }
 
         private void txtSuigracSet3_TextChanged(object sender, EventArgs e)
         {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
+            PromjenaUnosaRezultataSetova();
         }
 
         private void txtIgracSet4_TextChanged(object sender, EventArgs e)
         {
-            if (rbtn2Dobivena.Checked)
-                ProvjeriPotrebuZaUnosomTrecegSeta();
-            else
-            {
-                ProvjeriPotrebuZaUnosomCetvrtogSeta();
-                if (cetvrtiSetPotreban == true)
-                    ProvjeriPotrebuZaUnosomPetogSeta();
-            }
+            PromjenaUnosaRezultataSetova();
         }
 
         private void txtSuigracSet4_TextChanged(object sender, EventArgs e)
+        {
+            PromjenaUnosaRezultataSetova();
+        }
+
+        private void PromjenaUnosaRezultataSetova()
         {
             if (rbtn2Dobivena.Checked)
                 ProvjeriPotrebuZaUnosomTrecegSeta();
@@ -511,6 +572,7 @@ namespace Tennis_Track.Forme
 
         private void clanDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            odabirSuigraca = true;
             odabraniSuigrac = clanBindingSource.Current as Clan;
             txtSuigrac.Text = odabraniSuigrac.Ime + " " + odabraniSuigrac.Prezime;
         }
