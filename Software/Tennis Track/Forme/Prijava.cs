@@ -50,8 +50,7 @@ namespace Tennis_Track
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            TxtUsername.Text = "dpetrekovic";
-            TxtPassword.Text = "123";
+
         }
     }
 }
