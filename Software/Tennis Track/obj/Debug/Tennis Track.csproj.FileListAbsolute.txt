@@ -48,3 +48,4 @@ C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis 
 C:\Users\Tin\source\repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
+C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources

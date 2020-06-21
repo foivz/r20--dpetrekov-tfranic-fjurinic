@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,7 @@ namespace Tennis_Track.Forme
             {
                 btnAdminPanel.Visible = false;
             }
+
         }
 
         private void btnDodajClana_Click(object sender, EventArgs e)
@@ -74,6 +76,16 @@ namespace Tennis_Track.Forme
             PopisMeceva popisMeceva = new PopisMeceva(this);
             this.Hide();
             popisMeceva.ShowDialog();
+        }
+
+        private void GlavniIzbornik_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Help help = new Help(this);
+                this.Hide();
+                help.ShowDialog();
+            }
         }
     }
 }

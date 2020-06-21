@@ -146,10 +146,12 @@
             this.Controls.Add(this.bntMecevi);
             this.Controls.Add(this.btnTurniri);
             this.Controls.Add(this.btnRangListe);
+            this.KeyPreview = true;
             this.Name = "GlavniIzbornik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tennis Track";
             this.Load += new System.EventHandler(this.GlavniIzbornik_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GlavniIzbornik_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

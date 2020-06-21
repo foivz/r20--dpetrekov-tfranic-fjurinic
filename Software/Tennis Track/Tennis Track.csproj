@@ -39,6 +39,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -109,6 +110,12 @@
     <Compile Include="Forme\DodajClana.Designer.cs">
       <DependentUpon>DodajClana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Mecevi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlavniIzbornik.resx">
       <DependentUpon>GlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Mecevi.resx">
       <DependentUpon>Mecevi.cs</DependentUpon>
