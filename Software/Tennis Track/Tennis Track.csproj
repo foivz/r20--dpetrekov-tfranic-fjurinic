@@ -157,12 +157,6 @@
     <Compile Include="Forme\ResetirajLozinku.Designer.cs">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forme\StatistikaKorisnika.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forme\StatistikaKorisnika.Designer.cs">
-      <DependentUpon>StatistikaKorisnika.cs</DependentUpon>
-    </Compile>
     <Compile Include="Iznimke\ParseException.cs" />
     <Compile Include="Klase\Učlanjenje.cs" />
     <Compile Include="Klase\EnkripcijaLozinke.cs" />
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ResetirajLozinku.resx">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forme\StatistikaKorisnika.resx">
-      <DependentUpon>StatistikaKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

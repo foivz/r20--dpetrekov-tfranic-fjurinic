@@ -34,7 +34,7 @@ namespace Tennis_Track.Forme
 
         private void btnResetirajLozinku_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Klikom na gumb OK resetirati čete svoju lozinku.", "UPOZORENJE!", MessageBoxButtons.OKCancel) == DialogResult.OK);
+            if (MessageBox.Show("Klikom na gumb OK resetirati čete svoju lozinku.", "UPOZORENJE!", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 Učlanjenje.ResetirajLozinku(TxtUsername.Text.ToString(), txtEmail.Text.ToString());
             }

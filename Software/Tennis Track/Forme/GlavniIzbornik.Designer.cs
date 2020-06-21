@@ -129,7 +129,6 @@
             this.lblImePrezimeKorisnika.Size = new System.Drawing.Size(175, 20);
             this.lblImePrezimeKorisnika.TabIndex = 7;
             this.lblImePrezimeKorisnika.Text = "Ime_Prezime_Korisnika";
-            this.lblImePrezimeKorisnika.Click += new System.EventHandler(this.lblImePrezimeKorisnika_Click);
             // 
             // GlavniIzbornik
             // 

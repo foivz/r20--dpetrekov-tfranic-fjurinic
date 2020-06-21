@@ -75,12 +75,5 @@ namespace Tennis_Track.Forme
             this.Hide();
             popisMeceva.ShowDialog();
         }
-
-        private void lblImePrezimeKorisnika_Click(object sender, EventArgs e)
-        {
-            StatistikaKorisnika statistikaKorisnika = new StatistikaKorisnika(this);
-            this.Hide();
-            statistikaKorisnika.ShowDialog();
-        }
     }
 }

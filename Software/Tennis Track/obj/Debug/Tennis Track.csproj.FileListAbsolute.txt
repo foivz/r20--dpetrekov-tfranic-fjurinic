@@ -18,7 +18,6 @@ C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Tr
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.xml
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
-C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.StatistikaKorisnika.resources
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Mecevi.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Tennis Track.exe.config
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Tennis Track.exe
@@ -48,3 +47,4 @@ C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Tr
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.ResetirajLozinku.resources
 C:\Users\Tin\source\repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
+C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources

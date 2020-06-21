@@ -8,6 +8,7 @@ using Tennis_Track.Forme;
 using Tennis_Track.Baza_podataka;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.Data.Entity;
 
 namespace Tennis_Track.Klase
 {
@@ -15,22 +16,32 @@ namespace Tennis_Track.Klase
     {
         public static void DodajClana(DodajClana dodajClana)
         {
-            Clan clan = new Clan();
-            string lozinka = GenerirajLozinku();
-            clan.Ime = dodajClana.txtIme.Text.ToString();
-            clan.Prezime = dodajClana.txtPrezime.Text.ToString();
-            clan.Email = dodajClana.txtEmail.Text.ToString();
-            clan.KorisnickoIme = (dodajClana.txtIme.Text[0].ToString() + dodajClana.txtPrezime.Text.ToString()).ToLower();
-            clan.SaltLozinke = EnkripcijaLozinke.GenerateSalt();
-            clan.HashLozinke = EnkripcijaLozinke.GenerateSaltedHash(lozinka, clan.SaltLozinke);
-            clan.Telefon = dodajClana.txtTelefon.Text.ToString();
-            clan.TipClana = "Clan";
-
             TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
-            tennisTrackEntities.Clan.Add(clan);
-            tennisTrackEntities.SaveChanges();
-            MessageBox.Show("Korisnički podatci poslani su na mail korisnika.", "Obavijest!");
-            PosaljiKorisnickePodatke(clan, lozinka);
+            tennisTrackEntities.Clan.Load();
+            var result = from c in tennisTrackEntities.Clan.Local
+                         where c.KorisnickoIme == (dodajClana.txtIme.Text[0].ToString() + dodajClana.txtPrezime.Text.ToString()).ToLower()
+                         select c;
+            if (result.Count()!=0)
+            {
+                MessageBox.Show("Korisnik je vec registriran.", "Obavijest!");
+            }
+            else
+            {
+                Clan clan = new Clan();
+                string lozinka = GenerirajLozinku();
+                clan.Ime = dodajClana.txtIme.Text.ToString();
+                clan.Prezime = dodajClana.txtPrezime.Text.ToString();
+                clan.Email = dodajClana.txtEmail.Text.ToString();
+                clan.KorisnickoIme = (dodajClana.txtIme.Text[0].ToString() + dodajClana.txtPrezime.Text.ToString()).ToLower();
+                clan.SaltLozinke = EnkripcijaLozinke.GenerateSalt();
+                clan.HashLozinke = EnkripcijaLozinke.GenerateSaltedHash(lozinka, clan.SaltLozinke);
+                clan.Telefon = dodajClana.txtTelefon.Text.ToString();
+                clan.TipClana = "Clan";
+                tennisTrackEntities.Clan.Add(clan);
+                tennisTrackEntities.SaveChanges();
+                MessageBox.Show("Korisnički podatci poslani su na mail korisnika.", "Obavijest!");
+                PosaljiKorisnickePodatke(clan, lozinka);
+            }
         }
         public static void ResetirajLozinku(string KorisnickoIme, string email)
         {
