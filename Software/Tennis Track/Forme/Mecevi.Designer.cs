@@ -33,7 +33,6 @@
             this.btnPovratak = new System.Windows.Forms.Button();
             this.clanBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.clanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,9 +45,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clanBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.clanDataGridView = new System.Windows.Forms.DataGridView();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblPretraga = new System.Windows.Forms.Label();
             this.dtpDatumMeca = new System.Windows.Forms.DateTimePicker();
@@ -86,12 +82,16 @@
             this.rbtnSluzbeni = new System.Windows.Forms.RadioButton();
             this.rbtnNesluzbeni = new System.Windows.Forms.RadioButton();
             this.lblTeren = new System.Windows.Forms.Label();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingNavigator)).BeginInit();
             this.clanBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clanDataGridView)).BeginInit();
             this.gboBrojDobivenih.SuspendLayout();
             this.gboSluzbenostMeca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -144,10 +144,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // clanBindingSource
-            // 
-            this.clanBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Clan);
             // 
             // bindingNavigatorCountItem
             // 
@@ -249,24 +245,6 @@
             this.clanDataGridView.Size = new System.Drawing.Size(440, 180);
             this.clanDataGridView.TabIndex = 8;
             this.clanDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clanDataGridView_CellDoubleClick);
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            // 
-            // prezimeDataGridViewTextBoxColumn
-            // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // txtFilter
             // 
@@ -619,6 +597,28 @@
             this.lblTeren.TabIndex = 42;
             this.lblTeren.Text = "Teren:";
             // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // clanBindingSource
+            // 
+            this.clanBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Clan);
+            // 
             // Mecevi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,19 +661,21 @@
             this.Controls.Add(this.clanDataGridView);
             this.Controls.Add(this.clanBindingNavigator);
             this.Controls.Add(this.btnPovratak);
+            this.KeyPreview = true;
             this.Name = "Mecevi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj meč";
             this.Load += new System.EventHandler(this.Mecevi_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Mecevi_KeyDown_1);
             ((System.ComponentModel.ISupportInitialize)(this.clanBindingNavigator)).EndInit();
             this.clanBindingNavigator.ResumeLayout(false);
             this.clanBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clanDataGridView)).EndInit();
             this.gboBrojDobivenih.ResumeLayout(false);
             this.gboBrojDobivenih.PerformLayout();
             this.gboSluzbenostMeca.ResumeLayout(false);
             this.gboSluzbenostMeca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

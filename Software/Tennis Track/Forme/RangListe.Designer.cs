@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvRangLista = new System.Windows.Forms.DataGridView();
-            this.btnPovratak = new System.Windows.Forms.Button();
             this.BrojBodova = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SluzbenePobjede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UkupnoPobjeda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this.gboRangiranje = new System.Windows.Forms.GroupBox();
-            this.rbtnBodovi = new System.Windows.Forms.RadioButton();
             this.rbtnPobjede = new System.Windows.Forms.RadioButton();
+            this.rbtnBodovi = new System.Windows.Forms.RadioButton();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.korisnickoImeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,17 +67,6 @@
             this.dgvRangLista.Size = new System.Drawing.Size(776, 346);
             this.dgvRangLista.TabIndex = 3;
             // 
-            // btnPovratak
-            // 
-            this.btnPovratak.Location = new System.Drawing.Point(651, 401);
-            this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
-            this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(125, 25);
-            this.btnPovratak.TabIndex = 8;
-            this.btnPovratak.Text = "Povratak";
-            this.btnPovratak.UseVisualStyleBackColor = true;
-            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
-            // 
             // BrojBodova
             // 
             this.BrojBodova.DataPropertyName = "BrojBodova";
@@ -96,6 +85,17 @@
             this.UkupnoPobjeda.HeaderText = "UkupnoPobjeda";
             this.UkupnoPobjeda.Name = "UkupnoPobjeda";
             // 
+            // btnPovratak
+            // 
+            this.btnPovratak.Location = new System.Drawing.Point(651, 401);
+            this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
+            this.btnPovratak.Name = "btnPovratak";
+            this.btnPovratak.Size = new System.Drawing.Size(125, 25);
+            this.btnPovratak.TabIndex = 8;
+            this.btnPovratak.Text = "Povratak";
+            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
+            // 
             // gboRangiranje
             // 
             this.gboRangiranje.Controls.Add(this.rbtnPobjede);
@@ -107,6 +107,18 @@
             this.gboRangiranje.TabIndex = 9;
             this.gboRangiranje.TabStop = false;
             this.gboRangiranje.Text = "Rangiraj po:";
+            // 
+            // rbtnPobjede
+            // 
+            this.rbtnPobjede.AutoSize = true;
+            this.rbtnPobjede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rbtnPobjede.Location = new System.Drawing.Point(122, 22);
+            this.rbtnPobjede.Name = "rbtnPobjede";
+            this.rbtnPobjede.Size = new System.Drawing.Size(158, 19);
+            this.rbtnPobjede.TabIndex = 1;
+            this.rbtnPobjede.Text = "Ukupnim pobjedama";
+            this.rbtnPobjede.UseVisualStyleBackColor = true;
+            this.rbtnPobjede.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rbtnBodovi
             // 
@@ -121,18 +133,6 @@
             this.rbtnBodovi.Text = "Bodovima";
             this.rbtnBodovi.UseVisualStyleBackColor = true;
             this.rbtnBodovi.CheckedChanged += new System.EventHandler(this.rbtnBodovi_CheckedChanged);
-            // 
-            // rbtnPobjede
-            // 
-            this.rbtnPobjede.AutoSize = true;
-            this.rbtnPobjede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rbtnPobjede.Location = new System.Drawing.Point(122, 22);
-            this.rbtnPobjede.Name = "rbtnPobjede";
-            this.rbtnPobjede.Size = new System.Drawing.Size(158, 19);
-            this.rbtnPobjede.TabIndex = 1;
-            this.rbtnPobjede.Text = "Ukupnim pobjedama";
-            this.rbtnPobjede.UseVisualStyleBackColor = true;
-            this.rbtnPobjede.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // imeDataGridViewTextBoxColumn
             // 
@@ -179,10 +179,12 @@
             this.Controls.Add(this.gboRangiranje);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.dgvRangLista);
+            this.KeyPreview = true;
             this.Name = "RangListe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rang liste";
             this.Load += new System.EventHandler(this.RangListe_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RangListe_KeyDown_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRangLista)).EndInit();
             this.gboRangiranje.ResumeLayout(false);
             this.gboRangiranje.PerformLayout();

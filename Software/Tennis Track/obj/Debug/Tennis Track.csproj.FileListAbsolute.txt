@@ -33,7 +33,6 @@ C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis 
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.LoginForm.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PromjeniLozinku.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.RangListe.resources
-C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.StatistikaKorisnika.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Properties.Resources.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.GenerateResource.cache
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
@@ -46,6 +45,7 @@ C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis 
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.ResetirajLozinku.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.ResetirajLozinku.resources
 C:\Users\Tin\source\repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
-C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources
+C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache

@@ -121,5 +121,17 @@ namespace Tennis_Track.Forme
                 mecBindingSource.DataSource = sviNesluzbeniMecevi.ToList();
             }
         }
+
+        private void PopisMeceva_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Ovaj prozor korisniku omogućuje uvid u rezultate odigranih mečeva. Moguće je pretraživati " +
+                    "mečeve po imenu ili prezimenu igrača, kao i po imenu turnira. Klikom na gumb ''Prikaži moje mečeve'' korisnik " +
+                    "može, ovisno o odabiru iznad tog gumba, vidjeti sve svoje mečeve, ili samo službene i samo neslužbene. " +
+                    "Isto vrijedi i za klik na gumb ''Prikaži sve mečeve''. Klikom na gumb ''Dodaj meč'' otvara se prozor " +
+                    "u kojemu korisnik može upisati podatke o meču u kojem je sudjelovao.","Help");
+            }
+        }
     }
 }

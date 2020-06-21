@@ -113,5 +113,16 @@ namespace Tennis_Track.Forme
                 gboRangiranje.BackColor = System.Drawing.Color.Transparent;
             }
         }
+
+        private void RangListe_KeyDown_1(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Prozor ''Rang liste'' prikazuje popis svih korisnika aplikacije. Ovisno o odabiru ispod " +
+                    "tablice s korisnicima, rangiraju se po broju bodova koji su ostvareni na službenim turnirima ili po broju " +
+                    "ukupnih pobjeda.","Help");
+            }
+        }
     }
 }

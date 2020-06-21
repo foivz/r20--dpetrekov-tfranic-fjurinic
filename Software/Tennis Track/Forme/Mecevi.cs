@@ -41,6 +41,7 @@ namespace Tennis_Track.Forme
             this.popisMeceva = popisMeceva;
             InitializeComponent();
         }
+        
 
         private void Mecevi_Load(object sender, EventArgs e)
         {
@@ -590,6 +591,18 @@ namespace Tennis_Track.Forme
             if (rbtnNesluzbeni.Checked == true)
             {
                 cmbTurnir.Enabled = false;
+            }
+        }
+
+        private void Mecevi_KeyDown_1(object sender, KeyEventArgs e)
+        {
+        if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Prozor ''Dodaj meč'' omogućuje korisniku dodavanje već odigranog meča. Korisnik bira suparnika" +
+                    " dvostrukim klikom na korisnika u popisu igrača. Moguće je birati između igre na 2 ili 3 dobivena seta, kao i " +
+                    "između službenog i neslužbenog meča. Moguće je i odabrati datum, vrijeme i vrstu terena na kojemu se igra. " +
+                    "Nakon što odabere suparnika i unese rezultate setova, korisnik može " +
+                    "kreirati meč.","Help");
             }
         }
     }

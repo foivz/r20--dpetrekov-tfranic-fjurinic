@@ -217,7 +217,7 @@
             this.lblPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPretrazivanje.Location = new System.Drawing.Point(34, 361);
             this.lblPretrazivanje.Name = "lblPretrazivanje";
-            this.lblPretrazivanje.Size = new System.Drawing.Size(312, 16);
+            this.lblPretrazivanje.Size = new System.Drawing.Size(311, 16);
             this.lblPretrazivanje.TabIndex = 16;
             this.lblPretrazivanje.Text = "Pretraživanje po imenu, prezimenu ili turniru:";
             // 
@@ -252,10 +252,12 @@
             this.Controls.Add(this.btnMojiMecevi);
             this.Controls.Add(this.txtPretrazivanje);
             this.Controls.Add(this.dgvPopisMeceva);
+            this.KeyPreview = true;
             this.Name = "PopisMeceva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Popis mečeva";
             this.Load += new System.EventHandler(this.PopisMeceva_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PopisMeceva_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisMeceva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();
             this.gboSluzbenost.ResumeLayout(false);
