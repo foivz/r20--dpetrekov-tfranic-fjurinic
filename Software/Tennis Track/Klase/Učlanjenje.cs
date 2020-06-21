@@ -79,10 +79,10 @@ namespace Tennis_Track.Klase
                 msg.Subject = "Korisnički podatci";
                 msg.IsBodyHtml = true;
                 msg.Body = @"<p> Poštovani korisniče,<p>
-                                    <p>Zahvaljujemo se na korištenju aplikacije Tennis Track. Ispod čete nači Vaše korisičke podatke sa kojima se mozete prijaviti u našu aplikaciju.</p>
+                                    <p>Zahvaljujemo se na korištenju aplikacije Tennis Track. Ispod čete nači Vaše korisičke podatke sa kojima se možete prijaviti u našu aplikaciju.</p>
                                     <p>Ime: " + clan.Ime + " </p>" +
                                     "<p>Prezime: " + clan.Prezime + "</p>" +
-                                    "<p>Korisičko ime: " + clan.KorisnickoIme + "</p>" +
+                                    "<p>Korisničko ime: " + clan.KorisnickoIme + "</p>" +
                                     "<p>Lozinka: " + lozinka + "</p>" +
                                     "<p>S poštovanjem Tennis Track</p>";
                 mailServer.Send(msg);
