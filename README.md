@@ -17,10 +17,10 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 F01 | Prijava | Ukoliko korisnik želi pristupiti aplikaciji potrebno se je ulogirati u istu. | Domagoj Petreković
 F02 | Učlanjenje | Promjena E-maila, korisničkog imena, lozinke itd, kreiranje novoga računa od strane korisnika tipa "Admin" odnosno zaposlenika kluba. | Domagoj Petreković
 F03 | Brisanje mečeva | Samo korisnici tipa "Admin" mogu brisati mečeve odnosno samo zaposlenici kluba | Domagoj Petreković
-F03 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. | Tin Franić
-F04 | Mečevi | Dodavanje novoga meča između dva korisnika aplikacije, lista na kojoj će biti svi odigrani mečevi trenutnog korisnika  | Tin Franić
-F05 | Turniri | Dodavanje novoga turnira na listu dostupnih, prijava na turnir koji je netko od organizatora kreirao, pregled rezultata turnira koji su odigrani | Filip Jurinić
-F06 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet | Filip Jurinić
+F04 | Rang liste | Liste na kojima ce biti svi korisnici. Moći će filtrirati korisnike prema nekoliko kriterija. | Tin Franić
+F05 | Mečevi | Dodavanje novoga meča između dva korisnika aplikacije, lista na kojoj će biti svi odigrani mečevi trenutnog korisnika  | Tin Franić
+F06 | Turniri | Dodavanje novoga turnira na listu dostupnih, prijava na turnir koji je netko od organizatora kreirao, pregled rezultata turnira koji su odigrani | Filip Jurinić
+F07 | Rezervacija terena | Rezervacija terena u određeno vrijeme ukoliko nije već zauzet | Filip Jurinić
 
 
 ## Tehnologije i oprema
