@@ -144,7 +144,7 @@
             this.Controls.Add(this.txtNovaLozinka);
             this.Name = "PromjeniLozinku";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PromjeniLozinku";
+            this.Text = "Promjeni lozinku";
             this.ResumeLayout(false);
             this.PerformLayout();
 

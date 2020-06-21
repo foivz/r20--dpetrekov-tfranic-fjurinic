@@ -217,7 +217,7 @@
             this.lblPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPretrazivanje.Location = new System.Drawing.Point(34, 361);
             this.lblPretrazivanje.Name = "lblPretrazivanje";
-            this.lblPretrazivanje.Size = new System.Drawing.Size(311, 16);
+            this.lblPretrazivanje.Size = new System.Drawing.Size(312, 16);
             this.lblPretrazivanje.TabIndex = 16;
             this.lblPretrazivanje.Text = "Pretraživanje po imenu, prezimenu ili turniru:";
             // 
@@ -243,6 +243,7 @@
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(854, 457);
+            this.ControlBox = false;
             this.Controls.Add(this.btnDodajMec);
             this.Controls.Add(this.lblPretrazivanje);
             this.Controls.Add(this.gboSluzbenost);
@@ -253,7 +254,7 @@
             this.Controls.Add(this.dgvPopisMeceva);
             this.Name = "PopisMeceva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PopisMeceva";
+            this.Text = "Popis mečeva";
             this.Load += new System.EventHandler(this.PopisMeceva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisMeceva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();

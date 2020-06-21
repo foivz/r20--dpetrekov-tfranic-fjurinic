@@ -36,8 +36,6 @@ namespace Tennis_Track
             {
                 this.Hide();
                 glavniIzbornik.ShowDialog();
-                TxtUsername.Text = "Korisnicko ime";
-                TxtPassword.Text = "Lozinka";
             }
         }
 

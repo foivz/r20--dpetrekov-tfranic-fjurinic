@@ -32,6 +32,8 @@
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnResetirajLozinku = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -49,29 +51,27 @@
             // 
             this.TxtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUsername.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.TxtUsername.Location = new System.Drawing.Point(275, 161);
+            this.TxtUsername.Location = new System.Drawing.Point(278, 162);
             this.TxtUsername.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.TxtUsername.Multiline = true;
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(250, 30);
             this.TxtUsername.TabIndex = 9;
-            this.TxtUsername.Text = "Korisničko ime";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtEmail.Location = new System.Drawing.Point(275, 204);
+            this.txtEmail.Location = new System.Drawing.Point(278, 241);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 30);
             this.txtEmail.TabIndex = 10;
-            this.txtEmail.Text = "Email";
             // 
             // btnResetirajLozinku
             // 
-            this.btnResetirajLozinku.Location = new System.Drawing.Point(324, 247);
+            this.btnResetirajLozinku.Location = new System.Drawing.Point(324, 284);
             this.btnResetirajLozinku.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnResetirajLozinku.Name = "btnResetirajLozinku";
             this.btnResetirajLozinku.Size = new System.Drawing.Size(153, 43);
@@ -79,6 +79,26 @@
             this.btnResetirajLozinku.Text = "Resetiraj lozinku";
             this.btnResetirajLozinku.UseVisualStyleBackColor = true;
             this.btnResetirajLozinku.Click += new System.EventHandler(this.btnResetirajLozinku_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(273, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 29);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Korisničko ime";
             // 
             // ResetirajLozinku
             // 
@@ -88,6 +108,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnResetirajLozinku);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.TxtUsername);
@@ -106,5 +128,7 @@
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnResetirajLozinku;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

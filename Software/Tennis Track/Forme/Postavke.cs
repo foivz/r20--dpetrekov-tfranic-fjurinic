@@ -30,9 +30,7 @@ namespace Tennis_Track.Forme
         private void Postavke_Load(object sender, EventArgs e)
         {
             txtEmail.Text = PrijavaClana.PrijavljeniCLan.Email;
-            lblEmail.BackColor = System.Drawing.Color.Transparent;
             txtTelefon.Text = PrijavaClana.PrijavljeniCLan.Telefon;
-            lblTelefon.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)

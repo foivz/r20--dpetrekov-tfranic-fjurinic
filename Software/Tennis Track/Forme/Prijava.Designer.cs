@@ -118,7 +118,7 @@
             this.Controls.Add(this.TxtUsername);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TennisTrack";
+            this.Text = "Prijavi se";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

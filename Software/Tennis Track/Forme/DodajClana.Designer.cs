@@ -34,6 +34,10 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtIme = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -50,7 +54,7 @@
             // btnKreirajNoviRacun
             // 
             this.btnKreirajNoviRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKreirajNoviRacun.Location = new System.Drawing.Point(300, 283);
+            this.btnKreirajNoviRacun.Location = new System.Drawing.Point(300, 325);
             this.btnKreirajNoviRacun.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
             this.btnKreirajNoviRacun.Name = "btnKreirajNoviRacun";
             this.btnKreirajNoviRacun.Size = new System.Drawing.Size(200, 25);
@@ -62,46 +66,82 @@
             // txtTelefon
             // 
             this.txtTelefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefon.Location = new System.Drawing.Point(275, 248);
+            this.txtTelefon.Location = new System.Drawing.Point(277, 290);
             this.txtTelefon.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTelefon.Multiline = true;
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(250, 25);
             this.txtTelefon.TabIndex = 10;
-            this.txtTelefon.Text = "Telefon";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(275, 213);
+            this.txtEmail.Location = new System.Drawing.Point(277, 235);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 25);
             this.txtEmail.TabIndex = 9;
-            this.txtEmail.Text = "Email";
             // 
             // txtPrezime
             // 
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(275, 178);
+            this.txtPrezime.Location = new System.Drawing.Point(277, 180);
             this.txtPrezime.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPrezime.Multiline = true;
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(250, 25);
             this.txtPrezime.TabIndex = 8;
-            this.txtPrezime.Text = "Prezime_korisnika";
             // 
             // txtIme
             // 
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(275, 143);
+            this.txtIme.Location = new System.Drawing.Point(277, 125);
             this.txtIme.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtIme.Multiline = true;
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(250, 25);
             this.txtIme.TabIndex = 7;
-            this.txtIme.Text = "Ime_korisnika";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(273, 210);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.TabIndex = 13;
+            this.lblEmail.Text = "Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 155);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Prezime korisnika";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(273, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Ime korisnika";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(273, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Telefon";
             // 
             // DodajClana
             // 
@@ -111,6 +151,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnKreirajNoviRacun);
             this.Controls.Add(this.txtTelefon);
@@ -134,5 +178,9 @@
         public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtPrezime;
         public System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
