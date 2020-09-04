@@ -116,6 +116,12 @@
     <Compile Include="Forme\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\JedanTurnir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\JedanTurnir.Designer.cs">
+      <DependentUpon>JedanTurnir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Mecevi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     <Compile Include="Forme\ResetirajLozinku.Designer.cs">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Turniri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Turniri.Designer.cs">
+      <DependentUpon>Turniri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Iznimke\ParseException.cs" />
     <Compile Include="Klase\Učlanjenje.cs" />
     <Compile Include="Klase\EnkripcijaLozinke.cs" />
@@ -185,6 +197,9 @@
     <EmbeddedResource Include="Forme\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\JedanTurnir.resx">
+      <DependentUpon>JedanTurnir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\Mecevi.resx">
       <DependentUpon>Mecevi.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ResetirajLozinku.resx">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Turniri.resx">
+      <DependentUpon>Turniri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

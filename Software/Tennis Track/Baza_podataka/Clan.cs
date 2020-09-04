@@ -103,7 +103,7 @@ namespace Tennis_Track.Baza_podataka
             return brPobjeda;
         }
 
-        private int VratiBrojPobjeda()
+        public int VratiBrojPobjeda()
         {
             int brPobjeda = 0;
             int setoviIgrac1, setoviIgrac2;

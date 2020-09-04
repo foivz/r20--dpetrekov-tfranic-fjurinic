@@ -49,3 +49,31 @@ C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Tr
 C:\Users\Domagoj\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources
 C:\Users\Tin\Source\Repos\foivz\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\Tennis Track.exe.config
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\Tennis Track.exe
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\Tennis Track.pdb
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\EntityFramework.dll
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\EntityFramework.xml
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.csprojAssemblyReference.cache
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.AdminPanel.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Brisanje_mečeva.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.DodajClana.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.GlavniIzbornik.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Help.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Mecevi.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PopisMeceva.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Postavke.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.LoginForm.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.PromjeniLozinku.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.RangListe.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.ResetirajLozinku.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Properties.Resources.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.csproj.GenerateResource.cache
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CoreCompileInputs.cache
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.exe
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis Track.pdb
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Turniri.resources
+C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.JedanTurnir.resources

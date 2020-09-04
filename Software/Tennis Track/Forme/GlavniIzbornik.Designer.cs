@@ -60,6 +60,7 @@
             this.btnTurniri.TabIndex = 1;
             this.btnTurniri.Text = "Turniri";
             this.btnTurniri.UseVisualStyleBackColor = true;
+            this.btnTurniri.Click += new System.EventHandler(this.btnTurniri_Click);
             // 
             // bntMecevi
             // 

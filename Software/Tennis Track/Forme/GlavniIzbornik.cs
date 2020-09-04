@@ -87,5 +87,12 @@ namespace Tennis_Track.Forme
                 help.ShowDialog();
             }
         }
+
+        private void btnTurniri_Click(object sender, EventArgs e)
+        {
+            Turniri turniri = new Turniri(this);
+            this.Hide();
+            turniri.ShowDialog();
+        }
     }
 }
