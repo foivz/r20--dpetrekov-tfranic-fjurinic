@@ -67,5 +67,9 @@ namespace Tennis_Track.Forme
             txtTurnirVrijeme.Text = izabraniTurnir.Vrijeme.ToString();
         }
 
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

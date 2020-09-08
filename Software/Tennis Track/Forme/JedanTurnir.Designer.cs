@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnPrijava = new System.Windows.Forms.Button();
             this.btnOdjava = new System.Windows.Forms.Button();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sudioniciDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             this.sudioniciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sudioniciDataGridView.Location = new System.Drawing.Point(301, 43);
             this.sudioniciDataGridView.Name = "sudioniciDataGridView";
-            this.sudioniciDataGridView.Size = new System.Drawing.Size(349, 240);
+            this.sudioniciDataGridView.Size = new System.Drawing.Size(349, 192);
             this.sudioniciDataGridView.TabIndex = 33;
             // 
             // label3
@@ -147,13 +148,25 @@
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = true;
             // 
+            // btnPovratak
+            // 
+            this.btnPovratak.Location = new System.Drawing.Point(525, 241);
+            this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
+            this.btnPovratak.Name = "btnPovratak";
+            this.btnPovratak.Size = new System.Drawing.Size(125, 25);
+            this.btnPovratak.TabIndex = 37;
+            this.btnPovratak.Text = "Povratak";
+            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
+            // 
             // JedanTurnir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(662, 312);
+            this.ClientSize = new System.Drawing.Size(662, 272);
+            this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.label3);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.Button btnOdjava;
+        private System.Windows.Forms.Button btnPovratak;
     }
 }

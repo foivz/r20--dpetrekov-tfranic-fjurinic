@@ -13,6 +13,7 @@ namespace Tennis_Track.Forme
 {
     public partial class Turniri : Form
     {
+        TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
         private GlavniIzbornik glavniIzbornik;
         public Turniri()
         {
@@ -57,6 +58,31 @@ namespace Tennis_Track.Forme
         private Turnir DohvatiIzabraniTurnir()
         {
             return turniriDataGridView.CurrentRow.DataBoundItem as Turnir;
+        }
+
+        private void btnDodajTurnir_Click(object sender, EventArgs e)
+        {
+            DodavanjeTurnira dodavanjeTurnira = new DodavanjeTurnira(this);
+            dodavanjeTurnira.ShowDialog();
+
+            turniriDataGridView.DataSource = DohvatiTurnire();
+        }
+
+        private void rbtnSviTurniri_CheckedChanged(object sender, EventArgs e)
+        {
+            turniriDataGridView.DataSource = DohvatiTurnire();
+        }
+
+        private void rbtnPrijasnji_CheckedChanged(object sender, EventArgs e)
+        {
+            var prijasnjiTurniri = from m in tennisTrackEntities.Turnir where m.Datum <= DateTime.Today select m;
+            turniriDataGridView.DataSource = prijasnjiTurniri.ToList();
+        }
+
+        private void rbtnNadolazeci_CheckedChanged(object sender, EventArgs e)
+        {
+            var nadolazeciTurniri = from m in tennisTrackEntities.Turnir where m.Datum > DateTime.Today select m;
+            turniriDataGridView.DataSource = nadolazeciTurniri.ToList();
         }
     }
 }

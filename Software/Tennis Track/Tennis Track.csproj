@@ -110,6 +110,12 @@
     <Compile Include="Forme\DodajClana.Designer.cs">
       <DependentUpon>DodajClana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\DodavanjeTurnira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeTurnira.Designer.cs">
+      <DependentUpon>DodavanjeTurnira.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\DodajClana.resx">
       <DependentUpon>DodajClana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeTurnira.resx">
+      <DependentUpon>DodavanjeTurnira.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlavniIzbornik.resx">
       <DependentUpon>GlavniIzbornik.cs</DependentUpon>
