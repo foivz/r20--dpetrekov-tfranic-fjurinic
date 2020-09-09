@@ -65,9 +65,27 @@ namespace Tennis_Track.Forme
             lblNazivTurnira.Text = izabraniTurnir1.Naziv;
         }
 
+        private void OsvjeziRezultate()
+        {
+            List<Mec> mecevi = new List<Mec>();
+            mecevi = tennisTrackEntities.Mec.Local.ToList();
+            if (txtClan.Text.ToString() != "")
+            {
+                mecevi = (from r in mecevi
+                          where (r.ImePrviClan.ToString().ToLower().Contains(txtClan.Text.ToString().ToLower()))
+                          select r).ToList();
+            }
+            dgvRezultatiTurnira.DataSource = mecevi;
+        }
+
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtClan_TextChanged(object sender, EventArgs e)
+        {
+            OsvjeziRezultate();
         }
     }
 }

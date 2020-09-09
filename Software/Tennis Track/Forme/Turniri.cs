@@ -29,8 +29,12 @@ namespace Tennis_Track.Forme
         private void Turniri_Load(object sender, EventArgs e)
         {
             turniriDataGridView.DataSource = DohvatiTurnire();
-            turniriDataGridView.Columns["Mecs"].Visible = false;
-            turniriDataGridView.Columns["Clans"].Visible = false;
+
+            for (int i = 0; i < turniriDataGridView.Columns.Count; i++)
+            {
+                turniriDataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                turniriDataGridView.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             Ukljuci_Iskljuci_Tipke();
         }
 
@@ -105,15 +109,13 @@ namespace Tennis_Track.Forme
         {
             if (turniriDataGridView.Rows.Count != 0)
             {
-                btnPrikaziTurnir.Enabled = true;
-                btnPrikaziRezultateTurnira.Enabled = true;
-                var vrijednost = turniriDataGridView.CurrentRow.Cells[2].Value.ToString();
+                var vrijednost = turniriDataGridView.CurrentRow.Cells[1].Value.ToString();
                 var datum = DateTime.Parse(vrijednost);
                 var danas = DateTime.Today;
                 if (datum <= danas)
                 {
                     btnPrikaziRezultateTurnira.Enabled = true;
-                    //btnPrikaziTurnir.Enabled = false;
+                    btnPrikaziTurnir.Enabled = false;
                 }
                 else if (datum > danas)
                 {
@@ -133,5 +135,26 @@ namespace Tennis_Track.Forme
         {
             Ukljuci_Iskljuci_Tipke();
         }
+
+        private void OsvjeziTurnire()
+        {
+            List<Turnir> turniri = new List<Turnir>();
+            turniri = tennisTrackEntities.Turnir.ToList();
+            if (txtTurniri.Text.ToString() != "")
+            {
+                turniri = (from turnir in turniri
+                           where (turnir.Naziv.ToString().ToLower().Contains(txtTurniri.Text.ToString().ToLower()))
+                           select turnir).ToList();
+            }
+            turniriDataGridView.DataSource = turniri;
+            Ukljuci_Iskljuci_Tipke();
+        }
+
+        private void txtTurniri_TextChanged(object sender, EventArgs e)
+        {
+            OsvjeziTurnire();
+        }
+
+       
     }
 }

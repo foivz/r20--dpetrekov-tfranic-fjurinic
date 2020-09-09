@@ -39,9 +39,16 @@
             this.rbtnNadolazeci = new System.Windows.Forms.RadioButton();
             this.rbtnPrijasnji = new System.Windows.Forms.RadioButton();
             this.rbtnSviTurniri = new System.Windows.Forms.RadioButton();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnirBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.turnirBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtTurniri = new System.Windows.Forms.TextBox();
+            this.Pretrazi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +64,22 @@
             // 
             // turniriDataGridView
             // 
+            this.turniriDataGridView.AutoGenerateColumns = false;
             this.turniriDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.turniriDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nazivDataGridViewTextBoxColumn,
+            this.datumDataGridViewTextBoxColumn,
+            this.vrijemeDataGridViewTextBoxColumn});
+            this.turniriDataGridView.DataSource = this.turnirBindingSource1;
             this.turniriDataGridView.Location = new System.Drawing.Point(13, 42);
             this.turniriDataGridView.Name = "turniriDataGridView";
-            this.turniriDataGridView.Size = new System.Drawing.Size(443, 358);
+            this.turniriDataGridView.Size = new System.Drawing.Size(345, 327);
             this.turniriDataGridView.TabIndex = 29;
             this.turniriDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.turniriDataGridView_CellClick);
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(464, 375);
+            this.btnPovratak.Location = new System.Drawing.Point(366, 372);
             this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(125, 25);
@@ -77,7 +90,7 @@
             // 
             // btnPrikaziTurnir
             // 
-            this.btnPrikaziTurnir.Location = new System.Drawing.Point(462, 182);
+            this.btnPrikaziTurnir.Location = new System.Drawing.Point(364, 183);
             this.btnPrikaziTurnir.Name = "btnPrikaziTurnir";
             this.btnPrikaziTurnir.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziTurnir.TabIndex = 31;
@@ -87,7 +100,7 @@
             // 
             // btnPrikaziRezultateTurnira
             // 
-            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(462, 211);
+            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(364, 212);
             this.btnPrikaziRezultateTurnira.Name = "btnPrikaziRezultateTurnira";
             this.btnPrikaziRezultateTurnira.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziRezultateTurnira.TabIndex = 32;
@@ -97,7 +110,7 @@
             // 
             // btnDodajTurnir
             // 
-            this.btnDodajTurnir.Location = new System.Drawing.Point(462, 42);
+            this.btnDodajTurnir.Location = new System.Drawing.Point(364, 43);
             this.btnDodajTurnir.Name = "btnDodajTurnir";
             this.btnDodajTurnir.Size = new System.Drawing.Size(123, 23);
             this.btnDodajTurnir.TabIndex = 33;
@@ -112,7 +125,7 @@
             this.groupBox1.Controls.Add(this.rbtnPrijasnji);
             this.groupBox1.Controls.Add(this.rbtnSviTurniri);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(464, 77);
+            this.groupBox1.Location = new System.Drawing.Point(366, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 99);
             this.groupBox1.TabIndex = 34;
@@ -154,9 +167,50 @@
             this.rbtnSviTurniri.UseVisualStyleBackColor = true;
             this.rbtnSviTurniri.CheckedChanged += new System.EventHandler(this.rbtnSviTurniri_CheckedChanged);
             // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            // 
+            // vrijemeDataGridViewTextBoxColumn
+            // 
+            this.vrijemeDataGridViewTextBoxColumn.DataPropertyName = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
+            // 
+            // turnirBindingSource1
+            // 
+            this.turnirBindingSource1.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
+            // 
             // turnirBindingSource
             // 
             this.turnirBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
+            // 
+            // txtTurniri
+            // 
+            this.txtTurniri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTurniri.Location = new System.Drawing.Point(76, 375);
+            this.txtTurniri.Name = "txtTurniri";
+            this.txtTurniri.Size = new System.Drawing.Size(151, 22);
+            this.txtTurniri.TabIndex = 36;
+            this.txtTurniri.TextChanged += new System.EventHandler(this.txtTurniri_TextChanged);
+            // 
+            // Pretrazi
+            // 
+            this.Pretrazi.AutoSize = true;
+            this.Pretrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pretrazi.Location = new System.Drawing.Point(14, 378);
+            this.Pretrazi.Name = "Pretrazi";
+            this.Pretrazi.Size = new System.Drawing.Size(56, 16);
+            this.Pretrazi.TabIndex = 35;
+            this.Pretrazi.Text = "Pretraži:";
             // 
             // Turniri
             // 
@@ -164,8 +218,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(601, 409);
+            this.ClientSize = new System.Drawing.Size(506, 409);
             this.ControlBox = false;
+            this.Controls.Add(this.txtTurniri);
+            this.Controls.Add(this.Pretrazi);
             this.Controls.Add(this.btnPrikaziRezultateTurnira);
             this.Controls.Add(this.btnPrikaziTurnir);
             this.Controls.Add(this.groupBox1);
@@ -181,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,5 +257,11 @@
         private System.Windows.Forms.RadioButton rbtnNadolazeci;
         private System.Windows.Forms.RadioButton rbtnPrijasnji;
         private System.Windows.Forms.RadioButton rbtnSviTurniri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrijemeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource turnirBindingSource1;
+        private System.Windows.Forms.TextBox txtTurniri;
+        private System.Windows.Forms.Label Pretrazi;
     }
 }

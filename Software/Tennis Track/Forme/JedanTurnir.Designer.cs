@@ -184,6 +184,7 @@
             this.btnOdjava.TabIndex = 36;
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // btnPovratak
             // 

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Filip Jurinic\source\repos\Tennis_Track\Software\Tennis Track\Baza_podataka\TennisTrackModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\Baza_podataka\TennisTrackModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

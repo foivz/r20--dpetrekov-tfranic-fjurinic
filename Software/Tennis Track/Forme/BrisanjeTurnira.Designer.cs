@@ -67,6 +67,7 @@
             this.Pretrazi.Size = new System.Drawing.Size(56, 16);
             this.Pretrazi.TabIndex = 1;
             this.Pretrazi.Text = "Pretraži:";
+            this.Pretrazi.Click += new System.EventHandler(this.Pretrazi_Click);
             // 
             // txtTurnir
             // 

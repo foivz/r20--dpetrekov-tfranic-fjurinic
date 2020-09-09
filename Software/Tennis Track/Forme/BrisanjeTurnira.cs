@@ -61,10 +61,8 @@ namespace Tennis_Track.Forme
             if (txtTurnir.Text.ToString() != "")
             {
                 turniri = (from turnir in turniri
-                          where (turnir.Naziv.ToString().ToLower().Contains(txtTurnir.Text.ToString()))
-                          || (turnir.Naziv.ToString().Contains(txtTurnir.Text.ToString()))
-                          || (turnir.Naziv.ToString().ToUpper().Contains(txtTurnir.Text.ToString()))
-                           select turnir).ToList();
+                          where (turnir.Naziv.ToString().ToLower().Contains(txtTurnir.Text.ToString().ToLower()))
+                          select turnir).ToList();
             }
             dgvTurniri.DataSource = turniri;
         }
@@ -72,6 +70,11 @@ namespace Tennis_Track.Forme
         private void txtTurnir_TextChanged(object sender, EventArgs e)
         {
             OsvjeziTurnir();
+        }
+
+        private void Pretrazi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

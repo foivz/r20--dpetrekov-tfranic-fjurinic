@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e4c31a4d28742ae9ac4ae09531f21af" Name="Diagram1">
+      <Diagram DiagramId="9e4c31a4d28742ae9ac4ae09531f21af" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="TennisTrackModel.Clan" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TennisTrackModel.Mec" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TennisTrackModel.Rezervacije" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TennisTrackModel.Set" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TennisTrackModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TennisTrackModel.Teren" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TennisTrackModel.Turnir" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TennisTrackModel.Turnir" Width="1.5" PointX="2.25" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="TennisTrackModel.FK_Mec_Clan" ManuallyRouted="false" />
         <AssociationConnector Association="TennisTrackModel.FK_Mec_Clan1" ManuallyRouted="false" />
         <AssociationConnector Association="TennisTrackModel.FK_Rezervacije_Clan" ManuallyRouted="false" />
