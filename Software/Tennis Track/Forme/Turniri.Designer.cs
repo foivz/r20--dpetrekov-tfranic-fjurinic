@@ -36,9 +36,9 @@
             this.btnPrikaziRezultateTurnira = new System.Windows.Forms.Button();
             this.btnDodajTurnir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnSviTurniri = new System.Windows.Forms.RadioButton();
-            this.rbtnPrijasnji = new System.Windows.Forms.RadioButton();
             this.rbtnNadolazeci = new System.Windows.Forms.RadioButton();
+            this.rbtnPrijasnji = new System.Windows.Forms.RadioButton();
+            this.rbtnSviTurniri = new System.Windows.Forms.RadioButton();
             this.turnirBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,12 +60,13 @@
             this.turniriDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.turniriDataGridView.Location = new System.Drawing.Point(13, 42);
             this.turniriDataGridView.Name = "turniriDataGridView";
-            this.turniriDataGridView.Size = new System.Drawing.Size(443, 384);
+            this.turniriDataGridView.Size = new System.Drawing.Size(443, 358);
             this.turniriDataGridView.TabIndex = 29;
+            this.turniriDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.turniriDataGridView_CellClick);
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(462, 401);
+            this.btnPovratak.Location = new System.Drawing.Point(464, 375);
             this.btnPovratak.Margin = new System.Windows.Forms.Padding(15);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(125, 25);
@@ -76,26 +77,27 @@
             // 
             // btnPrikaziTurnir
             // 
-            this.btnPrikaziTurnir.Location = new System.Drawing.Point(462, 147);
+            this.btnPrikaziTurnir.Location = new System.Drawing.Point(462, 182);
             this.btnPrikaziTurnir.Name = "btnPrikaziTurnir";
             this.btnPrikaziTurnir.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziTurnir.TabIndex = 31;
-            this.btnPrikaziTurnir.Text = "Prikaži turnir";
+            this.btnPrikaziTurnir.Text = "Prikaži turnir / Prijava";
             this.btnPrikaziTurnir.UseVisualStyleBackColor = true;
             this.btnPrikaziTurnir.Click += new System.EventHandler(this.btnPrikaziTurnir_Click);
             // 
             // btnPrikaziRezultateTurnira
             // 
-            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(464, 176);
+            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(462, 211);
             this.btnPrikaziRezultateTurnira.Name = "btnPrikaziRezultateTurnira";
             this.btnPrikaziRezultateTurnira.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziRezultateTurnira.TabIndex = 32;
             this.btnPrikaziRezultateTurnira.Text = "Prikaži rezultate turnira";
             this.btnPrikaziRezultateTurnira.UseVisualStyleBackColor = true;
+            this.btnPrikaziRezultateTurnira.Click += new System.EventHandler(this.btnPrikaziRezultateTurnira_Click);
             // 
             // btnDodajTurnir
             // 
-            this.btnDodajTurnir.Location = new System.Drawing.Point(464, 205);
+            this.btnDodajTurnir.Location = new System.Drawing.Point(462, 42);
             this.btnDodajTurnir.Name = "btnDodajTurnir";
             this.btnDodajTurnir.Size = new System.Drawing.Size(123, 23);
             this.btnDodajTurnir.TabIndex = 33;
@@ -110,12 +112,34 @@
             this.groupBox1.Controls.Add(this.rbtnPrijasnji);
             this.groupBox1.Controls.Add(this.rbtnSviTurniri);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(464, 42);
+            this.groupBox1.Location = new System.Drawing.Point(464, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(125, 99);
+            this.groupBox1.Size = new System.Drawing.Size(121, 99);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
+            // 
+            // rbtnNadolazeci
+            // 
+            this.rbtnNadolazeci.AutoSize = true;
+            this.rbtnNadolazeci.Location = new System.Drawing.Point(7, 73);
+            this.rbtnNadolazeci.Name = "rbtnNadolazeci";
+            this.rbtnNadolazeci.Size = new System.Drawing.Size(95, 20);
+            this.rbtnNadolazeci.TabIndex = 2;
+            this.rbtnNadolazeci.Text = "Nadolazeći";
+            this.rbtnNadolazeci.UseVisualStyleBackColor = true;
+            this.rbtnNadolazeci.CheckedChanged += new System.EventHandler(this.rbtnNadolazeci_CheckedChanged);
+            // 
+            // rbtnPrijasnji
+            // 
+            this.rbtnPrijasnji.AutoSize = true;
+            this.rbtnPrijasnji.Location = new System.Drawing.Point(7, 48);
+            this.rbtnPrijasnji.Name = "rbtnPrijasnji";
+            this.rbtnPrijasnji.Size = new System.Drawing.Size(73, 20);
+            this.rbtnPrijasnji.TabIndex = 1;
+            this.rbtnPrijasnji.Text = "Prijašnji";
+            this.rbtnPrijasnji.UseVisualStyleBackColor = true;
+            this.rbtnPrijasnji.CheckedChanged += new System.EventHandler(this.rbtnPrijasnji_CheckedChanged);
             // 
             // rbtnSviTurniri
             // 
@@ -130,28 +154,6 @@
             this.rbtnSviTurniri.UseVisualStyleBackColor = true;
             this.rbtnSviTurniri.CheckedChanged += new System.EventHandler(this.rbtnSviTurniri_CheckedChanged);
             // 
-            // rbtnPrijasnji
-            // 
-            this.rbtnPrijasnji.AutoSize = true;
-            this.rbtnPrijasnji.Location = new System.Drawing.Point(7, 48);
-            this.rbtnPrijasnji.Name = "rbtnPrijasnji";
-            this.rbtnPrijasnji.Size = new System.Drawing.Size(73, 20);
-            this.rbtnPrijasnji.TabIndex = 1;
-            this.rbtnPrijasnji.Text = "Prijašnji";
-            this.rbtnPrijasnji.UseVisualStyleBackColor = true;
-            this.rbtnPrijasnji.CheckedChanged += new System.EventHandler(this.rbtnPrijasnji_CheckedChanged);
-            // 
-            // rbtnNadolazeci
-            // 
-            this.rbtnNadolazeci.AutoSize = true;
-            this.rbtnNadolazeci.Location = new System.Drawing.Point(7, 73);
-            this.rbtnNadolazeci.Name = "rbtnNadolazeci";
-            this.rbtnNadolazeci.Size = new System.Drawing.Size(95, 20);
-            this.rbtnNadolazeci.TabIndex = 2;
-            this.rbtnNadolazeci.Text = "Nadolazeći";
-            this.rbtnNadolazeci.UseVisualStyleBackColor = true;
-            this.rbtnNadolazeci.CheckedChanged += new System.EventHandler(this.rbtnNadolazeci_CheckedChanged);
-            // 
             // turnirBindingSource
             // 
             this.turnirBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
@@ -162,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Tennis_Track.Properties.Resources.How_to_Grip_a_Tennis_Racket_Properly;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(601, 438);
+            this.ClientSize = new System.Drawing.Size(601, 409);
             this.ControlBox = false;
             this.Controls.Add(this.btnPrikaziRezultateTurnira);
             this.Controls.Add(this.btnPrikaziTurnir);

@@ -133,7 +133,7 @@
             this.Controls.Add(this.Naziv);
             this.Name = "DodavanjeTurnira";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DodavanjeTurnira";
+            this.Text = "Dodavanje turnira";
             this.Load += new System.EventHandler(this.DodavanjeTurnira_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,7 +31,10 @@ namespace Tennis_Track.Forme
             turniriDataGridView.DataSource = DohvatiTurnire();
             turniriDataGridView.Columns["Mecs"].Visible = false;
             turniriDataGridView.Columns["Clans"].Visible = false;
+            Ukljuci_Iskljuci_Tipke();
         }
+
+        
 
         private object DohvatiTurnire()
         {
@@ -66,23 +69,69 @@ namespace Tennis_Track.Forme
             dodavanjeTurnira.ShowDialog();
 
             turniriDataGridView.DataSource = DohvatiTurnire();
+            Ukljuci_Iskljuci_Tipke();
         }
 
         private void rbtnSviTurniri_CheckedChanged(object sender, EventArgs e)
         {
             turniriDataGridView.DataSource = DohvatiTurnire();
+            Ukljuci_Iskljuci_Tipke();
+
         }
 
         private void rbtnPrijasnji_CheckedChanged(object sender, EventArgs e)
         {
             var prijasnjiTurniri = from m in tennisTrackEntities.Turnir where m.Datum <= DateTime.Today select m;
             turniriDataGridView.DataSource = prijasnjiTurniri.ToList();
+            Ukljuci_Iskljuci_Tipke();
         }
 
         private void rbtnNadolazeci_CheckedChanged(object sender, EventArgs e)
         {
             var nadolazeciTurniri = from m in tennisTrackEntities.Turnir where m.Datum > DateTime.Today select m;
             turniriDataGridView.DataSource = nadolazeciTurniri.ToList();
+            Ukljuci_Iskljuci_Tipke();
+
+        }
+
+        private void btnPrikaziRezultateTurnira_Click(object sender, EventArgs e)
+        {
+            Turnir izabraniTurnir2 = DohvatiIzabraniTurnir();
+            RezultatiTurnira form = new RezultatiTurnira(izabraniTurnir2);
+            form.ShowDialog();
+        }
+
+        private void Ukljuci_Iskljuci_Tipke()
+        {
+            if (turniriDataGridView.Rows.Count != 0)
+            {
+                btnPrikaziTurnir.Enabled = true;
+                btnPrikaziRezultateTurnira.Enabled = true;
+                var vrijednost = turniriDataGridView.CurrentRow.Cells[2].Value.ToString();
+                var datum = DateTime.Parse(vrijednost);
+                var danas = DateTime.Today;
+                if (datum <= danas)
+                {
+                    btnPrikaziRezultateTurnira.Enabled = true;
+                    //btnPrikaziTurnir.Enabled = false;
+                }
+                else if (datum > danas)
+                {
+                    btnPrikaziTurnir.Enabled = true;
+                    btnPrikaziRezultateTurnira.Enabled = false;
+                }
+
+            }
+            else
+            {
+                btnPrikaziTurnir.Enabled = false;
+                btnPrikaziRezultateTurnira.Enabled = false;
+            }
+        }
+
+        private void turniriDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Ukljuci_Iskljuci_Tipke();
         }
     }
 }

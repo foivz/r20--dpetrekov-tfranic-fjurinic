@@ -106,3 +106,5 @@ C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Ten
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis Track.csproj.CopyComplete
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.DodavanjeTurnira.resources
+C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.RezultatiTurnira.resources
+C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.BrisanjeTurnira.resources

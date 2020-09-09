@@ -44,5 +44,12 @@ namespace Tennis_Track.Forme
             this.Hide();
             brisanje_Mečeva.ShowDialog();
         }
+
+        private void btnBrisanjeTurnira_Click(object sender, EventArgs e)
+        {
+            BrisanjeTurnira brisanjeTurnira = new BrisanjeTurnira(this);
+            this.Hide();
+            brisanjeTurnira.ShowDialog();
+        }
     }
 }

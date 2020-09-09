@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTurnirVrijeme = new System.Windows.Forms.TextBox();
             this.txtTurnirDatum = new System.Windows.Forms.TextBox();
@@ -36,12 +37,19 @@
             this.txtTurnirNaziv = new System.Windows.Forms.TextBox();
             this.Naziv = new System.Windows.Forms.Label();
             this.sudioniciDataGridView = new System.Windows.Forms.DataGridView();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnPrijava = new System.Windows.Forms.Button();
             this.btnOdjava = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.turnirBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sudioniciDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,15 +74,15 @@
             this.txtTurnirVrijeme.Location = new System.Drawing.Point(122, 105);
             this.txtTurnirVrijeme.Name = "txtTurnirVrijeme";
             this.txtTurnirVrijeme.ReadOnly = true;
-            this.txtTurnirVrijeme.Size = new System.Drawing.Size(55, 22);
+            this.txtTurnirVrijeme.Size = new System.Drawing.Size(58, 22);
             this.txtTurnirVrijeme.TabIndex = 5;
             // 
             // txtTurnirDatum
             // 
-            this.txtTurnirDatum.Location = new System.Drawing.Point(63, 68);
+            this.txtTurnirDatum.Location = new System.Drawing.Point(58, 68);
             this.txtTurnirDatum.Name = "txtTurnirDatum";
             this.txtTurnirDatum.ReadOnly = true;
-            this.txtTurnirDatum.Size = new System.Drawing.Size(65, 22);
+            this.txtTurnirDatum.Size = new System.Drawing.Size(73, 22);
             this.txtTurnirDatum.TabIndex = 4;
             // 
             // label2
@@ -114,11 +122,39 @@
             // 
             // sudioniciDataGridView
             // 
+            this.sudioniciDataGridView.AutoGenerateColumns = false;
             this.sudioniciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sudioniciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.telefonDataGridViewTextBoxColumn});
+            this.sudioniciDataGridView.DataSource = this.clanBindingSource;
             this.sudioniciDataGridView.Location = new System.Drawing.Point(301, 43);
             this.sudioniciDataGridView.Name = "sudioniciDataGridView";
             this.sudioniciDataGridView.Size = new System.Drawing.Size(349, 192);
             this.sudioniciDataGridView.TabIndex = 33;
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            // 
+            // telefonDataGridViewTextBoxColumn
+            // 
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            // 
+            // clanBindingSource
+            // 
+            this.clanBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Clan);
             // 
             // label3
             // 
@@ -138,6 +174,7 @@
             this.btnPrijava.TabIndex = 35;
             this.btnPrijava.Text = "Prijava";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // btnOdjava
             // 
@@ -159,6 +196,10 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
+            // turnirBindingSource
+            // 
+            this.turnirBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
+            // 
             // JedanTurnir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +220,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sudioniciDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +240,10 @@
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource clanBindingSource;
+        private System.Windows.Forms.BindingSource turnirBindingSource;
     }
 }

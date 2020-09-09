@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Tennis_Track.Baza_podataka;
+
+namespace Tennis_Track.Forme
+{
+
+    public partial class RezultatiTurnira : Form
+    {
+        TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
+
+        private Turnir izabraniTurnir1;
+
+        public RezultatiTurnira(Turnir turnir)
+        {
+            InitializeComponent();
+            izabraniTurnir1 = turnir;
+        }
+
+        private void RezultatiTurnira_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
+        }
+
+        private void RefreshGUI()
+        {
+            PopuniInformacije();
+            PopuniRezultate();
+        }
+
+        private void PopuniRezultate()
+        {
+            DohvatiRezultateTurnira();
+        }
+
+        private void DohvatiRezultateTurnira()
+        {
+                var mecevi = from m in tennisTrackEntities.Mec where izabraniTurnir1.Id == m.Turnir_Id select m;
+                dgvRezultatiTurnira.DataSource = mecevi.ToList();
+
+                for (int i = 0; i < dgvRezultatiTurnira.Columns.Count; i++)
+                {
+                    dgvRezultatiTurnira.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgvRezultatiTurnira.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgvRezultatiTurnira.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+
+                dgvRezultatiTurnira.AllowUserToAddRows = false;
+                dgvRezultatiTurnira.RowHeadersVisible = false;
+                dgvRezultatiTurnira.Columns[0].HeaderText = "Prvi igrač";
+                dgvRezultatiTurnira.Columns[1].HeaderText = "Drugi igrač";
+                dgvRezultatiTurnira.Columns[3].HeaderText = "Setovi";
+               
+        }
+
+        private void PopuniInformacije()
+        {
+            lblNazivTurnira.Text = izabraniTurnir1.Naziv;
+        }
+
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+}
