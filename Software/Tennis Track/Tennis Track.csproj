@@ -182,6 +182,12 @@
     <Compile Include="Forme\ResetirajLozinku.Designer.cs">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Rezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Rezervacije.Designer.cs">
+      <DependentUpon>Rezervacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\RezultatiTurnira.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ResetirajLozinku.resx">
       <DependentUpon>ResetirajLozinku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Rezervacije.resx">
+      <DependentUpon>Rezervacije.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\RezultatiTurnira.resx">
       <DependentUpon>RezultatiTurnira.cs</DependentUpon>

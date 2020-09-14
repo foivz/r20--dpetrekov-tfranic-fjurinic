@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tennis_Track.Baza_podataka;
+using Tennis_Track.Klase;
 
 namespace Tennis_Track.Forme
 {
@@ -36,7 +37,17 @@ namespace Tennis_Track.Forme
                 turniriDataGridView.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             Ukljuci_Iskljuci_Tipke();
+
+            if (PrijavaClana.PrijavljeniCLan.TipClana == "Admin")
+            {
+                btnDodajTurnir.Visible = true;
+            }
+            else
+            {
+                btnDodajTurnir.Visible = false;
+            }
         }
+
 
         
 

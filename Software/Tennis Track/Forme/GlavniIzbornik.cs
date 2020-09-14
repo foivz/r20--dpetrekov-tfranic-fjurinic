@@ -94,5 +94,12 @@ namespace Tennis_Track.Forme
             this.Hide();
             turniri.ShowDialog();
         }
+
+        private void btnRezervacijaTerena_Click(object sender, EventArgs e)
+        {
+            Rezervacije rezervacije = new Rezervacije(this);
+            this.Hide();
+            rezervacije.ShowDialog();
+        }
     }
 }

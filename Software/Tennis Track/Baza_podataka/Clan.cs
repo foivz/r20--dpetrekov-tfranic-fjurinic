@@ -43,6 +43,14 @@ namespace Tennis_Track.Baza_podataka
         public virtual ICollection<Turnir> Turnirs { get; set; }
 
 
+        private string imeIPrezime;
+
+        public string ImeIPrezime
+        {
+            get { return Ime + " " + Prezime; }
+            set { imeIPrezime = value; }
+        }
+
         private int ukupnoPobjeda;
         public int UkupnoPobjeda
         {

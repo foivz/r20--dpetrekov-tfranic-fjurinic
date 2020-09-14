@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.lblPopis = new System.Windows.Forms.Label();
             this.turniriDataGridView = new System.Windows.Forms.DataGridView();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnirBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnPovratak = new System.Windows.Forms.Button();
             this.btnPrikaziTurnir = new System.Windows.Forms.Button();
             this.btnPrikaziRezultateTurnira = new System.Windows.Forms.Button();
@@ -39,16 +43,12 @@
             this.rbtnNadolazeci = new System.Windows.Forms.RadioButton();
             this.rbtnPrijasnji = new System.Windows.Forms.RadioButton();
             this.rbtnSviTurniri = new System.Windows.Forms.RadioButton();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vrijemeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnirBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.turnirBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTurniri = new System.Windows.Forms.TextBox();
             this.Pretrazi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,28 @@
             this.turniriDataGridView.TabIndex = 29;
             this.turniriDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.turniriDataGridView_CellClick);
             // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            // 
+            // vrijemeDataGridViewTextBoxColumn
+            // 
+            this.vrijemeDataGridViewTextBoxColumn.DataPropertyName = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
+            this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
+            // 
+            // turnirBindingSource1
+            // 
+            this.turnirBindingSource1.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
+            // 
             // btnPovratak
             // 
             this.btnPovratak.Location = new System.Drawing.Point(366, 372);
@@ -90,7 +112,7 @@
             // 
             // btnPrikaziTurnir
             // 
-            this.btnPrikaziTurnir.Location = new System.Drawing.Point(364, 183);
+            this.btnPrikaziTurnir.Location = new System.Drawing.Point(364, 147);
             this.btnPrikaziTurnir.Name = "btnPrikaziTurnir";
             this.btnPrikaziTurnir.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziTurnir.TabIndex = 31;
@@ -100,7 +122,7 @@
             // 
             // btnPrikaziRezultateTurnira
             // 
-            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(364, 212);
+            this.btnPrikaziRezultateTurnira.Location = new System.Drawing.Point(364, 176);
             this.btnPrikaziRezultateTurnira.Name = "btnPrikaziRezultateTurnira";
             this.btnPrikaziRezultateTurnira.Size = new System.Drawing.Size(125, 23);
             this.btnPrikaziRezultateTurnira.TabIndex = 32;
@@ -110,7 +132,7 @@
             // 
             // btnDodajTurnir
             // 
-            this.btnDodajTurnir.Location = new System.Drawing.Point(364, 43);
+            this.btnDodajTurnir.Location = new System.Drawing.Point(366, 12);
             this.btnDodajTurnir.Name = "btnDodajTurnir";
             this.btnDodajTurnir.Size = new System.Drawing.Size(123, 23);
             this.btnDodajTurnir.TabIndex = 33;
@@ -125,7 +147,7 @@
             this.groupBox1.Controls.Add(this.rbtnPrijasnji);
             this.groupBox1.Controls.Add(this.rbtnSviTurniri);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(366, 78);
+            this.groupBox1.Location = new System.Drawing.Point(366, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 99);
             this.groupBox1.TabIndex = 34;
@@ -158,7 +180,7 @@
             // 
             this.rbtnSviTurniri.AutoSize = true;
             this.rbtnSviTurniri.Checked = true;
-            this.rbtnSviTurniri.Location = new System.Drawing.Point(7, 22);
+            this.rbtnSviTurniri.Location = new System.Drawing.Point(6, 21);
             this.rbtnSviTurniri.Name = "rbtnSviTurniri";
             this.rbtnSviTurniri.Size = new System.Drawing.Size(79, 20);
             this.rbtnSviTurniri.TabIndex = 0;
@@ -166,28 +188,6 @@
             this.rbtnSviTurniri.Text = "Svi turniri";
             this.rbtnSviTurniri.UseVisualStyleBackColor = true;
             this.rbtnSviTurniri.CheckedChanged += new System.EventHandler(this.rbtnSviTurniri_CheckedChanged);
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            // 
-            // vrijemeDataGridViewTextBoxColumn
-            // 
-            this.vrijemeDataGridViewTextBoxColumn.DataPropertyName = "Vrijeme";
-            this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
-            this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
-            // 
-            // turnirBindingSource1
-            // 
-            this.turnirBindingSource1.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
             // 
             // turnirBindingSource
             // 
@@ -235,9 +235,9 @@
             this.Text = "Turniri";
             this.Load += new System.EventHandler(this.Turniri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

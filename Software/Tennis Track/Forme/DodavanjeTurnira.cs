@@ -44,6 +44,7 @@ namespace Tennis_Track.Forme
 
                 Turnir noviTurnir = new Turnir
                 {
+                    
                     Naziv = naziv,
                     Datum = datum,
                     Vrijeme = pravoVrijeme
@@ -87,7 +88,7 @@ namespace Tennis_Track.Forme
 
             else if(dtpDatumTurnira.Value == danas)
             {
-                MessageBox.Show("Ne možete rezervirati turnir na današnji dan!");
+                MessageBox.Show("Ne možete dodati turnir na današnji dan!");
                 dtpDatumTurnira.Value = sutra;
             }
             

@@ -119,6 +119,7 @@
             this.btnRezervacijaTerena.TabIndex = 6;
             this.btnRezervacijaTerena.Text = "Rezervacija terena";
             this.btnRezervacijaTerena.UseVisualStyleBackColor = true;
+            this.btnRezervacijaTerena.Click += new System.EventHandler(this.btnRezervacijaTerena_Click);
             // 
             // lblImePrezimeKorisnika
             // 
