@@ -72,7 +72,8 @@ namespace Tennis_Track.Forme
             if (txtClan.Text.ToString() != "")
             {
                 mecevi = (from r in mecevi
-                          where (r.ImePrviClan.ToString().ToLower().Contains(txtClan.Text.ToString().ToLower()))
+                          where r.ImePrviClan.ToString().ToLower().Contains(txtClan.Text.ToString().ToLower()) ||
+                          r.ImeDrugiClan.ToString().ToLower().Contains(txtClan.Text.ToString().ToLower())
                           select r).ToList();
             }
             dgvRezultatiTurnira.DataSource = mecevi;
