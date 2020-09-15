@@ -30,12 +30,12 @@
         {
             this.btnPovratak = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblRangListe = new System.Windows.Forms.Label();
-            this.lblTurniri = new System.Windows.Forms.Label();
-            this.lblMecevi = new System.Windows.Forms.Label();
-            this.lblRezervacijaTerena = new System.Windows.Forms.Label();
-            this.lblPostavke = new System.Windows.Forms.Label();
             this.lblAdminPanel = new System.Windows.Forms.Label();
+            this.lblPostavke = new System.Windows.Forms.Label();
+            this.lblRezervacijaTerena = new System.Windows.Forms.Label();
+            this.lblMecevi = new System.Windows.Forms.Label();
+            this.lblTurniri = new System.Windows.Forms.Label();
+            this.lblRangListe = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,49 +64,17 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // lblRangListe
+            // lblAdminPanel
             // 
-            this.lblRangListe.AutoSize = true;
-            this.lblRangListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRangListe.Location = new System.Drawing.Point(6, 16);
-            this.lblRangListe.Margin = new System.Windows.Forms.Padding(5);
-            this.lblRangListe.Name = "lblRangListe";
-            this.lblRangListe.Size = new System.Drawing.Size(568, 25);
-            this.lblRangListe.TabIndex = 9;
-            this.lblRangListe.Text = "Rang liste - prikaz svih korisnika te njihovih rangova unutar kluba";
-            // 
-            // lblTurniri
-            // 
-            this.lblTurniri.AutoSize = true;
-            this.lblTurniri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurniri.Location = new System.Drawing.Point(8, 55);
-            this.lblTurniri.Margin = new System.Windows.Forms.Padding(5);
-            this.lblTurniri.Name = "lblTurniri";
-            this.lblTurniri.Size = new System.Drawing.Size(645, 25);
-            this.lblTurniri.TabIndex = 10;
-            this.lblTurniri.Text = "Turniri - dodavanje turnira (samo za zaposlenike kluba) i prijave na turnire";
-            // 
-            // lblMecevi
-            // 
-            this.lblMecevi.AutoSize = true;
-            this.lblMecevi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMecevi.Location = new System.Drawing.Point(8, 94);
-            this.lblMecevi.Margin = new System.Windows.Forms.Padding(5);
-            this.lblMecevi.Name = "lblMecevi";
-            this.lblMecevi.Size = new System.Drawing.Size(499, 25);
-            this.lblMecevi.TabIndex = 11;
-            this.lblMecevi.Text = "Mečevi - pregled svih mečeva te unos odigranih mečeva";
-            // 
-            // lblRezervacijaTerena
-            // 
-            this.lblRezervacijaTerena.AutoSize = true;
-            this.lblRezervacijaTerena.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRezervacijaTerena.Location = new System.Drawing.Point(8, 133);
-            this.lblRezervacijaTerena.Margin = new System.Windows.Forms.Padding(5);
-            this.lblRezervacijaTerena.Name = "lblRezervacijaTerena";
-            this.lblRezervacijaTerena.Size = new System.Drawing.Size(682, 25);
-            this.lblRezervacijaTerena.TabIndex = 12;
-            this.lblRezervacijaTerena.Text = "Rezervacija terana - rezerviranje terena na određeni datum i određeno vrijeme";
+            this.lblAdminPanel.AutoSize = true;
+            this.lblAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminPanel.Location = new System.Drawing.Point(8, 211);
+            this.lblAdminPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.lblAdminPanel.Name = "lblAdminPanel";
+            this.lblAdminPanel.Size = new System.Drawing.Size(647, 50);
+            this.lblAdminPanel.TabIndex = 14;
+            this.lblAdminPanel.Text = "Admin panel - dodavanje novih članova, brisanje mečeva i brisanje turnira\r\n(samo " +
+    "za zaposlenike)";
             // 
             // lblPostavke
             // 
@@ -119,16 +87,49 @@
             this.lblPostavke.TabIndex = 13;
             this.lblPostavke.Text = "Postavke - promjena Emaila, telefona i lozinke";
             // 
-            // lblAdminPanel
+            // lblRezervacijaTerena
             // 
-            this.lblAdminPanel.AutoSize = true;
-            this.lblAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdminPanel.Location = new System.Drawing.Point(8, 211);
-            this.lblAdminPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.lblAdminPanel.Name = "lblAdminPanel";
-            this.lblAdminPanel.Size = new System.Drawing.Size(712, 25);
-            this.lblAdminPanel.TabIndex = 14;
-            this.lblAdminPanel.Text = "Admin panel - dodavanje novih članova i brisanje mečeva (samo za zaposlenike)";
+            this.lblRezervacijaTerena.AutoSize = true;
+            this.lblRezervacijaTerena.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRezervacijaTerena.Location = new System.Drawing.Point(8, 133);
+            this.lblRezervacijaTerena.Margin = new System.Windows.Forms.Padding(5);
+            this.lblRezervacijaTerena.Name = "lblRezervacijaTerena";
+            this.lblRezervacijaTerena.Size = new System.Drawing.Size(682, 25);
+            this.lblRezervacijaTerena.TabIndex = 12;
+            this.lblRezervacijaTerena.Text = "Rezervacija terana - rezerviranje terena na određeni datum i određeno vrijeme";
+            // 
+            // lblMecevi
+            // 
+            this.lblMecevi.AutoSize = true;
+            this.lblMecevi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMecevi.Location = new System.Drawing.Point(8, 94);
+            this.lblMecevi.Margin = new System.Windows.Forms.Padding(5);
+            this.lblMecevi.Name = "lblMecevi";
+            this.lblMecevi.Size = new System.Drawing.Size(499, 25);
+            this.lblMecevi.TabIndex = 11;
+            this.lblMecevi.Text = "Mečevi - pregled svih mečeva te unos odigranih mečeva";
+            // 
+            // lblTurniri
+            // 
+            this.lblTurniri.AutoSize = true;
+            this.lblTurniri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurniri.Location = new System.Drawing.Point(8, 55);
+            this.lblTurniri.Margin = new System.Windows.Forms.Padding(5);
+            this.lblTurniri.Name = "lblTurniri";
+            this.lblTurniri.Size = new System.Drawing.Size(645, 25);
+            this.lblTurniri.TabIndex = 10;
+            this.lblTurniri.Text = "Turniri - dodavanje turnira (samo za zaposlenike kluba) i prijave na turnire";
+            // 
+            // lblRangListe
+            // 
+            this.lblRangListe.AutoSize = true;
+            this.lblRangListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRangListe.Location = new System.Drawing.Point(6, 16);
+            this.lblRangListe.Margin = new System.Windows.Forms.Padding(5);
+            this.lblRangListe.Name = "lblRangListe";
+            this.lblRangListe.Size = new System.Drawing.Size(568, 25);
+            this.lblRangListe.TabIndex = 9;
+            this.lblRangListe.Text = "Rang liste - prikaz svih korisnika te njihovih rangova unutar kluba";
             // 
             // Help
             // 
