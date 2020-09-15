@@ -301,7 +301,12 @@
   <ItemGroup>
     <None Include="Resources\How-to-Grip-a-Tennis-Racket-Properly.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Provjera vremena\Provjera_vremena.csproj">
+      <Project>{6492a7dd-078b-4ff2-932e-ccd1d04abc72}</Project>
+      <Name>Provjera_vremena</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Baza_podataka\TennisTrackModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

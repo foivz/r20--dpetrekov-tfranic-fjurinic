@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tennis_Track.Baza_podataka;
 using Tennis_Track.Klase;
+using ProvjeraVremena;
 
 namespace Tennis_Track.Forme
 {
@@ -107,9 +108,11 @@ namespace Tennis_Track.Forme
             var date = DateTime.Parse(lblDatum.Text);
             var datum = date.ToString("yyyy-MM-dd");
 
+            Vrijeme kontrola = new Vrijeme();
+
             if (label.Text == "Slobodno")
             {
-                if (ProvjeriRezervacije() == true && ProvjeriVrijeme(vrijeme) == false)
+                if (ProvjeriRezervacije() == true && kontrola.ProvjeriVrijeme(vrijeme, lblDatum) == false)
                 {
                     if (MessageBox.Show("Želite rezervirati odabrani termin?", "Rezervacija", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
@@ -130,30 +133,32 @@ namespace Tennis_Track.Forme
                     {
                         PopuniRezervacije(DateTime.Today.AddDays(2));
                     }
-
                 }
             }
             else if (label.Text == PrijavaClana.PrijavljeniCLan.ImeIPrezime)
             {
-                if (MessageBox.Show("Želite obrisati odabrani termin?", "Brisanje rezervacije", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Delete from Rezervacije where Datum = '" + datum + "' AND Vrijeme = '" + vrijeme + "' AND Clan_Id =" + PrijavaClana.PrijavljeniCLan.ID + " AND Teren_Id = " + teren + "", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
-                if (datum == DateTime.Today.ToString("yyyy-MM-dd"))
-                {
-                    PopuniRezervacije(DateTime.Today.Date);
-                }
-                else if (datum == DateTime.Today.AddDays(1).ToString("yyyy-MM-dd"))
-                {
-                    PopuniRezervacije(DateTime.Today.AddDays(1));
-                }
-                else
-                {
-                    PopuniRezervacije(DateTime.Today.AddDays(2));
-                }
+               if (kontrola.ProvjeriVrijemeBrisanje(vrijeme, lblDatum) == false)
+               {
+                    if (MessageBox.Show("Želite obrisati odabrani termin?", "Brisanje rezervacije", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("Delete from Rezervacije where Datum = '" + datum + "' AND Vrijeme = '" + vrijeme + "' AND Clan_Id =" + PrijavaClana.PrijavljeniCLan.ID + " AND Teren_Id = " + teren + "", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (datum == DateTime.Today.ToString("yyyy-MM-dd"))
+                    {
+                        PopuniRezervacije(DateTime.Today.Date);
+                    }
+                    else if (datum == DateTime.Today.AddDays(1).ToString("yyyy-MM-dd"))
+                    {
+                        PopuniRezervacije(DateTime.Today.AddDays(1));
+                    }
+                    else
+                    {
+                        PopuniRezervacije(DateTime.Today.AddDays(2));
+                    }
+               }
             }
             else
             {
@@ -181,24 +186,6 @@ namespace Tennis_Track.Forme
             {
                 con.Close();
                 return true;
-            }
-        }
-
-        private bool ProvjeriVrijeme(string vrijeme)
-        {
-            var date = DateTime.Parse(lblDatum.Text);
-            var datum = date.ToString("yyyy-MM-dd");
-            var time = DateTime.Now;
-            DateTime vrijeme1 = DateTime.Parse(vrijeme);
-
-            if (datum == DateTime.Today.ToString("yyyy-MM-dd") && vrijeme1 <= time)
-            {
-                MessageBox.Show("Ne možete rezervirati termin u prošlosti!");
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 

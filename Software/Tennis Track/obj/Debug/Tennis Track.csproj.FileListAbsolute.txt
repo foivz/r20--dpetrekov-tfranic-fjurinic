@@ -109,3 +109,6 @@ C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Ten
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.RezultatiTurnira.resources
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.BrisanjeTurnira.resources
 C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\obj\Debug\Tennis_Track.Forme.Rezervacije.resources
+C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Provjera vremena.dll
+C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Provjera vremena.pdb
+C:\Users\Filip Jurinic\source\repos\r20--dpetrekov-tfranic-fjurinic\Software\Tennis Track\bin\Debug\Provjera vremena.dll.config
