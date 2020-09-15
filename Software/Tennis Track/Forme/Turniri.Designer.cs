@@ -234,6 +234,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turniri";
             this.Load += new System.EventHandler(this.Turniri_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Turniri_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.turniriDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnirBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -29,7 +29,10 @@ namespace Tennis_Track.Forme
 
         private void Turniri_Load(object sender, EventArgs e)
         {
-            turniriDataGridView.DataSource = DohvatiTurnire();
+            rbtnSviTurniri.Checked = true;
+            rbtnPrijasnji.Checked = false;
+            rbtnNadolazeci.Checked = false;
+            DohvatiTurnire();
 
             for (int i = 0; i < turniriDataGridView.Columns.Count; i++)
             {
@@ -51,11 +54,26 @@ namespace Tennis_Track.Forme
 
         
 
-        private object DohvatiTurnire()
+        private void DohvatiTurnire()
         {
-            using (var context = new TennisTrackEntities())
+            
+            if(rbtnPrijasnji.Checked == true)
             {
-                return context.Turnir.ToList();
+                var prijasnjiTurniri = from m in tennisTrackEntities.Turnir where m.Datum <= DateTime.Today select m;
+                turniriDataGridView.DataSource = prijasnjiTurniri.ToList();
+                Ukljuci_Iskljuci_Tipke();
+            }
+            if (rbtnNadolazeci.Checked == true)
+            {
+                var nadolazeciTurniri = from m in tennisTrackEntities.Turnir where m.Datum > DateTime.Today select m;
+                turniriDataGridView.DataSource = nadolazeciTurniri.ToList();
+                Ukljuci_Iskljuci_Tipke();
+            }
+            if (rbtnSviTurniri.Checked == true)
+            {
+                var turniri = from t in tennisTrackEntities.Turnir select t;
+                turniriDataGridView.DataSource = turniri.ToList();
+                Ukljuci_Iskljuci_Tipke();
             }
         }
 
@@ -83,29 +101,35 @@ namespace Tennis_Track.Forme
             DodavanjeTurnira dodavanjeTurnira = new DodavanjeTurnira(this);
             dodavanjeTurnira.ShowDialog();
 
-            turniriDataGridView.DataSource = DohvatiTurnire();
+            DohvatiTurnire();
             Ukljuci_Iskljuci_Tipke();
+            OsvjeziTurnire();
         }
 
         private void rbtnSviTurniri_CheckedChanged(object sender, EventArgs e)
         {
-            turniriDataGridView.DataSource = DohvatiTurnire();
+            
+            DohvatiTurnire();
             Ukljuci_Iskljuci_Tipke();
+            OsvjeziTurnire();
 
         }
 
         private void rbtnPrijasnji_CheckedChanged(object sender, EventArgs e)
         {
-            var prijasnjiTurniri = from m in tennisTrackEntities.Turnir where m.Datum <= DateTime.Today select m;
-            turniriDataGridView.DataSource = prijasnjiTurniri.ToList();
+            
+            DohvatiTurnire();
             Ukljuci_Iskljuci_Tipke();
+            OsvjeziTurnire();
+
         }
 
         private void rbtnNadolazeci_CheckedChanged(object sender, EventArgs e)
         {
-            var nadolazeciTurniri = from m in tennisTrackEntities.Turnir where m.Datum > DateTime.Today select m;
-            turniriDataGridView.DataSource = nadolazeciTurniri.ToList();
+            
+            DohvatiTurnire();
             Ukljuci_Iskljuci_Tipke();
+            OsvjeziTurnire();
 
         }
 
@@ -151,21 +175,57 @@ namespace Tennis_Track.Forme
         {
             List<Turnir> turniri = new List<Turnir>();
             turniri = tennisTrackEntities.Turnir.ToList();
-            if (txtTurniri.Text.ToString() != "")
+            if (txtTurniri.Text.ToString() == "")
             {
-                turniri = (from turnir in turniri
-                           where (turnir.Naziv.ToString().ToLower().Contains(txtTurniri.Text.ToString().ToLower()))
-                           select turnir).ToList();
+                DohvatiTurnire();
             }
-            turniriDataGridView.DataSource = turniri;
+            else
+            {
+                if(rbtnSviTurniri.Checked == true)
+                {
+                    turniri = (from turnir in turniri
+                               where (turnir.Naziv.ToString().ToLower().Contains(txtTurniri.Text.ToString().ToLower()))
+                               select turnir).ToList();
+
+                    turniriDataGridView.DataSource = turniri;
+                }
+                if(rbtnPrijasnji.Checked == true)
+                {
+                    turniri = (from turnir in turniri
+                               where turnir.Naziv.ToString().ToLower().Contains(txtTurniri.Text.ToString().ToLower()) && turnir.Datum <= DateTime.Today
+                               select turnir).ToList();
+
+                    turniriDataGridView.DataSource = turniri;
+                }
+                if(rbtnNadolazeci.Checked == true)
+                {
+                    turniri = (from turnir in turniri
+                               where turnir.Naziv.ToString().ToLower().Contains(txtTurniri.Text.ToString().ToLower()) && turnir.Datum > DateTime.Today
+                               select turnir).ToList();
+
+                    turniriDataGridView.DataSource = turniri;
+                }
+            }
             Ukljuci_Iskljuci_Tipke();
         }
 
         private void txtTurniri_TextChanged(object sender, EventArgs e)
         {
             OsvjeziTurnire();
+            
         }
 
-       
+        private void Turniri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Ovdje su prikazani svi turniri. Moguće je pretraživati turnire" +
+                    " prema nazivu. S desne strane imamo filter gdje možemo izabrati sve turnire, prijašnje ili nadolazeće." +
+                    "Kada odaberete turnir i ako je turnir već odigran, tada možete vidjeti rezultate turnira klikom " +
+                    "na tipku 'Prikaži rezultate turnira'." +
+                    "Odabirom nadolazećeg turnira, možete kliknuti na tipku 'Prikaži turnir / Prijava' te se tada otvara " +
+                    "prozor sa prikazom sudionika turnira i moguće se prijaviti ili odjaviti s turnira.","Help");
+            }
+        }
     }
 }

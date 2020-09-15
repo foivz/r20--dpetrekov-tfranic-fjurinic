@@ -413,6 +413,19 @@ namespace Tennis_Track.Forme
         {
             UpisiObrisiRezervaciju("20:00", 23, lblZemlja20);
         }
+
+        private void Rezervacije_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Ovaj prozor korisniku omogućuje pregled i rezervaciju termina za teniske terene." +
+                    "Klikom na tipku Danas, Sutra i Preksutra mijenjamo datum kada želimo rezervirati te se datum prikazuje iznad." +
+                    "Klikom na termin gdje piše 'Slobodno' možemo rezervirati termin, ako već nisu rezervirana dva sata termina" +
+                    "i ako rezervirano termin u budućnosti." +
+                    "Klikom na postojeću prijavu, ako prijava nije u prošlosti, možemo izbrisati termin.","Help");
+            }
+        }
+
     }
 }
 
