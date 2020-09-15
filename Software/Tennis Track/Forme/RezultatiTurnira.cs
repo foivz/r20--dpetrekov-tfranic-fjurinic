@@ -88,5 +88,14 @@ namespace Tennis_Track.Forme
         {
             OsvjeziRezultate();
         }
+
+        private void RezultatiTurnira_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Ovdje su prikazani svi rezultati odabranog turnira. " +
+                    "Moguće je pretraživati rezultate prema imenu i prezimenu prvog ili drugog igrača." ,"Help");
+            }
+        }
     }
 }

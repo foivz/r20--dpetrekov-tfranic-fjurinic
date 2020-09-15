@@ -126,5 +126,16 @@ namespace Tennis_Track.Forme
             }
             
         }
+
+        private void JedanTurnir_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Ovdje su prikazani podaci o odabranom turniru te prijavljeni sudionici." +
+                    "Klikom na tipku 'Prijava' možete se prijaviti na turnir. Tipka 'Odjava' se ne može " +
+                    "kliknuti ako član nije prijavljen, a ako je prijavljen, klikom na tu tipku se može " +
+                    "odjaviti s turnira.", "Help");
+            }
+        }
     }
 }

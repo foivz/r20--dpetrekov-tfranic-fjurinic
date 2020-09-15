@@ -214,10 +214,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.sudioniciDataGridView);
             this.Controls.Add(this.groupBox1);
+            this.KeyPreview = true;
             this.Name = "JedanTurnir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turnir";
             this.Load += new System.EventHandler(this.JedanTurnir_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.JedanTurnir_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sudioniciDataGridView)).EndInit();

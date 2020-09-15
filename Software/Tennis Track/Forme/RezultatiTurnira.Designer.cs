@@ -163,10 +163,12 @@
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.lblNazivTurnira);
             this.Controls.Add(this.dgvRezultatiTurnira);
+            this.KeyPreview = true;
             this.Name = "RezultatiTurnira";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezultati turnira";
             this.Load += new System.EventHandler(this.RezultatiTurnira_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RezultatiTurnira_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezultatiTurnira)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mecBindingSource)).EndInit();
             this.ResumeLayout(false);
