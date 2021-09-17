@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace Tennis_Track.Klase
 {
@@ -35,6 +36,18 @@ namespace Tennis_Track.Klase
                 return salt;
             }
         }
+
+        public static bool ProvjeriLozinku(string Lozinka)
+        {
+            byte[] hashLozinke = GenerateSaltedHash(Lozinka, PrijavaClana.PrijavljeniCLan.SaltLozinke);
+            if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.PrijavljeniCLan.HashLozinke, hashLozinke))
+                return true;
+            else
+            {
+                return false;
+            }
+        }
+
 
     }
 }

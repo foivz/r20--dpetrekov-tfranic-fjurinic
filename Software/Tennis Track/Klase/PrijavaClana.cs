@@ -16,10 +16,7 @@ namespace Tennis_Track.Klase
         public static Clan PrijavljeniCLan = null;
         public static bool ProvjeriPodatke(string KorisnickoIme, string Lozinka)
         {
-            using (var db = new TennisTrackEntities())
-            {
-                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
-            }
+            DohvatiKorisnika(KorisnickoIme);
 
             if (PrijavljeniCLan == null)
             {
@@ -39,5 +36,12 @@ namespace Tennis_Track.Klase
             }
         }
 
+        private static void DohvatiKorisnika(string KorisnickoIme)
+        {
+            using (var db = new TennisTrackEntities())
+            {
+                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
+            }
+        }
     }
 }
