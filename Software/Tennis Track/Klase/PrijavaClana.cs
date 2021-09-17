@@ -16,18 +16,14 @@ namespace Tennis_Track.Klase
         public static Clan PrijavljeniCLan = null;
         public static bool ProvjeriPodatke(string KorisnickoIme, string Lozinka)
         {
-            using (var db = new TennisTrackEntities())
-            {
-                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
-            }
+            DohvatiKorisnika(KorisnickoIme);
 
             if (PrijavljeniCLan == null)
             {
                 MessageBox.Show("Nepostojece korisnničko ime!", "Korisničko ime koje ste unesli ne postoji");
                 return false;
             }
-            else if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavljeniCLan.HashLozinke, 
-                    EnkripcijaLozinke.GenerateSaltedHash(Lozinka, PrijavljeniCLan.SaltLozinke)))
+            else if (EnkripcijaLozinke.ProvjeriLozinku(Lozinka))
             {
                 return true;
             }
@@ -36,6 +32,13 @@ namespace Tennis_Track.Klase
                 PrijavljeniCLan = null;
                 MessageBox.Show("Pogrešna lozinka!", "Lozinka koju ste unesli je neispravna");
                 return false;
+            }
+        }
+        private static void DohvatiKorisnika(string KorisnickoIme)
+        {
+            using (var db = new TennisTrackEntities())
+            {
+                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
             }
         }
     }

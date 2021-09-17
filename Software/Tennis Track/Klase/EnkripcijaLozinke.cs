@@ -11,7 +11,6 @@ namespace Tennis_Track.Klase
     public static class EnkripcijaLozinke
     {
         private static readonly int maxSaltLength = 32;
-
         public static byte[] GenerateSaltedHash(string lozinka, byte[] salt)
         {
             byte[] Lozinka = new byte[32];
@@ -34,6 +33,17 @@ namespace Tennis_Track.Klase
                 random.GetNonZeroBytes(salt);
                 return salt;
             }
+        }
+        public static bool ProvjeriLozinku(string Lozinka)
+        {
+            byte[] hashLozinke = GenerateSaltedHash(Lozinka, PrijavaClana.PrijavljeniCLan.SaltLozinke);
+            if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.PrijavljeniCLan.HashLozinke, hashLozinke))
+                return true;
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
