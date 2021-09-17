@@ -26,7 +26,6 @@ namespace Tennis_Track.Klase
                 return algorithm.ComputeHash(saltedText);
             }
         }
-
         public static byte[] GenerateSalt()
         {
             using (RandomNumberGenerator random = new RNGCryptoServiceProvider())
@@ -36,18 +35,5 @@ namespace Tennis_Track.Klase
                 return salt;
             }
         }
-
-        public static bool ProvjeriLozinku(string Lozinka)
-        {
-            byte[] hashLozinke = GenerateSaltedHash(Lozinka, PrijavaClana.PrijavljeniCLan.SaltLozinke);
-            if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.PrijavljeniCLan.HashLozinke, hashLozinke))
-                return true;
-            else
-            {
-                return false;
-            }
-        }
-
-
     }
 }
