@@ -64,7 +64,7 @@ namespace Tennis_Track.Klase
             }
         }
 
-        private static void PosaljiKorisnickePodatke(Clan clan, string lozinka)
+        public static void PosaljiKorisnickePodatke(Clan clan, string lozinka)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace Tennis_Track.Klase
             }
         }
 
-        private static string GenerirajLozinku()
+        public static string GenerirajLozinku()
         {
             Random random = new Random();
             string lozinka = "";
