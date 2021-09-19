@@ -34,7 +34,7 @@ namespace Tennis_Track.Klase
                 return salt;
             }
         }
-        private static bool ProvjeriLozinku(string Lozinka)
+        public static bool ProvjeriLozinku(string Lozinka)
         {
             byte[] hashLozinke = GenerateSaltedHash(Lozinka, PrijavaClana.PrijavljeniCLan.SaltLozinke);
             if (StructuralComparisons.StructuralEqualityComparer.Equals(PrijavaClana.PrijavljeniCLan.HashLozinke, hashLozinke))

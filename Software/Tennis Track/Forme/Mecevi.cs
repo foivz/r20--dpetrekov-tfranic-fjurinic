@@ -54,8 +54,8 @@ namespace Tennis_Track.Forme
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
             txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             
-            var tereni = (from m in tennisTrackEntities.Teren select m.Vrsta).Distinct();
-            cmbTeren.DataSource = tereni.ToList();
+            var vrsteTerena = (from m in tennisTrackEntities.Teren select m.Vrsta).Distinct();
+            cmbTeren.DataSource = vrsteTerena.ToList();
 
             cmbTermini.DataSource = PopuniTermine();
 
