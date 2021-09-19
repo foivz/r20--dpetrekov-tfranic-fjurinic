@@ -20,14 +20,22 @@ namespace Tennis_Track.Forme
             InitializeComponent();
         }
 
-        private void PopuniVrijeme()
+        private void DodavanjeTurnira_Load(object sender, EventArgs e)
         {
-            cmbVrijeme.Items.Add("08:00:00");
-            cmbVrijeme.Items.Add("09:00:00");
-            cmbVrijeme.Items.Add("10:00:00");
-            cmbVrijeme.Items.Add("11:00:00");
-            cmbVrijeme.Items.Add("12:00:00");
-            cmbVrijeme.Items.Add("13:00:00");
+            dtpDatumTurnira.Value = DateTime.Today.AddDays(1);
+            cmbVrijeme.DataSource = PopuniVrijeme();
+        }
+
+        private List<string> PopuniVrijeme()
+        {
+            List<string> vrijemeString = new List<string>();
+            vrijemeString.Add("08:00:00");
+            vrijemeString.Add("09:00:00");
+            vrijemeString.Add("10:00:00");
+            vrijemeString.Add("11:00:00");
+            vrijemeString.Add("12:00:00");
+            vrijemeString.Add("13:00:00");
+            return vrijemeString;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -62,11 +70,6 @@ namespace Tennis_Track.Forme
             }
         }
 
-        private void DodavanjeTurnira_Load(object sender, EventArgs e)
-        {
-            dtpDatumTurnira.Value = DateTime.Today.AddDays(1);
-            PopuniVrijeme();
-        }
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
