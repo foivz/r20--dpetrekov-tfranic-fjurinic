@@ -123,10 +123,6 @@
             this.vrijemeDataGridViewTextBoxColumn.HeaderText = "Vrijeme";
             this.vrijemeDataGridViewTextBoxColumn.Name = "vrijemeDataGridViewTextBoxColumn";
             // 
-            // turnirBindingSource
-            // 
-            this.turnirBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Turnir);
-            // 
             // BrisanjeTurnira
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -224,14 +224,6 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // mecBindingSource
-            // 
-            this.mecBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Mec);
-            // 
-            // terenBindingSource
-            // 
-            this.terenBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Teren);
-            // 
             // Brisanje_mečeva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
