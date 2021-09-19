@@ -46,13 +46,17 @@ namespace Tennis_Track.Forme
         private void Mecevi_Load(object sender, EventArgs e)
         {
             tennisTrackEntities.Clan.Load();
-            clanBindingSource.DataSource = from c in tennisTrackEntities.Clan.Local where
-                                           c.KorisnickoIme!=PrijavaClana.PrijavljeniCLan.KorisnickoIme select c;
+            var SviClanoviOsimPrijavljenog = from c in tennisTrackEntities.Clan.Local
+                                            where c.KorisnickoIme != PrijavaClana.PrijavljeniCLan.KorisnickoIme
+                                            select c;
+            clanBindingSource.DataSource = SviClanoviOsimPrijavljenog;
+
             cmbTeren.DataSource = tennisTrackEntities.Teren.Local;
             txtIgrac.Text = PrijavaClana.PrijavljeniCLan.Ime + " " + PrijavaClana.PrijavljeniCLan.Prezime;
             
             var tereni = (from m in tennisTrackEntities.Teren select m.Vrsta).Distinct();
             cmbTeren.DataSource = tereni.ToList();
+
             cmbTermini.DataSource = PopuniTermine();
 
             var turniriKorisnika = (from turnir in tennisTrackEntities.Turnir from clan in turnir.Clans

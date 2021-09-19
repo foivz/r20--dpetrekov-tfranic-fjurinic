@@ -615,10 +615,6 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
-            // clanBindingSource
-            // 
-            this.clanBindingSource.DataSource = typeof(Tennis_Track.Baza_podataka.Clan);
-            // 
             // Mecevi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
