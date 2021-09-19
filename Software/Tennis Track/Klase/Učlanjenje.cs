@@ -14,12 +14,12 @@ namespace Tennis_Track.Klase
 {
     public static class Učlanjenje
     {
-        public static void DodajClana(string ime, string prezime, string email, string telefon)
+        public static void DodajClana(DodajClana dodajClana)
         {
             TennisTrackEntities tennisTrackEntities = new TennisTrackEntities();
             tennisTrackEntities.Clan.Load();
             var result = from c in tennisTrackEntities.Clan.Local
-                         where c.KorisnickoIme == (ime[0] + prezime.ToLower())
+                         where c.KorisnickoIme == (dodajClana.txtIme.Text[0].ToString() + dodajClana.txtPrezime.Text.ToString()).ToLower()
                          select c;
             if (result.Count()!=0)
             {
@@ -29,13 +29,13 @@ namespace Tennis_Track.Klase
             {
                 Clan clan = new Clan();
                 string lozinka = GenerirajLozinku();
-                clan.Ime = ime;
-                clan.Prezime = prezime;
-                clan.Email = email;
-                clan.KorisnickoIme = ime[0] + prezime.ToLower();
+                clan.Ime = dodajClana.txtIme.Text.ToString();
+                clan.Prezime = dodajClana.txtPrezime.Text.ToString();
+                clan.Email = dodajClana.txtEmail.Text.ToString();
+                clan.KorisnickoIme = (dodajClana.txtIme.Text[0].ToString() + dodajClana.txtPrezime.Text.ToString()).ToLower();
                 clan.SaltLozinke = EnkripcijaLozinke.GenerateSalt();
                 clan.HashLozinke = EnkripcijaLozinke.GenerateSaltedHash(lozinka, clan.SaltLozinke);
-                clan.Telefon = telefon;
+                clan.Telefon = dodajClana.txtTelefon.Text.ToString();
                 clan.TipClana = "Clan";
                 tennisTrackEntities.Clan.Add(clan);
                 tennisTrackEntities.SaveChanges();

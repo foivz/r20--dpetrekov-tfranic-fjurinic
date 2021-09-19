@@ -36,8 +36,7 @@ namespace Tennis_Track.Forme
 
         private void btnKreirajNoviRacun_Click(object sender, EventArgs e)
         {
-            Učlanjenje.DodajClana(txtIme.Text.ToString(), txtPrezime.Text.ToString(), 
-                                  txtEmail.Text.ToString(), txtTelefon.Text.ToString());
+            Učlanjenje.DodajClana(this);
         }
 
         private void DodajClana_Load(object sender, EventArgs e)
