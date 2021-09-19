@@ -26,11 +26,6 @@ namespace Tennis_Track.Forme
 
         private void RezultatiTurnira_Load(object sender, EventArgs e)
         {
-            RefreshGUI();
-        }
-
-        private void RefreshGUI()
-        {
             lblNazivTurnira.Text = izabraniTurnir1.Naziv;
             DohvatiRezultateTurnira();
         }
