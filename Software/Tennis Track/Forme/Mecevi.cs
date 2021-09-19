@@ -281,7 +281,6 @@ namespace Tennis_Track.Forme
                     unosZadovoljava = false;
                     return false;
                 }
-                
             }
             else
             {

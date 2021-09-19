@@ -31,12 +31,7 @@ namespace Tennis_Track.Forme
 
         private void RefreshGUI()
         {
-            PopuniInformacije();
-            PopuniRezultate();
-        }
-
-        private void PopuniRezultate()
-        {
+            lblNazivTurnira.Text = izabraniTurnir1.Naziv;
             DohvatiRezultateTurnira();
         }
 
@@ -60,10 +55,6 @@ namespace Tennis_Track.Forme
                
         }
 
-        private void PopuniInformacije()
-        {
-            lblNazivTurnira.Text = izabraniTurnir1.Naziv;
-        }
 
         private void OsvjeziRezultate()
         {
