@@ -16,7 +16,10 @@ namespace Tennis_Track.Klase
         public static Clan PrijavljeniCLan = null;
         public static bool ProvjeriPodatke(string KorisnickoIme, string Lozinka)
         {
-            DohvatiKorisnika(KorisnickoIme);
+            using (var db = new TennisTrackEntities())
+            {
+                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
+            }
 
             if (PrijavljeniCLan == null)
             {
@@ -32,13 +35,6 @@ namespace Tennis_Track.Klase
                 PrijavljeniCLan = null;
                 MessageBox.Show("Pogrešna lozinka!", "Lozinka koju ste unesli je neispravna");
                 return false;
-            }
-        }
-        private static void DohvatiKorisnika(string KorisnickoIme)
-        {
-            using (var db = new TennisTrackEntities())
-            {
-                PrijavljeniCLan = (from k in db.Clan where KorisnickoIme == k.KorisnickoIme select k).FirstOrDefault();
             }
         }
     }
